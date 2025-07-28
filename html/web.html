@@ -4,23 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Introduction au Web - EcoleDigitale</title>
+  <link rel="stylesheet" href="../default.css">
   <link rel="stylesheet" href="../css/web.css">
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="logo">EcoleDigitale</div>
-      <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Cours</a>
-        <a href="#">Formations</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
-        <button>Inscription</button>
-        <button class="login">Connexion</button>
+  <header class="nav-header">
+    <div class="nav-header__left">
+      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+      <span class="nav-title">EcoleDigitale</span>
+    </div>
+    <div class="nav-header__right">
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <!-- Icône hamburger SVG -->
+        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
+      </button>
+      <nav class="nav-nav" id="navMenu">
+        <a href="#" class="nav-link">Accueil</a>
+        <a href="#" class="nav-link">Cours</a>
+        <a href="#" class="nav-link">À propos</a>
+        <a href="#" class="nav-link">Contact</a>
+        <button class="nav-btn">Se connecter</button>
       </nav>
     </div>
   </header>
+
 
   <main>
 <div class="breadcrumb">Cours / Introduction au web</div>
@@ -56,15 +63,10 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-links">
-      <a href="#">Accueil</a>
-      <a href="#">Cours</a>
-      <a href="#">Formations</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
+    <div class="footer-legal">
+      © 2025 EcoleDigitale. Tous droits réservés.
     </div>
-    <p>© 2024 EcoleDigitale. Tous droits réservés.</p>
   </footer>
+  <script src="js/script.js"></script>
 </body>
 </html>

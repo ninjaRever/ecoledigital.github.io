@@ -6,39 +6,6 @@ body {
   color: #333;
 }
 
-.navbar {
-  background: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.navbar .logo {
-  font-weight: bold;
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #444;
-}
-
-nav button {
-  margin-left: 10px;
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: none;
-  background: #dcdcff;
-  cursor: pointer;
-}
-
-nav .login {
-  background: #e8e8f0;
-}
-
 main {
   max-width: 800px;
   margin: 40px auto;
@@ -85,17 +52,3 @@ main {
   border-radius: 8px;
   margin-bottom: 10px;
 }
-
-footer {
-  text-align: center;
-  padding: 30px 10px;
-  background: #f1f1f7;
-  margin-top: 40px;
-}
-
-.footer-links a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #666;
-}
-```
