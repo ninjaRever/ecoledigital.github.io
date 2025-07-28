@@ -24,25 +24,29 @@ body {
   border-bottom: 1px solid rgb(229, 231, 235);
 }
 
-.nav-header__left {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* Ajoute un espace entre le logo et le texte */
-}
-
+.nav-header__left,
 .nav-header__right {
   display: flex;
   align-items: center;
-  gap: 16px;
-}
-
-.nav-logo {
-  height: 40px;
 }
 
 .nav-nav {
   display: flex;
   gap: 24px;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 40px;
+  margin-right: 12px; /* espace entre logo et texte */
+}
+
+.nav-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: rgb(26, 26, 26);
+  letter-spacing: 1px;
+  margin-right: 24px; /* espace entre titre et liens */
 }
 
 .nav-link {
@@ -54,13 +58,6 @@ body {
 
 .nav-link:hover {
   color: rgb(99, 91, 255);
-}
-
-.nav-title {
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: rgb(26, 26, 26);
-  letter-spacing: 1px;
 }
 
 .nav-btn {
@@ -114,6 +111,12 @@ body {
   .nav-btn {
     width: 100%;
     margin-top: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-burger {
+    display: none;
   }
 }
 
