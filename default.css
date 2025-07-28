@@ -1,0 +1,220 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: rgb(249, 249, 252);
+  color: rgb(26, 26, 26);
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(249, 249, 252);
+  padding: 16px 32px;
+  border-bottom: 1px solid rgb(229, 231, 235);
+}
+
+.nav-header__left {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Ajoute un espace entre le logo et le texte */
+}
+
+.nav-header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.nav-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  color: rgb(55, 65, 81);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: rgb(99, 91, 255);
+}
+
+.nav-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: rgb(26, 26, 26);
+  letter-spacing: 1px;
+}
+
+.nav-btn {
+  background: rgb(99, 91, 255);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover {
+  background: #fff;
+  color: rgb(99, 91, 255);
+  border: 1px solid rgb(99, 91, 255);
+}
+
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+@media (max-width: 800px) {
+  .nav-nav {
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    background: rgb(249, 249, 252);
+    position: absolute;
+    top: 70px;
+    right: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    z-index: 100;
+  }
+  .nav-nav.nav-open {
+    display: flex;
+  }
+  .nav-burger {
+    display: block;
+  }
+  .nav-header__right {
+    position: relative;
+  }
+  .nav-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* --- Footer --- */
+.footer {
+  background: #f8f8fb;
+  color: #475569; /* text-slate-600 */
+  font-family: 'Inter', sans-serif;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: auto;
+  gap: 1rem;           /* Plus d'espace vertical entre les blocs */
+  padding: 1rem 1rem;  /* Plus de hauteur */
+}
+
+.footer-main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* gap-6 */
+  font-size: 1rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+  gap: 14rem;           /* Plus d'espace entre les liens principaux */
+}
+
+.footer-link {
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: #6366f1; /* violet-500 */
+}
+
+.footer-secondary-nav {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  gap: 10rem;           /* Plus d'espace entre les liens secondaires */
+  margin-top: 1rem;    /* Plus d'espace au-dessus */
+}
+
+.footer-link-secondary {
+  color: #64748b; /* text-slate-500 */
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-link-secondary:hover {
+  color: #6366f1;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  gap: 3rem;           /* Plus d'espace entre les icônes */
+  margin-top: 1rem;    /* Plus d'espace au-dessus */
+}
+
+.footer-social {
+  color: #64748b;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.footer-social:hover {
+  color: #6366f1;
+}
+
+.footer-legal {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  margin-top: 2rem;    /* Plus d'espace au-dessus */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-main-nav,
+  .footer-secondary-nav,
+  .footer-socials {
+    flex-direction: column;
+    gap: 2rem;         /* Plus d'espace en mobile */
+  }
+  .footer {
+    gap: 2rem;
+    padding: 2rem 0.5rem;
+  }
+}
