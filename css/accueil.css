@@ -1,0 +1,166 @@
+/* Palette EcoleDigitale */
+:root {
+  --bg-main: rgb(249, 249, 252);
+  --text-main: rgb(26, 26, 26);
+  --text-secondary: rgb(107, 114, 128);
+  --text-button: rgb(55, 65, 81);
+  --violet: rgb(99, 91, 255);
+  --violet-light: rgb(167, 139, 250);
+  --gray-light: rgb(229, 231, 235);
+  --white: #ffffff;
+  --radius: 0.5rem;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Section générique */
+.section {
+  padding: 3rem 2rem;
+}
+.section h2,
+.section p {
+  text-align: center;
+}
+
+/* Héros */
+.hero {
+  padding: 2rem;
+}
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: row-reverse; /* image à droite */
+}
+.hero-image {
+  max-width: 400px;
+  width: 100%;
+}
+.hero-text h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.hero-text p {
+  color: var(--text-secondary);
+  margin: 1rem 0;
+}
+.btn-primary {
+  background: rgb(99, 91, 255);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  color: rgb(99, 91, 255);
+  border: 1px solid rgb(99, 91, 255);
+}
+
+/* Niveaux */
+.levels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;           /* Plus d'espace entre les boutons */
+  margin-top: 2rem;
+  justify-content: center; /* Centrer sur la page */
+}
+.levels button {
+  background-color: rgb(229, 231, 235); /* gris clair */
+  color: rgb(55, 65, 81);               /* texte gris foncé */
+  padding: 1rem 2.5rem;                 /* boutons plus larges */
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  min-width: 180px;                     /* largeur minimale */
+}
+
+.levels button:hover {
+  background: rgb(99, 91, 255);         /* violet */
+  color: #fff;
+  border: 1px solid rgb(99, 91, 255);
+}
+
+/* Cours populaires */
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.course-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  width: 200px;
+  padding-bottom: 1rem;
+}
+.course-card img {
+  width: 100%;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.course-card h3 {
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+.course-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0 0.5rem;
+}
+
+/* Fonctionnalités */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.feature-card {
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  width: 240px;
+}
+.feature-card h4 {
+  margin-bottom: 0.5rem;
+}
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Newsletter */
+.newsletter {
+  background-color: var(--bg-main); /* même couleur que le body */
+  padding: 2rem;
+  margin: 3rem 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+.newsletter-form {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.newsletter-form input {
+  padding: 0.75rem;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  min-width: 250px;
+}
