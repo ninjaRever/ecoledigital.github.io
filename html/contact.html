@@ -33,6 +33,16 @@
 
   <!-- ...autre contenu... -->
 
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="formulaire.js"> </script>
+  </head>
+  <body>
     <!-- l'entete de la page -->
     <h1>Contactez-nous</h1>
     <div class="entete">
@@ -63,7 +73,8 @@
     <option value="">Sujet de message</option>
     <option value="info">Demande d'informations</option>
     <option value="sugg">Suggestions</option>
-    <option value="prob">Problème rencontré</option>
+
+<option value="prob">Problème rencontré</option>
     <option value="retour">Retour d'expérience</option>
   </select>
   <br><br>
@@ -73,12 +84,15 @@
     border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;"></textarea>
   <br><br>
 
-  <button class=".btn-contact" type="button" onclick="resetForm()">Envoyer</button> <br>
+  <button type="button" onclick="resetForm()" class="button"> Envoyer</button> <br>
+  <div id="notification" style="display:none; background-color:#4f46e5; color:white; padding:10px; border-radius:5px; margin-top:10px; text-align:center;">
+  Votre message est bien envoyé !
+</div>
 </form>
 <!-- Autres moyens de nous contacter -->
 <h2>Autres moyens de nous contacter</h2>
 
-     <div>
+     </div>
      <hr>
     <pre>
 <span id="mail">Email</span>                                    <span id="mail2">support@ecoledigitale.com</span> <br>
@@ -87,12 +101,12 @@
 <hr>
 <span id="reseau">Reseaux sociaux</span>                        <span id="reseau2">Facebook,Twitter,Linkedin</span>
     </pre>
+    <p id="last">Votre message a été envoyé avec succès.Nous vous répondrons dans les plus brefs délais.</p>
     </div>
    
 
   <!-- ...autre contenu... -->
 <script>
-  javascript
 function resetForm() {
   const nom = document.getElementById('nom').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -104,13 +118,22 @@ function resetForm() {
     return;
   }
 
-  // Si tout est rempli, vider les champs
+  // Vider les champs
   document.getElementById('nom').value = '';
   document.getElementById('email').value = '';
   document.getElementById('Sujet').value = '';
   document.getElementById('message').value = '';
-  alert("Votre  Message est bien envoyé !");
+
+  // Afficher la notification
+  const notif = document.getElementById('notification');
+  notif.style.display = 'block';
+
+  // La cacher après 2 secondes
+  setTimeout(() => {
+    notif.style.display = 'none';
+  }, 2000);
 }
+  
 </script>
 
 
