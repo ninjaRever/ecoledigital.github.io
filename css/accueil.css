@@ -98,14 +98,17 @@ body {
 /* Cours populaires */
 .courses {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1rem;
   margin-top: 1rem;
+  overflow-x: auto;
 }
 .course-card {
   background-color: var(--white);
   border-radius: var(--radius);
-  width: 200px;
+  flex: 1;
+  min-width: 150px;
+  max-width: 250px;
   padding-bottom: 1rem;
 }
 .course-card img {
