@@ -1,0 +1,103 @@
+body{
+    background-color: #f7f7fb;
+    color: black;
+}
+/* Css  pour h et p */
+.entete{
+    
+    justify-content: center;
+margin-left: 305px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-weight: 400;
+}
+h1{
+    margin-left: 305px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+/* formulaire */
+.formulaire{
+    width: 500px;
+
+}
+/* l'interieur des formulaire */
+input::placeholder{
+    color: #475569;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:700;
+   
+}
+/* message */
+textarea::placeholder{
+    color: #475569;
+    font-weight: 700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+select{
+color: black;
+}
+
+.zuu{
+    color: black;
+}
+button{
+    background-color: #4f46e5;
+    width: 80px;
+    height: 35px;
+    border-radius: 8px;
+    color: rgb(229,231,235);
+    border: black;
+    cursor: pointer; 
+}
+button:hover{
+    background-color: #f7f7fb;
+    color: rgb(99, 91, 255);
+     border: 1px solid rgb(99, 91, 255);
+     transform: scale();
+     transition: 0.2s
+}
+/* Autres moyens de nous contacter */
+h2{
+    font-size: large;
+    font-weight: bold;
+    font-style: normal;
+}
+.ndao{
+
+right: 100px;
+margin: 0px;
+margin-right: 20px;
+}
+#mail{
+    color:   #475569;
+    font-weight: bold;
+    font-size: larger;
+}
+#mail2{
+     font-weight: bold;
+    font-size: larger;
+}
+#call{
+     color:  #475569;
+    font-weight: bold;
+    font-size: larger;
+}
+#call2{
+    font-weight: bold;
+    font-size: larger;
+}
+#reseau{
+     color: #475569;
+    font-weight: bold;
+    font-size: larger;  
+}
+#reseau2{
+   font-weight: bold;
+    font-size: larger; 
+}
+#last{
+   color:   rgb(55, 65, 81);
+    font-weight:400;
+  font-size:small;
+}
