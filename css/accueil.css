@@ -1,169 +1,304 @@
-/* Palette EcoleDigitale */
+/* Définition des variables CSS pour la palette de couleurs EcoleDigitale */
+/* Ces variables permettent de centraliser les couleurs utilisées dans le design */
 :root {
+  /* Couleur de fond principale - gris très clair */
   --bg-main: rgb(249, 249, 252);
+  /* Couleur de texte principale - noir presque absolu */
   --text-main: rgb(26, 26, 26);
+  /* Couleur de texte secondaire - gris moyen */
   --text-secondary: rgb(107, 114, 128);
+  /* Couleur de texte pour les boutons - gris foncé */
   --text-button: rgb(55, 65, 81);
+  /* Couleur violette principale de la marque */
   --violet: rgb(99, 91, 255);
+  /* Couleur violette claire */
   --violet-light: rgb(167, 139, 250);
+  /* Couleur grise claire */
   --gray-light: rgb(229, 231, 235);
+  /* Couleur blanche */
   --white: #ffffff;
+  /* Rayon pour les coins arrondis */
   --radius: 0.5rem;
 }
 
+/* Styles généraux pour le corps de la page */
 body {
+  /* Suppression de la marge par défaut */
   margin: 0;
+  /* Utilisation de la police sans-serif par défaut */
   font-family: sans-serif;
+  /* Application de la couleur de fond principale */
   background-color: var(--bg-main);
+  /* Application de la couleur de texte principale */
   color: var(--text-main);
+  /* Hauteur de ligne pour une meilleure lisibilité */
   line-height: 1.6;
 }
 
-/* Section générique */
+/* Styles pour les sections génériques */
+/* Classe utilitaire pour les sections principales */
 .section {
+  /* Espacement interne pour le confort visuel */
   padding: 3rem 2rem;
 }
+
+/* Centrage du texte pour les titres et paragraphes des sections */
 .section h2,
 .section p {
   text-align: center;
 }
 
-/* Héros */
+/* Styles pour la section Héros */
 .hero {
+  /* Espacement interne */
   padding: 2rem;
 }
+
+/* Contenu de la section Héros */
 .hero-content {
+  /* Affichage flexible pour le positionnement */
   display: flex;
+  /* Permet aux éléments de passer à la ligne si nécessaire */
   flex-wrap: wrap;
+  /* Espacement entre les éléments */
   gap: 2rem;
+  /* Alignement des éléments sur le centre */
   align-items: center;
-  flex-direction: row-reverse; /* image à droite */
+  /* Inversion de l'ordre : image à droite, texte à gauche */
+  flex-direction: row-reverse;
 }
+
+/* Image de la section Héros */
 .hero-image {
+  /* Largeur maximale de l'image */
   max-width: 400px;
+  /* Largeur de 100% pour s'adapter au conteneur */
   width: 100%;
 }
+
+/* Texte de la section Héros */
 .hero-text h1 {
+  /* Taille de la police pour le titre principal */
   font-size: 2rem;
+  /* Épaisseur de la police en gras */
   font-weight: bold;
 }
+
 .hero-text p {
+  /* Application de la couleur de texte secondaire */
   color: var(--text-secondary);
+  /* Espacement vertical */
   margin: 1rem 0;
 }
+
+/* Styles pour le bouton principal */
 .btn-primary {
+  /* Couleur de fond violette */
   background: rgb(99, 91, 255);
+  /* Couleur du texte en blanc */
   color: #fff;
+  /* Suppression de la bordure par défaut */
   border: none;
+  /* Espacement interne */
   padding: 10px 22px;
+  /* Coins arrondis */
   border-radius: var(--radius);
+  /* Épaisseur de la police en gras */
   font-weight: 600;
+  /* Curseur en forme de main pour indiquer l'interactivité */
   cursor: pointer;
+  /* Transitions fluides pour les changements d'état */
   transition: background 0.2s, color 0.2s, border 0.2s;
 }
 
+/* Effet au survol du bouton principal */
 .btn-primary:hover {
+  /* Changement de la couleur de fond en blanc */
   background: #fff;
+  /* Changement de la couleur du texte en violet */
   color: rgb(99, 91, 255);
+  /* Ajout d'une bordure violette */
   border: 1px solid rgb(99, 91, 255);
 }
 
-/* Niveaux */
+/* Styles pour la section Niveaux */
 .levels {
+  /* Affichage flexible pour le positionnement */
   display: flex;
+  /* Permet aux éléments de passer à la ligne si nécessaire */
   flex-wrap: wrap;
-  gap: 2rem;           /* Plus d'espace entre les boutons */
+  /* Espacement entre les boutons */
+  gap: 2rem;
+  /* Espacement vertical */
   margin-top: 2rem;
-  justify-content: center; /* Centrer sur la page */
-}
-.levels button {
-  background-color: rgb(229, 231, 235); /* gris clair */
-  color: rgb(55, 65, 81);               /* texte gris foncé */
-  padding: 1rem 2.5rem;                 /* boutons plus larges */
-  border: none;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s;
-  min-width: 180px;                     /* largeur minimale */
+  /* Centrage des éléments */
+  justify-content: center;
 }
 
+/* Styles pour les boutons de niveau */
+.levels button {
+  /* Couleur de fond gris clair */
+  background-color: rgb(229, 231, 235);
+  /* Couleur du texte gris foncé */
+  color: rgb(55, 65, 81);
+  /* Espacement interne pour un bouton plus large */
+  padding: 1rem 2.5rem;
+  /* Suppression de la bordure */
+  border: none;
+  /* Coins arrondis */
+  border-radius: var(--radius);
+  /* Épaisseur de la police en gras */
+  font-weight: 600;
+  /* Taille de la police */
+  font-size: 1.1rem;
+  /* Curseur en forme de main */
+  cursor: pointer;
+  /* Transitions fluides */
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  /* Largeur minimale pour les boutons */
+  min-width: 180px;
+}
+
+/* Effet au survol des boutons de niveau */
 .levels button:hover {
-  background: rgb(99, 91, 255);         /* violet */
+  /* Changement de la couleur de fond en violet */
+  background: rgb(99, 91, 255);
+  /* Changement de la couleur du texte en blanc */
   color: #fff;
+  /* Ajout d'une bordure violette */
   border: 1px solid rgb(99, 91, 255);
 }
 
-/* Cours populaires */
+/* Styles pour la section Cours populaires */
 .courses {
+  /* Affichage flexible */
   display: flex;
+  /* Empêche les éléments de passer à la ligne */
   flex-wrap: nowrap;
+  /* Espacement entre les cartes */
   gap: 1rem;
+  /* Espacement vertical */
   margin-top: 1rem;
+  /* Défilement horizontal si nécessaire */
   overflow-x: auto;
 }
+
+/* Styles pour les cartes de cours */
 .course-card {
+  /* Couleur de fond blanche */
   background-color: var(--white);
+  /* Coins arrondis */
   border-radius: var(--radius);
+  /* Élargissement flexible */
   flex: 1;
+  /* Largeur minimale */
   min-width: 150px;
+  /* Largeur maximale */
   max-width: 250px;
+  /* Espacement interne en bas */
   padding-bottom: 1rem;
 }
+
+/* Images dans les cartes de cours */
 .course-card img {
+  /* Largeur de 100% */
   width: 100%;
+  /* Coins arrondis seulement en haut */
   border-radius: var(--radius) var(--radius) 0 0;
 }
+
+/* Titres dans les cartes de cours */
 .course-card h3 {
+  /* Espacement vertical réduit */
   margin: 0.5rem;
+  /* Taille de la police */
   font-size: 1rem;
 }
+
+/* Paragraphes dans les cartes de cours */
 .course-card p {
+  /* Taille de la police réduite */
   font-size: 0.875rem;
+  /* Couleur de texte secondaire */
   color: var(--text-secondary);
+  /* Espacement horizontal */
   margin: 0 0.5rem;
 }
 
-/* Fonctionnalités */
+/* Styles pour la section Fonctionnalités */
 .features {
+  /* Affichage flexible */
   display: flex;
+  /* Permet aux éléments de passer à la ligne */
   flex-wrap: wrap;
+  /* Espacement entre les cartes */
   gap: 1rem;
+  /* Espacement vertical */
   margin-top: 1rem;
 }
+
+/* Styles pour les cartes de fonctionnalités */
 .feature-card {
+  /* Couleur de fond blanche */
   background-color: var(--white);
+  /* Espacement interne */
   padding: 1rem;
+  /* Coins arrondis */
   border-radius: var(--radius);
+  /* Largeur fixe */
   width: 240px;
 }
+
+/* Titres dans les cartes de fonctionnalités */
 .feature-card h4 {
+  /* Espacement en bas */
   margin-bottom: 0.5rem;
 }
+
+/* Paragraphes dans les cartes de fonctionnalités */
 .feature-card p {
+  /* Couleur de texte secondaire */
   color: var(--text-secondary);
+  /* Taille de la police réduite */
   font-size: 0.875rem;
 }
 
-/* Newsletter */
+/* Styles pour la section Newsletter */
 .newsletter {
-  background-color: var(--bg-main); /* même couleur que le body */
+  /* Couleur de fond identique au body */
+  background-color: var(--bg-main);
+  /* Espacement interne */
   padding: 2rem;
+  /* Espacement externe horizontal */
   margin: 3rem 2rem;
+  /* Coins arrondis */
   border-radius: var(--radius);
+  /* Alignement du texte au centre */
   text-align: center;
 }
+
+/* Formulaire de la newsletter */
 .newsletter-form {
+  /* Espacement vertical */
   margin-top: 1rem;
+  /* Affichage flexible */
   display: flex;
+  /* Espacement entre les éléments */
   gap: 1rem;
+  /* Centrage des éléments */
   justify-content: center;
+  /* Permet aux éléments de passer à la ligne */
   flex-wrap: wrap;
 }
+
+/* Champ de saisie de la newsletter */
 .newsletter-form input {
+  /* Espacement interne vertical */
   padding: 0.75rem;
+  /* Bordure grise claire */
   border: 1px solid var(--gray-light);
+  /* Coins arrondis */
   border-radius: var(--radius);
+  /* Largeur minimale */
   min-width: 250px;
 }

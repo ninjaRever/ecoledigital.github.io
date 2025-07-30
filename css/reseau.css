@@ -34,6 +34,16 @@ main {
   margin: 20px 0;
 }
 
+/* Pseudo-élément pour les éléments de liste dans les modules */
+.modules li::before {
+  /* Contenu vide */
+  content: "";
+  /* Position absolue */
+  position: absolute;
+  /* Positionnement à gauche */
+  left: 0;
+}
+
 /* Styles pour le bouton "Commencer ce cours" */
 .start-course {
   /* Espacement vertical de 15px */

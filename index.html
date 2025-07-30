@@ -1,113 +1,186 @@
 <!DOCTYPE html>
+<!-- Déclaration du type de document HTML5 -->
 <html lang="fr">
+<!-- Balise racine avec langue définie sur français -->
 <head>
+  <!-- Section d'en-tête du document -->
   <meta charset="UTF-8">
+  <!-- Encodage des caractères en UTF-8 -->
   <title>EcoleDigitale</title>
+  <!-- Titre de la page affiché dans l'onglet du navigateur -->
   <link rel="stylesheet" href="default.css">
+  <!-- Lien vers la feuille de style par défaut -->
   <link rel="stylesheet" href="css/accueil.css">
+  <!-- Lien vers la feuille de style spécifique à la page d'accueil -->
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <!-- Lien vers la police Google Fonts Inter -->
 </head>
 <body>
+  <!-- Corps de la page web -->
   <header class="nav-header">
+    <!-- En-tête de navigation -->
     <div class="nav-header__left">
+      <!-- Partie gauche de l'en-tête -->
       <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+      <!-- Logo de l'école avec texte alternatif -->
       <span class="nav-title">EcoleDigitale</span>
+      <!-- Nom de l'école -->
     </div>
     <div class="nav-header__right">
+      <!-- Partie droite de l'en-tête -->
       <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <!-- Bouton hamburger pour le menu mobile -->
         <!-- Icône hamburger SVG -->
         <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
+        <!-- Icône SVG représentant le menu hamburger -->
       </button>
       <nav class="nav-nav" id="navMenu">
+        <!-- Navigation principale -->
         <a href="../index.html" class="nav-link">Accueil</a>
+        <!-- Lien vers la page d'accueil -->
         <a href="" class="nav-link">Cours</a>
+        <!-- Lien vers la section des cours -->
         <a href="#" class="nav-link">À propos</a>
+        <!-- Lien vers la page "À propos" -->
         <a href="#" class="nav-link">Contact</a>
+        <!-- Lien vers la page de contact -->
         <button class="nav-btn">Se connecter</button>
+        <!-- Bouton de connexion -->
       </nav>
     </div>
   </header>
 
  <!-- Section Héros -->
   <section class="hero">
+    <!-- Section principale avec contenu de héros -->
     <div class="hero-content">
+      <!-- Contenu de la section héros -->
       <img src="image/acceuill.jpg" alt="Illustration éducative" class="hero-image">
+      <!-- Image illustrative -->
       <div class="hero-text">
+        <!-- Texte de la section héros -->
         <h1>Apprenez Autrement avec EcoleDigitale</h1>
+        <!-- Titre principal -->
         <p>
           Cours interactifs, vidéos explicatives, quiz et supports complets pour tous les niveaux.
         </p>
+        <!-- Description de l'offre -->
         <button class="btn-primary">Explorer les cours</button>
+        <!-- Bouton d'action principale -->
       </div>
     </div>
   </section>
 
   <!-- Niveaux -->
   <section class="section">
+    <!-- Section pour les niveaux d'apprentissage -->
     <h2>Choisissez Votre Niveau d'Apprentissage</h2>
+    <!-- Titre de la section -->
     <div class="levels">
+      <!-- Conteneur pour les boutons de niveau -->
       <button>Classe d’examen</button>
+      <!-- Bouton pour la classe d'examen -->
       <a href="html/ctgcite.html"><button>Université</button></a>
+      <!-- Lien vers la page université avec bouton -->
       <button>Technique</button>
+      <!-- Bouton pour le niveau technique -->
       <button>Lycée</button>
+      <!-- Bouton pour le lycée -->
       <button>Collège</button>
+      <!-- Bouton pour le collège -->
     </div>
   </section>
 
   <!-- Cours populaires -->
    <!-- Cours populaires -->
   <section class="section">
+    <!-- Section pour les cours populaires -->
     <h2>Nos Cours les Plus Populaires</h2>
+    <!-- Titre de la section -->
     <div class="courses">
+      <!-- Conteneur pour les cartes de cours -->
       <div class="course-card">
+        <!-- Carte de cours individuelle -->
         <img src="image/ALGORITHEME.jpeg" alt="Algorithme">
+        <!-- Image du cours -->
         <h3>Algorithme</h3>
+        <!-- Titre du cours -->
         <p>Niveau : Université</p>
+        <!-- Niveau du cours -->
       </div>
       <div class="course-card">
+        <!-- Carte de cours individuelle -->
         <img src="image/HTMLCSS.jpeg" alt="HTML">
+        <!-- Image du cours -->
         <h3>HTML/CSS</h3>
+        <!-- Titre du cours -->
         <p>Niveau : Université</p>
+        <!-- Niveau du cours -->
       </div>
       <div class="course-card">
+        <!-- Carte de cours individuelle -->
         <img src="image/mathématiques.jpeg" alt="CSS">
+        <!-- Image du cours -->
         <h3>mathématiques</h3>
+        <!-- Titre du cours -->
         <p>Niveau : Université</p>
+        <!-- Niveau du cours -->
       </div>
       <div class="course-card">
+        <!-- Carte de cours individuelle -->
         <img src="image/js.png" alt="JavaScript">
+        <!-- Image du cours -->
         <h3>JavaScript</h3>
+        <!-- Titre du cours -->
         <p>Niveau : Université</p>
+        <!-- Niveau du cours -->
       </div>
       <div class="course-card">
+        <!-- Carte de cours individuelle -->
         <img src="image/PHILOSOPHI.jpeg" alt="Philosophie">
+        <!-- Image du cours -->
         <h3>Philosophie</h3>
+        <!-- Titre du cours -->
         <p>Niveau : Classe d’examen (Terminale)</p>
+        <!-- Niveau du cours -->
       </div>
       <div class="course-card">
+        <!-- Carte de cours individuelle -->
         <img src="image/ANGLAIS.jpeg" alt="Anglais">
+        <!-- Image du cours -->
         <h3>Anglais</h3>
+        <!-- Titre du cours -->
         <p>Niveau : Université</p>
+        <!-- Niveau du cours -->
       </div>
     </div>
   </section>
 
   <!-- Fonctionnalités -->
   <section class="section">
+    <!-- Section pour les fonctionnalités -->
     <h2>Fonctionnalités</h2>
+    <!-- Titre de la section -->
     <p>Améliorez votre expérience d’apprentissage grâce à notre plateforme éducative complète.</p>
+    <!-- Description des fonctionnalités -->
     <div class="features">
+      <!-- Conteneur pour les cartes de fonctionnalités -->
       <div class="feature-card">
+        <!-- Carte de fonctionnalité individuelle -->
         <svg width="32" height="32" viewBox="0 0 24 24" fill="rgb(99, 91, 255)">
     <!-- Icône de caméra avec bouton play -->
     <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
     <circle cx="12" cy="12" r="5" fill="currentColor"/>
     <polygon points="10 10 10 14 14 12" fill="white"/>
   </svg>
+        <!-- Icône SVG pour les vidéos explicatives -->
         <h4>🎥 Vidéos Explicatives</h4>
+        <!-- Titre de la fonctionnalité -->
         <p>Leçons vidéo engageantes pour clarifier les sujets complexes.</p>
+        <!-- Description de la fonctionnalité -->
       </div>
       <div class="feature-card">
+         <!-- Carte de fonctionnalité individuelle -->
          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgb(99, 91, 255)" stroke-width="2">
     <!-- Style ligne moderne -->
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -115,36 +188,52 @@
     <path d="M12 16v-6"/>
     <polyline points="9 13 12 16 15 13"/>
   </svg>
+        <!-- Icône SVG pour les supports téléchargeables -->
         <h4>📄 Supports Téléchargeables</h4>
+        <!-- Titre de la fonctionnalité -->
         <p>Accédez à des guides complets à télécharger.</p>
+        <!-- Description de la fonctionnalité -->
       </div>
       <div class="feature-card">
+         <!-- Carte de fonctionnalité individuelle -->
          <svg width="32" height="32" viewBox="0 0 24 24" fill="rgb(99, 91, 255)">
     <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
     <circle cx="12" cy="9" r="1"/>
     <circle cx="12" cy="12" r="1"/>
   </svg>
+        <!-- Icône SVG pour les quiz interactifs -->
         <h4>📝 Quiz Interactifs</h4>
+        <!-- Titre de la fonctionnalité -->
         <p>Testez vos connaissances avec nos quiz interactifs.</p>
+        <!-- Description de la fonctionnalité -->
       </div>
       <div class="feature-card">
+         <!-- Carte de fonctionnalité individuelle -->
          <svg width="32" height="32" viewBox="0 0 24 24" fill="rgb(99, 91, 255)">
     <path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="2"/>
     <path d="M12 8l-1 2h-2v4h2l1 2 1-2h2v-4h-2z"/>
     <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
   </svg>
+        <!-- Icône SVG pour l'apprentissage autonome -->
         <h4>📚 Apprentissage Autonome</h4>
+        <!-- Titre de la fonctionnalité -->
         <p>Apprenez à votre rythme, où et quand vous voulez.</p>
+        <!-- Description de la fonctionnalité -->
       </div>
     </div>
   </section>
 
   <!-- Newsletter -->
   <section class="newsletter">
+    <!-- Section pour la newsletter -->
     <h2>Recevez Nos Nouveaux Cours et Mises à Jour</h2>
+    <!-- Titre de la section -->
     <div class="newsletter-form">
+      <!-- Formulaire de la newsletter -->
       <input type="email" placeholder="Entrez votre email" />
+      <!-- Champ de saisie pour l'email -->
       <button class="btn-primary">S'inscrire</button>
+      <!-- Bouton d'inscription -->
     </div>
   </section>
 
@@ -152,42 +241,65 @@
 
   <!-- ...autre contenu... -->
   <footer class="footer">
+    <!-- Pied de page -->
     <nav class="footer-main-nav">
+      <!-- Navigation principale du pied de page -->
       <a href="#" class="footer-link">Accueil</a>
+      <!-- Lien vers la page d'accueil -->
       <a href="#" class="footer-link">Cours</a>
+      <!-- Lien vers la section des cours -->
       <a href="#" class="footer-link">À propos</a>
+      <!-- Lien vers la page "À propos" -->
       <a href="#" class="footer-link">Contact</a>
+      <!-- Lien vers la page de contact -->
     </nav>
     <div class="footer-secondary-nav">
+      <!-- Navigation secondaire du pied de page -->
       <a href="#" class="footer-link-secondary">Politique de confidentialité</a>
+      <!-- Lien vers la politique de confidentialité -->
       <a href="#" class="footer-link-secondary">Conditions d'utilisation</a>
+      <!-- Lien vers les conditions d'utilisation -->
     </div>
     <div class="footer-socials">
+      <!-- Liens sociaux du pied de page -->
       <a href="#" aria-label="Twitter" class="footer-social">
+        <!-- Lien vers Twitter -->
         <!-- Heroicons Twitter -->
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.29 20c7.547 0 11.675-6.155 11.675-11.495 0-.175 0-.349-.012-.522A8.18 8.18 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.637A4.077 4.077 0 0 0 21.448 4.1a8.224 8.224 0 0 1-2.605.981A4.108 4.108 0 0 0 16.616 3c-2.266 0-4.104 1.82-4.104 4.065 0 .319.036.63.105.927C8.728 7.87 5.8 6.13 3.785 3.671a4.032 4.032 0 0 0-.555 2.045c0 1.41.722 2.655 1.823 3.384a4.093 4.093 0 0 1-1.858-.511v.052c0 1.97 1.41 3.615 3.292 3.99a4.1 4.1 0 0 1-1.853.07c.522 1.613 2.037 2.788 3.833 2.82A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"></path></svg>
+        <!-- Icône SVG de Twitter -->
       </a>
       <a href="#" aria-label="Facebook" class="footer-social">
+        <!-- Lien vers Facebook -->
         <!-- Heroicons Facebook -->
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2.75h-2.5A4.25 4.25 0 0 0 10.25 7v2.25H7.75a.75.75 0 0 0-.75.75v2.5c0 .414.336.75.75.75h2.5V21.25c0 .414.336.75.75.75h2.5a.75.75 0 0 0 .75-.75V13.25h2.25a.75.75 0 0 0 .75-.75v-2.5a.75.75 0 0 0-.75-.75H14.75V7A1.75 1.75 0 0 1 16.5 5.25H17a.75.75 0 0 0 .75-.75V3.5a.75.75 0 0 0-.75-.75z"></path></svg>
+        <!-- Icône SVG de Facebook -->
       </a>
       <a href="#" aria-label="Instagram" class="footer-social">
+        <!-- Lien vers Instagram -->
         <!-- Heroicons Instagram -->
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="16" height="16" x="4" y="4" rx="4" /><circle cx="12" cy="12" r="3.5"/><circle cx="16.5" cy="7.5" r="1"/></svg>
+        <!-- Icône SVG d'Instagram -->
       </a>
       <a href="#" aria-label="TikTok" class="footer-social">
+        <!-- Lien vers TikTok -->
         <!-- TikTok SVG -->
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3v7.25a4.25 4.25 0 1 1-4.25-4.25"></path></svg>
+        <!-- Icône SVG de TikTok -->
       </a>
       <a href="#" aria-label="YouTube" class="footer-social">
+        <!-- Lien vers YouTube -->
         <!-- Heroicons YouTube -->
         <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="20" height="14" x="2" y="5" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor"/></svg>
+        <!-- Icône SVG de YouTube -->
       </a>
     </div>
     <div class="footer-legal">
+      <!-- Informations légales du pied de page -->
       © 2025 EcoleDigitale. Tous droits réservés.
+      <!-- Copyright -->
     </div>
   </footer>
   <script src="js/script.js"></script>
+  <!-- Lien vers le fichier JavaScript -->
 </body>
 </html>
