@@ -19,3 +19,27 @@ document.getElementById('navBurger').onclick = function() {
         if (match) blocFiltres.appendChild(course.cloneNode(true));});}}
   filtres.forEach(select => select.addEventListener('change', appliquerFiltre));
 
+
+  function showChapter(id) {
+    const chapters = document.querySelectorAll('.chapter');
+    chapters.forEach(ch => ch.style.display = 'none');
+    document.getElementById(id).style.display = 'block'; 
+  }
+
+
+function submitQuiz(formId, resultId) {
+  const form = document.getElementById(formId);
+  const result = document.getElementById(resultId);
+  const data = new FormData(form);
+  let score = 0;
+  let total = 0;
+
+  for (let [key, value] of data.entries()) {
+    score += parseInt(value);
+    total++;
+  }
+
+  result.innerText = `Votre score : ${score} / ${total}`;
+  return false; 
+}
+

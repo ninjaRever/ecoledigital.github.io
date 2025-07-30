@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <title>EcoleDigitale</title>
   <link rel="stylesheet" href="../default.css">
-  <link rel="stylesheet" href="../css/programmation.css">
+  <link rel="stylesheet" href="../css/connexion.css">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="nav-header">
     <div class="nav-header__left">
-      <img src="../../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
       <span class="nav-title">EcoleDigitale</span>
-      <link rel="stylesheet" href="../css/ctgcite.css">
     </div>
     <div class="nav-header__right">
       <button class="nav-burger" id="navBurger" aria-label="Menu">
@@ -30,74 +29,16 @@
   </header>
 
 
+
+
   <!-- ...autre contenu... -->
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catalogue de Cours - EcoleDigitale</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- Catalogue -->
-  <main class="container">
- <h1>Catalogue de Cours</h1>
 
-  <div class="filters">
-    <select id="filtre-filiere">
-      <option value="all">Toutes les Filières</option>
-      <option value="IDA">IDA</option>
-      <option value="MAI">MAI</option>
-    </select>
 
-    <select id="filtre-module">
-      <option value="all">Tous les Modules</option>
-      <option value="WEB">WEB</option>
-      <option value="ALGO">ALGO</option>
-      <option value="RESEAU">RESEAU</option>
-    </select>
 
-    <select id="filtre-chapitre">
-      <option value="all">Tous les Chapitres</option>
-      <option value="Chapitre 1">Chapitre 1</option>
-      <option value="Chapitre 2">Chapitre 2</option>
-      <option value="Chapitre 3">Chapitre 3</option>
-      <option value="Chapitre 4">Chapitre 4</option>
-      <option value="Chapitre 5">Chapitre 5</option>
-    </select>
-  </div>
 
-<div id="cours-par-filiere">
-  <div class="filiere-block" data-filiere="IDA">
-    <h2>Filière IDA</h2>
-    <div class="courses">
-      <div class="course" data-filiere="IDA" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/html-css.png" alt=""><p>HTML/CSS</p></div>
-      <div class="course" data-filiere="IDA" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/js.png" alt=""><p>JAVASCRIPT</p></div>
-      <div class="course" data-filiere="IDA" data-module="RESEAU" data-chapitre="Chapitre 1"><img src="../image/reseau.png" alt=""><p>Réseau</p></div>
-      <div class="course" data-filiere="IDA" data-module="ALGO" data-chapitre="Chapitre 1"><img src="../image/ALGORITHEME.jpeg" alt=""><p>ALGORITHMIQUE</p></div>
-      <a style="text-decoration: none; " href="web.html"><div class="course" data-filiere="IDA" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/web.png" alt=""><p>Développement Web</p></div></a>
-      <a style="text-decoration: none;" href="mobil-dev.html"><div class="course" data-filiere="IDA" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/mobile-dev.png" alt=""><p>DEVELOPMENT MOBILE</p></div></a>
-      <div class="course" data-filiere="IDA" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/env-mobile.png" alt=""><p>ENVIRONMENT MOBILE</p></div>
-      <div class="course" data-filiere="IDA" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/prog.png" alt=""><p>PROGAMATION</p></div>
-    </div>
-  </div>
 
-  <div class="filiere-block" data-filiere="MAI">
-    <h2>Filière MAI</h2>
-    <div class="courses">
-      <div class="course" data-filiere="MAI" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/chap1.png" alt=""><p>CHAPITRE1</p></div>
-      <div class="course" data-filiere="MAI" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/chap2.png" alt=""><p>CHAPITRE2</p></div>
-      <div class="course" data-filiere="MAI" data-module="WEB" data-chapitre="Chapitre 1"><img src="../image/chap1.png" alt=""><p>CHAPITRE3</p></div>
-    </div>
-  </div>
-</div>
-
-<!-- Conteneur des résultats filtrés -->
-<div id="cours-filtres" class="courses" style="display: none;"></div>
-
-<footer class="footer">
+  <footer class="footer">
     <nav class="footer-main-nav">
       <a href="#" class="footer-link">Accueil</a>
       <a href="#" class="footer-link">Cours</a>
@@ -133,8 +74,7 @@
     <div class="footer-legal">
       © 2025 EcoleDigitale. Tous droits réservés.
     </div>
-    <script src="../js/script.js"> </script>
   </footer>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
