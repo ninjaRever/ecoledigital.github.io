@@ -103,8 +103,28 @@
    
   </body>
 </html>
+!-- Parti Javascript-->
+<script>
+  javascript
+function resetForm() {
+  const nom = document.getElementById('nom').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const sujet = document.getElementById('Sujet').value.trim();
+  const message = document.getElementById('message').value.trim();
 
+  if (!nom || !email || !sujet || !message) {
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
 
+  // Si tout est rempli, vider les champs
+  document.getElementById('nom').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('Sujet').value = '';
+  document.getElementById('message').value = '';
+  alert("Votre  Message est bien envoyé !");
+}
+</script>
 
 
 
