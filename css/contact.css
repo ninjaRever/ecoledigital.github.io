@@ -41,16 +41,32 @@ color: black;
 .zuu{
     color: black;
 }
-button{
+.btn-contact{
     background-color: #4f46e5;
     width: 80px;
     height: 35px;
     border-radius: 8px;
     color: rgb(229,231,235);
-    border: black;
+   border: 1px solid black;
     cursor: pointer; 
 }
-button:hover{
+.btn-contact:hover{
+    background-color: #f7f7fb;
+    color: rgb(99, 91, 255);
+     border: 1px solid rgb(99, 91, 255);
+     transform: scale();
+     transition: 0.2s
+}
+.button{
+   background-color: #4f46e5;
+    width: 80px;
+    height: 35px;
+    border-radius: 8px;
+    color: rgb(229,231,235);
+   border: 1px solid black;
+    cursor: pointer;  
+}
+.button:hover{
     background-color: #f7f7fb;
     color: rgb(99, 91, 255);
      border: 1px solid rgb(99, 91, 255);
