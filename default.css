@@ -1,223 +1,385 @@
+/* Styles généraux pour l'ensemble du document HTML et body */
 html, body {
+  /* Hauteur de 100% pour s'adapter à la taille de la fenêtre */
   height: 100%;
 }
 
+/* Styles pour le corps de la page */
 body {
+  /* Hauteur minimale de 100vh pour occuper toute la hauteur de la fenêtre */
   min-height: 100vh;
+  /* Affichage flexible pour le positionnement */
   display: flex;
+  /* Direction de la disposition en colonne */
   flex-direction: column;
 }
 
+/* Styles supplémentaires pour le corps de la page */
 body {
+  /* Suppression de la marge par défaut */
   margin: 0;
+  /* Utilisation de la police Inter comme police par défaut */
   font-family: 'Inter', sans-serif;
+  /* Couleur de fond gris très clair */
   background: rgb(249, 249, 252);
+  /* Couleur de texte noir presque absolu */
   color: rgb(26, 26, 26);
 }
 
+/* Styles pour l'en-tête de navigation */
 .nav-header {
+  /* Affichage flexible pour le positionnement */
   display: flex;
+  /* Alignement des éléments sur le centre */
   align-items: center;
+  /* Répartition de l'espace entre les éléments */
   justify-content: space-between;
+  /* Couleur de fond gris très clair */
   background: rgb(249, 249, 252);
+  /* Espacement interne */
   padding: 16px 32px;
+  /* Bordure inférieure grise claire */
   border-bottom: 1px solid rgb(229, 231, 235);
 }
 
+/* Classes pour les parties gauche et droite de l'en-tête */
 .nav-header__left,
 .nav-header__right {
+  /* Affichage flexible pour le positionnement */
   display: flex;
+  /* Alignement des éléments sur le centre */
   align-items: center;
 }
 
+/* Styles pour la navigation */
 .nav-nav {
+  /* Affichage flexible pour le positionnement */
   display: flex;
+  /* Espacement entre les éléments */
   gap: 24px;
+  /* Alignement des éléments sur le centre */
   align-items: center;
 }
 
+/* Styles pour le logo de navigation */
 .nav-logo {
+  /* Hauteur fixe de 40px */
   height: 40px;
-  margin-right: 12px; /* espace entre logo et texte */
+  /* Espacement à droite pour séparer du texte */
+  margin-right: 12px;
 }
 
+/* Styles pour le titre de navigation */
 .nav-title {
+  /* Épaisseur de la police en gras */
   font-weight: 700;
+  /* Taille de la police */
   font-size: 1.3rem;
+  /* Couleur de texte noir presque absolu */
   color: rgb(26, 26, 26);
+  /* Espacement des lettres */
   letter-spacing: 1px;
-  margin-right: 24px; /* espace entre titre et liens */
+  /* Espacement à droite pour séparer des liens */
+  margin-right: 24px;
 }
 
+/* Styles pour les liens de navigation */
 .nav-link {
+  /* Couleur de texte gris foncé */
   color: rgb(55, 65, 81);
+  /* Suppression du soulignement par défaut */
   text-decoration: none;
+  /* Épaisseur de la police en gras */
   font-weight: 600;
+  /* Transition fluide pour le changement de couleur */
   transition: color 0.2s;
 }
 
+/* Effet au survol des liens de navigation */
 .nav-link:hover {
+  /* Changement de couleur en violet */
   color: rgb(99, 91, 255);
 }
 
+/* Styles pour le bouton de navigation */
 .nav-btn {
+  /* Couleur de fond violette */
   background: rgb(99, 91, 255);
+  /* Couleur du texte en blanc */
   color: #fff;
+  /* Suppression de la bordure par défaut */
   border: none;
+  /* Espacement interne */
   padding: 10px 22px;
+  /* Coins arrondis */
   border-radius: 6px;
+  /* Épaisseur de la police en gras */
   font-weight: 600;
+  /* Curseur en forme de main */
   cursor: pointer;
+  /* Transition fluide pour le changement de couleur de fond */
   transition: background 0.2s;
 }
 
+/* Effet au survol du bouton de navigation */
 .nav-btn:hover {
+  /* Changement de la couleur de fond en blanc */
   background: #fff;
+  /* Changement de la couleur du texte en violet */
   color: rgb(99, 91, 255);
+  /* Ajout d'une bordure violette */
   border: 1px solid rgb(99, 91, 255);
 }
 
+/* Styles pour le bouton hamburger */
 .nav-burger {
+  /* Cacher le bouton par défaut */
   display: none;
+  /* Suppression de la couleur de fond */
   background: none;
+  /* Suppression de la bordure */
   border: none;
+  /* Curseur en forme de main */
   cursor: pointer;
+  /* Espacement à gauche */
   margin-left: 1rem;
 }
 
+/* Media query pour les écrans de largeur maximale 800px */
 @media (max-width: 800px) {
+  /* Styles pour la navigation en mode mobile */
   .nav-nav {
+    /* Cacher la navigation par défaut */
     display: none;
+    /* Direction de la disposition en colonne */
     flex-direction: column;
+    /* Espacement entre les éléments */
     gap: 2rem;
+    /* Couleur de fond gris très clair */
     background: rgb(249, 249, 252);
+    /* Position absolue */
     position: absolute;
+    /* Positionnement vertical */
     top: 70px;
+    /* Positionnement horizontal */
     right: 16px;
+    /* Ombre portée */
     box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    /* Espacement interne */
     padding: 2rem 1.5rem;
+    /* Coins arrondis */
     border-radius: 12px;
+    /* Index z élevé pour apparaître au-dessus */
     z-index: 100;
   }
+  
+  /* Styles pour la navigation ouverte en mode mobile */
   .nav-nav.nav-open {
+    /* Afficher la navigation */
     display: flex;
   }
+  
+  /* Styles pour le bouton hamburger en mode mobile */
   .nav-burger {
+    /* Afficher le bouton */
     display: block;
   }
+  
+  /* Styles pour la partie droite de l'en-tête en mode mobile */
   .nav-header__right {
+    /* Position relative */
     position: relative;
   }
+  
+  /* Styles pour le bouton de navigation en mode mobile */
   .nav-btn {
+    /* Largeur de 100% */
     width: 100%;
+    /* Espacement vertical */
     margin-top: 1rem;
   }
 }
 
+/* Media query pour les écrans de largeur minimale 768px */
 @media (min-width: 768px) {
+  /* Styles pour le bouton hamburger en mode desktop */
   .nav-burger {
+    /* Cacher le bouton */
     display: none;
   }
 }
 
+/* Styles pour le pied de page */
 /* --- Footer --- */
 .footer {
+  /* Couleur de fond gris clair */
   background: #f8f8fb;
-  color: #475569; /* text-slate-600 */
-  font-family: 'Inter', sans-serif;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  margin-top: auto;
-  gap: 1rem;           /* Plus d'espace vertical entre les blocs */
-  padding: 1rem 1rem;  /* Plus de hauteur */
-}
-
-.footer-main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem; /* gap-6 */
-  font-size: 1rem;
-  font-weight: 500;
-  flex-wrap: wrap;
-  gap: 14rem;           /* Plus d'espace entre les liens principaux */
-}
-
-.footer-link {
+  /* Couleur de texte gris moyen */
   color: #475569;
-  text-decoration: none;
-  transition: color 0.2s;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.footer-link:hover {
-  color: #6366f1; /* violet-500 */
-}
-
-.footer-secondary-nav {
+  /* Utilisation de la police Inter */
+  font-family: 'Inter', sans-serif;
+  /* Espacement interne */
+  padding: 2rem 1rem;
+  /* Affichage flexible pour le positionnement */
   display: flex;
-  justify-content: center;
-  justify-content: center;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  gap: 10rem;           /* Plus d'espace entre les liens secondaires */
-  margin-top: 1rem;    /* Plus d'espace au-dessus */
+  /* Direction de la disposition en colonne */
+  flex-direction: column;
+  /* Alignement des éléments sur le centre */
+  align-items: center;
+  /* Espacement entre les éléments */
+  gap: 1.5rem;
+  /* Marge automatique en haut pour pousser vers le bas */
+  margin-top: auto;
+  /* Espacement vertical supplémentaire */
+  gap: 1rem;
+  /* Espacement interne supplémentaire */
+  padding: 1rem 1rem;
 }
 
-.footer-link-secondary {
-  color: #64748b; /* text-slate-500 */
-  text-decoration: none;
-  font-size: 0.95rem;
+/* Styles pour la navigation principale du pied de page */
+.footer-main-nav {
+  /* Affichage flexible pour le positionnement */
+  display: flex;
+  /* Centrage des éléments */
+  justify-content: center;
+  /* Espacement entre les éléments */
+  gap: 1.5rem;
+  /* Taille de la police */
+  font-size: 1rem;
+  /* Épaisseur de la police */
   font-weight: 500;
-  transition: color 0.2s;
+  /* Permet aux éléments de passer à la ligne */
+  flex-wrap: wrap;
+  /* Espacement supplémentaire entre les liens principaux */
+  gap: 14rem;
 }
 
-.footer-link-secondary:hover {
+/* Styles pour les liens du pied de page */
+.footer-link {
+  /* Couleur de texte gris moyen */
+  color: #475569;
+  /* Suppression du soulignement */
+  text-decoration: none;
+  /* Transition fluide pour le changement de couleur */
+  transition: color 0.2s;
+  /* Taille de la police */
+  font-size: 1rem;
+  /* Épaisseur de la police */
+  font-weight: 500;
+}
+
+/* Effet au survol des liens du pied de page */
+.footer-link:hover {
+  /* Changement de couleur en violet */
   color: #6366f1;
 }
 
-.footer-socials {
+/* Styles pour la navigation secondaire du pied de page */
+.footer-secondary-nav {
+  /* Affichage flexible pour le positionnement */
   display: flex;
+  /* Centrage des éléments */
   justify-content: center;
-  gap: 1.5rem;
+  /* Espacement vertical */
   margin-top: 0.5rem;
-  gap: 3rem;           /* Plus d'espace entre les icônes */
-  margin-top: 1rem;    /* Plus d'espace au-dessus */
+  /* Taille de la police */
+  font-size: 0.95rem;
+  /* Espacement supplémentaire entre les liens secondaires */
+  gap: 10rem;
+  /* Espacement vertical supplémentaire */
+  margin-top: 1rem;
 }
 
-.footer-social {
+/* Styles pour les liens secondaires du pied de page */
+.footer-link-secondary {
+  /* Couleur de texte gris clair */
   color: #64748b;
+  /* Suppression du soulignement */
+  text-decoration: none;
+  /* Taille de la police */
+  font-size: 0.95rem;
+  /* Épaisseur de la police */
+  font-weight: 500;
+  /* Transition fluide pour le changement de couleur */
   transition: color 0.2s;
+}
+
+/* Effet au survol des liens secondaires du pied de page */
+.footer-link-secondary:hover {
+  /* Changement de couleur en violet */
+  color: #6366f1;
+}
+
+/* Styles pour les icônes sociales du pied de page */
+.footer-socials {
+  /* Affichage flexible pour le positionnement */
   display: flex;
+  /* Centrage des éléments */
+  justify-content: center;
+  /* Espacement entre les éléments */
+  gap: 1.5rem;
+  /* Espacement vertical */
+  margin-top: 0.5rem;
+  /* Espacement supplémentaire entre les icônes */
+  gap: 3rem;
+  /* Espacement vertical supplémentaire */
+  margin-top: 1rem;
+}
+
+/* Styles pour les liens sociaux du pied de page */
+.footer-social {
+  /* Couleur de texte gris clair */
+  color: #64748b;
+  /* Transition fluide pour le changement de couleur */
+  transition: color 0.2s;
+  /* Affichage flexible pour le positionnement */
+  display: flex;
+  /* Alignement des éléments sur le centre */
   align-items: center;
 }
 
+/* Effet au survol des liens sociaux du pied de page */
 .footer-social:hover {
+  /* Changement de couleur en violet */
   color: #6366f1;
 }
 
+/* Styles pour les informations légales du pied de page */
 .footer-legal {
+  /* Alignement du texte au centre */
   text-align: center;
+  /* Taille de la police */
   font-size: 0.95rem;
+  /* Couleur de texte gris clair */
   color: #64748b;
+  /* Espacement vertical */
   margin-top: 0.5rem;
+  /* Épaisseur de la police */
   font-weight: 500;
-  margin-top: 2rem;    /* Plus d'espace au-dessus */
+  /* Espacement vertical supplémentaire */
+  margin-top: 2rem;
 }
 
+/* Media query pour les écrans de largeur maximale 600px */
 /* Responsive */
 @media (max-width: 600px) {
+  /* Styles pour la navigation principale en mode mobile */
   .footer-main-nav,
+  /* Styles pour la navigation secondaire en mode mobile */
   .footer-secondary-nav,
+  /* Styles pour les icônes sociales en mode mobile */
   .footer-socials {
+    /* Direction de la disposition en colonne */
     flex-direction: column;
-    gap: 2rem;         /* Plus d'espace en mobile */
-  }
-  .footer {
+    /* Espacement entre les éléments */
     gap: 2rem;
+  }
+  
+  /* Styles pour le pied de page en mode mobile */
+  .footer {
+    /* Espacement entre les éléments */
+    gap: 2rem;
+    /* Espacement interne */
     padding: 2rem 0.5rem;
   }
 }

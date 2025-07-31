@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction au Web - EcoleDigitale</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../css/mobil-dev.css">
+  <script>
+  function showTab(button, tabId) {
+    const container = button.closest('div');
+    const tabButtons = container.querySelectorAll('.tab-button');
+    const tabContents = container.parentElement.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    tabContents.forEach(content => content.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';
+  }
+</script>
+
+</head>
+<body>
+  <header class="nav-header">
+    <div class="nav-header__left">
+      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+      <span class="nav-title">EcoleDigitale</span>
+    </div>
+    <div class="nav-header__right">
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <!-- Icône hamburger SVG -->
+        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
+      </button>
+      <nav class="nav-nav" id="navMenu">
+        <a href="./index.html" class="nav-link">Accueil</a>
+        <a href="#" class="nav-link">Cours</a>
+        <a href="#" class="nav-link">À propos</a>
+        <a href="html/contact.html" class="nav-link">Contact</a>
+        <button class="nav-btn">Se connecter</button>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+
+<section id="chapters-content" style="position: relative;">
+<div id="ch1" class="chapter" style="display:none;">
+  <h2>Chapitre 1 : Initiation au génie logiciel Mobile</h2>
+
+  <!--  Onglets -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab(this, 'video1', 'progress1', 33)">Vidéo</button>
+    <button class="tab-button" onclick="showTab(this, 'support1', 'progress1', 66)">Support de cours</button>
+    <button class="tab-button" onclick="showTab(this, 'quiz1', 'progress1', 100)">Tests de connaissance</button>
+  </div>
+
+  <!--  Contenu Vidéo -->
+  <div class="tab-content" id="video1">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc?si=68roXQExGQJru3Dm&amp;
+    controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+  </div>
+
+  <!--  Contenu Support -->
+  <div class="tab-content" id="support1" style="display:none;">
+    <iframe class="carte" src="../supports/dev-mob1.pdf" frameborder="0" height="550" width="95%" type="application/pdf"></iframe>
+    <p>Téléchargez le support de cours (PDF) :</p>
+    <a href="../supports/dev-mob1.pdf" download class="nav-btn">📥 Télécharger le support</a>
+  </div>
+
+  <!--  Contenu Quiz -->
+  <div class="tab-content" id="quiz1" style="display:none;">
+    <form id="quizForm1" onsubmit="return submitQuiz('quizForm1', 'result1')">
+      <p><strong>1. Laquelle des affirmations suivantes est vraie ?</strong></p>
+      <label><input type="radio" name="q1" value="0"> Toutes les applications Android sont gratuites</label><br>
+      <label><input type="radio" name="q1" value="1">Il y a des applications Android payantes et des applications gratuites </label><br>
+      <label><input type="radio" name="q1" value="0">Toutes les applications Android sont payantes</label><br>
+
+      <p><strong>2. Laquelle des affirmations suivantes est vraie ?</strong></p>
+      <label><input type="radio" name="q2" value="1"> SDK Manager permet d’installer des paquets supplémentaires sur Android Studio </label><br>
+      <label><input type="radio" name="q2" value="0"> SDK Manager nous permet de développer des applications Java</label><br>
+      <label><input type="radio" name="q2" value="0"> SDK Manager est un IDE qui permet de développer des applications Android</label><br>
+
+      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
+    </form>
+    <p id="result1" style="margin-top:1rem; font-weight: bold;"></p>
+  </div>
+</div>
+
+  <div id="ch2" class="chapter" style="display:none;">
+    <h2>Chapitre 2 : Introduction en Android sous Android Studio</h2>  
+    <p>A la fin de cette séquence, l’étudiant devra être :<br>familier  à l’environnement Android studio.
+    <br>Il doit aussi capable d’installer le IDE Android studio
+    <br>et créer un projet android sous android studio et se familiariser avec la structure.
+</p>
+  </div>
+
+  <div id="ch3" class="chapter" style="display:none;">
+    <h2>Chapitre 3 : Notions essentielles d’une application Android</h2>
+    <p>A la fin de cette séquence, l’étudiant devra être familier avec les notions d’activity, d’intent, service, la stucture du fichier Manifest.xml</p>
+  </div>
+
+  <div id="ch4" class="chapter" style="display:none;">
+    <h2>Chapitre 4 : Les applications Hybrides (Ionic)</h2>
+    <p>Objectifs spécifiques:
+    <br>- Connaitre les avantages d’une évaluation du personnel
+    <br>- Savoir comment évaluer le personnel
+    <br>- Connaître les problèmes pouvant biaiser l’évaluation</p>
+  </div>
+
+
+
+
+</section>
+
+<section class="modules">
+  <h2>Modules du cours</h2>
+  <ul>
+    <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Initiation au génie logiciel Mobile</a></li>
+    <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Introduction en Android sous Android Studio</a></li>
+    <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : Notions essentielles d’une application Android</a></li>
+    <li><a href="#" onclick="showChapter('ch4')">Chapitre 4 : Les applications Hybrides (Ionic)</a></li>
+  </ul>
+</section>
+  </main>
+
+   <footer class="footer">
+    <nav class="footer-main-nav">
+      <a href="#" class="footer-link">Accueil</a>
+      <a href="#" class="footer-link">Cours</a>
+      <a href="#" class="footer-link">À propos</a>
+      <a href="#" class="footer-link">Contact</a>
+    </nav>
+    <div class="footer-secondary-nav">
+      <a href="#" class="footer-link-secondary">Politique de confidentialité</a>
+      <a href="#" class="footer-link-secondary">Conditions d'utilisation</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#" aria-label="Twitter" class="footer-social">
+        <!-- Heroicons Twitter -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.29 20c7.547 0 11.675-6.155 11.675-11.495 0-.175 0-.349-.012-.522A8.18 8.18 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.637A4.077 4.077 0 0 0 21.448 4.1a8.224 8.224 0 0 1-2.605.981A4.108 4.108 0 0 0 16.616 3c-2.266 0-4.104 1.82-4.104 4.065 0 .319.036.63.105.927C8.728 7.87 5.8 6.13 3.785 3.671a4.032 4.032 0 0 0-.555 2.045c0 1.41.722 2.655 1.823 3.384a4.093 4.093 0 0 1-1.858-.511v.052c0 1.97 1.41 3.615 3.292 3.99a4.1 4.1 0 0 1-1.853.07c.522 1.613 2.037 2.788 3.833 2.82A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"></path></svg>
+      </a>
+      <a href="#" aria-label="Facebook" class="footer-social">
+        <!-- Heroicons Facebook -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2.75h-2.5A4.25 4.25 0 0 0 10.25 7v2.25H7.75a.75.75 0 0 0-.75.75v2.5c0 .414.336.75.75.75h2.5V21.25c0 .414.336.75.75.75h2.5a.75.75 0 0 0 .75-.75V13.25h2.25a.75.75 0 0 0 .75-.75v-2.5a.75.75 0 0 0-.75-.75H14.75V7A1.75 1.75 0 0 1 16.5 5.25H17a.75.75 0 0 0 .75-.75V3.5a.75.75 0 0 0-.75-.75z"></path></svg>
+      </a>
+      <a href="#" aria-label="Instagram" class="footer-social">
+        <!-- Heroicons Instagram -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="16" height="16" x="4" y="4" rx="4" /><circle cx="12" cy="12" r="3.5"/><circle cx="16.5" cy="7.5" r="1"/></svg>
+      </a>
+      <a href="#" aria-label="TikTok" class="footer-social">
+        <!-- TikTok SVG -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3v7.25a4.25 4.25 0 1 1-4.25-4.25"></path></svg>
+      </a>
+      <a href="#" aria-label="YouTube" class="footer-social">
+        <!-- Heroicons YouTube -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="20" height="14" x="2" y="5" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor"/></svg>
+      </a>
+    </div>
+    <div class="footer-legal">
+      © 2025 EcoleDigitale. Tous droits réservés.
+    </div>
+  </footer>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+
+    
