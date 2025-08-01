@@ -1,7 +1,17 @@
 document.getElementById('navBurger').onclick = function() {
   document.getElementById('navMenu').classList.toggle('nav-open');
 };
+function showTab(button, tabId) {
+    const container = button.closest('div');
+    const tabButtons = container.querySelectorAll('.tab-button');
+    const tabContents = container.parentElement.querySelectorAll('.tab-content');
 
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    tabContents.forEach(content => content.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';}
+    
   const filtres = ['filtre-filiere', 'filtre-module', 'filtre-chapitre'].map(id => document.getElementById(id));
   const blocParFiliere = document.getElementById('cours-par-filiere');
   const blocFiltres = document.getElementById('cours-filtres');
