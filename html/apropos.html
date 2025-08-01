@@ -2,79 +2,502 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoleDigitale</title>
   <link rel="stylesheet" href="../default.css">
   <link rel="stylesheet" href="../css/apropos.css">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    /* Style général */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #f6f9fc;
+  color: #333;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Header */
+.nav-header {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-title {
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+}
+
+.nav-nav {
+  display: flex;
+  gap: 45px; /* espace entre chaque lien du menu */
+  align-items: center;
+  margin-left: 80px; /* réduit la distance entre logo et menu */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.nav-btn {
+  padding: 6px 14px;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Contenu principal */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a202c;
+  background-color: #ffffff;
+  padding: 25px 35px;
+  margin-bottom: 30px;
+  text-align: left;
+  width: fit-content;
+  border: 0;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  background: #2563eb;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+h2 {
+  color: #1a202c;
+  font-size: 24px;
+  font-weight: 600;
+  border-left: 4px solid #2563eb;
+  padding-left: 12px;
+  margin-top: 40px;
+}
+
+p {
+  font-weight: 500;
+  color: #444;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+/* Équipe */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.team-member {
+  text-align: center;
+  padding: 20px 10px;
+  width: 30%;
+  min-width: 250px;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Témoignages */
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 700px;
+}
+
+.testimonial img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.testimonial p {
+  background-color: #f0f4ff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+  font-style: italic;
+  color: #2d3748;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  max-width: 90%;
+}
+
+/* Footer */
+.footer {
+  background-color: #f1f5f9;
+  padding: 30px 20px;
+  text-align: center; 
+}
+
+.footer-main-nav,
+.footer-secondary-nav,
+.footer-socials {
+  margin-bottom: 10px;
+  
+}
+
+.footer-link,
+.footer-link-secondary {
+  margin: 0 10px;
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer-socials img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footer-socials img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+
+
+.footer-legal {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-member {
+    width: 100%;
+  }
+  .nav-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+        display: none;
+  }
+  
+  
+  h1 {
+    font-size: 28px;
+    padding: 20px 25px;
+  }
+  .testimonial img {
+    max-height: 250px;
+  }
+  .testimonial p {
+    font-size: 15px;
+  }
+}
+
+  .nav-burger {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.citation-styled {
+  position: relative;
+  background: linear-gradient(135deg, #e0ecff, #f5faff);
+  padding: 50px 30px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-top: 50px;
+  text-align: center;
+  overflow: hidden;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.citation-styled img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #2563eb;
+  box-shadow: 0 0 0 5px #ffffff;
+  margin-top: 25px;
+}
+
+.citation-styled .quote-icon {
+  font-size: 100px;
+  color: #2563eb;
+  position: absolute;
+  top: -25px;
+  left: 25px;
+  opacity: 0.07;
+}
+
+.citation-styled blockquote {
+  font-style: italic;
+  font-size: 1.4em;
+  color: #1a202c;
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.citation-styled blockquote footer {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1em;
+  color: #2d3748;
+}
+
+@media (max-width: 600px) {
+  .citation-styled {
+    padding: 40px 20px;
+  }
+
+  .citation-styled img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .citation-styled .quote-icon {
+    font-size: 70px;
+    top: -10px;
+    left: 15px
+   
+  }
+
+  .citation-styled blockquote {
+    font-size: 1.1em;
+  }
+}
+.nom{
+    color: #2563eb;
+}
+ .signature-box {
+      margin-top: 30px;
+      background: #f1f5ff;
+      border-left: 4px solid #2563eb;
+      padding: 15px 20px;
+      font-weight: 500;
+      color: #2d3748;
+       border-right: 4px solid #2563eb;
+    }
+
+
+</style>
 </head>
 <body>
-  <header class="nav-header">
-    <div class="nav-header__left">
-      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
-      <span class="nav-title">EcoleDigitale</span>
-    </div>
-    <div class="nav-header__right">
-      <button class="nav-burger" id="navBurger" aria-label="Menu">
-        <!-- Icône hamburger SVG -->
-        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
-      </button>
-      <nav class="nav-nav" id="navMenu">
-        <a href="../index.html" class="nav-link">Accueil</a>
-        <a href="#" class="nav-link">Cours</a>
-        <a href="#" class="nav-link">À propos</a>
-        <a href="#" class="nav-link">Contact</a>
-        <button class="nav-btn">Se connecter</button>
-      </nav>
-    </div>
-  </header>
 
-
-
-
-  <!-- ...autre contenu... -->
-
-
-
-
-
-
-  <footer class="footer">
-    <nav class="footer-main-nav">
-      <a href="#" class="footer-link">Accueil</a>
-      <a href="#" class="footer-link">Cours</a>
-      <a href="#" class="footer-link">À propos</a>
-      <a href="#" class="footer-link">Contact</a>
+<header class="nav-header">
+  <div class="nav-header__left">
+    <img src="../images/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+    <span class="nav-title">EcoleDigitale</span>
+  </div>
+  <div class="nav-header__right">
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+         <!-- Icône hamburger SVG -->
+      <svg width="32" height="32" viewBox="0 0 24 24">
+        <rect y="5" width="24" height="2" rx="1"/>
+        <rect y="11" width="24" height="2" rx="1"/>
+        <rect y="17" width="24" height="2" rx="1"/>
+      </svg>
+    </button>
+    <nav class="nav-nav" id="navMenu">
+      <a href="../index.html" class="nav-link">Accueil</a>
+      <a href="#" class="nav-link">Cours</a>
+      <a href="#" class="nav-link">À propos</a>
+      <a href="#" class="nav-link">Contact</a>
+      <button class="nav-btn">Se connecter</button>
     </nav>
-    <div class="footer-secondary-nav">
-      <a href="#" class="footer-link-secondary">Politique de confidentialité</a>
-      <a href="#" class="footer-link-secondary">Conditions d'utilisation</a>
+  </div>
+</header>
+  <!-- ...autre contenu... -->
+<div class="citation-styled">
+  <div class="quote-icon">❝</div>
+  <blockquote>
+    <p>« L'éducation est l'arme la plus puissante qu'on puisse utiliser pour changer le monde. »</p>
+    <footer>— Nelson Mandela —</footer>
+  </blockquote>
+  
+  <img src="../images/NelsonMandela.jpeg" alt="Nelson Mandela">
+</div>
+
+<main class="main-content">
+  <section class="section">
+  <h1>À propos de EcoleDigitale</h1>
+
+  <p>
+    <strong style="color: #2563eb;">EcoleDigitale</strong> est bien plus qu'une simple plateforme d'apprentissage : 
+    c'est une initiative née du cœur et de l'engagement d'étudiants en Informatique et Développement d'Applications (IDA), issus de la 12<sup>e</sup>
+     promotion de l'Université Numérique Cheikh Hamidou Kane.
+  </p>
+
+  <p>
+    Animés par la volonté de contribuer à une éducation numérique accessible à tous, ces étudiants ont conçu et mis en ligne ce site dans le but d'accompagner 
+    leurs frères, sœurs, camarades et l'ensemble des apprenants dans leur parcours éducatif.
+  </p>
+
+  <p>
+    Conscients des défis que peuvent rencontrer de nombreux élèves et étudiants dans l'accès au savoir, ils ont voulu créer un espace d'apprentissage moderne, 
+    interactif et motivant, où chacun peut apprendre à son rythme et développer des compétences utiles pour l'avenir.
+  </p>
+
+  <p>
+    Avec des cours soigneusement élaborés, une interface intuitive, et un esprit de solidarité au cœur du projet, EcoleDigitale vise à rendre l'éducation plus engageante, 
+    inclusive et tournée vers l'excellence.
+  </p>
+
+  <p>
+    C'est donc une plateforme créée par des jeunes, pour les jeunes, avec l'objectif de bâtir ensemble un avenir où chacun a sa chance.
+  </p>
+
+
+  <div class="signature-box">
+    <p>— Les étudiants de la 12<sup>e</sup> promotion IDA<br>
+    Université Numérique Cheikh Hamidou Kane</p>
+  </div>
+</section>
+
+  </section>
+
+  <section class="section">
+    <h2>Notre mission et nos valeurs</h2>
+    <p>
+     Chez EcoleDigitale, nous avons un objectif clair : faciliter l'apprentissage pour tous, en le rendant plus simple,
+    plus efficace et surtout plus motivant.
+
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Notre équipe</h2>
+    <div class="team">
+      <div class="team-member">
+        <img src="../images/pers1.jpg" alt="Khoudia Diop,">
+        <p><strong>Khoudia Diop</strong><br>Développeuse</p>
+      </div>
+      <div class="team-member">
+        <img src="../images/pers2.jpg" alt="Samba">
+        <p><strong>Samba</strong><br>Créateur de contenu</p>
+      </div>
+      <div class="team-member">
+        <img src="../images/pers3.jpg" alt="">
+        <p><strong>Khoudia Diop</strong><br>Développeuse</p>
+      </div>
     </div>
-    <div class="footer-socials">
-      <a href="#" aria-label="Twitter" class="footer-social">
-        <!-- Heroicons Twitter -->
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.29 20c7.547 0 11.675-6.155 11.675-11.495 0-.175 0-.349-.012-.522A8.18 8.18 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.637A4.077 4.077 0 0 0 21.448 4.1a8.224 8.224 0 0 1-2.605.981A4.108 4.108 0 0 0 16.616 3c-2.266 0-4.104 1.82-4.104 4.065 0 .319.036.63.105.927C8.728 7.87 5.8 6.13 3.785 3.671a4.032 4.032 0 0 0-.555 2.045c0 1.41.722 2.655 1.823 3.384a4.093 4.093 0 0 1-1.858-.511v.052c0 1.97 1.41 3.615 3.292 3.99a4.1 4.1 0 0 1-1.853.07c.522 1.613 2.037 2.788 3.833 2.82A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"></path></svg>
-      </a>
-      <a href="#" aria-label="Facebook" class="footer-social">
-        <!-- Heroicons Facebook -->
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2.75h-2.5A4.25 4.25 0 0 0 10.25 7v2.25H7.75a.75.75 0 0 0-.75.75v2.5c0 .414.336.75.75.75h2.5V21.25c0 .414.336.75.75.75h2.5a.75.75 0 0 0 .75-.75V13.25h2.25a.75.75 0 0 0 .75-.75v-2.5a.75.75 0 0 0-.75-.75H14.75V7A1.75 1.75 0 0 1 16.5 5.25H17a.75.75 0 0 0 .75-.75V3.5a.75.75 0 0 0-.75-.75z"></path></svg>
-      </a>
-      <a href="#" aria-label="Instagram" class="footer-social">
-        <!-- Heroicons Instagram -->
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="16" height="16" x="4" y="4" rx="4" /><circle cx="12" cy="12" r="3.5"/><circle cx="16.5" cy="7.5" r="1"/></svg>
-      </a>
-      <a href="#" aria-label="TikTok" class="footer-social">
-        <!-- TikTok SVG -->
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3v7.25a4.25 4.25 0 1 1-4.25-4.25"></path></svg>
-      </a>
-      <a href="#" aria-label="YouTube" class="footer-social">
-        <!-- Heroicons YouTube -->
-        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="20" height="14" x="2" y="5" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor"/></svg>
-      </a>
+  </section>
+
+  <section class="section">
+    <h2>Témoignages</h2>
+    <div class="testimonial">
+      <img src="../images/temoin1.jpg" alt="Femme étudiant">
+      <p>
+        "EcoleDigitale a transformé ma façon d'apprendre. Les cours sont clairs, les professeurs sont passionnés,
+        et j'ai pu progresser à mon rythme. Je recommande vivement !" <br><em class="nom">— Khoudia D</em>
+      </p>
     </div>
-    <div class="footer-legal">
-      © 2025 EcoleDigitale. Tous droits réservés.
+    <div class="testimonial">
+      <img src="../images/temoin2.jpg" alt="Homme étudiant">
+      <p>
+        "Grâce à EcoleDigitale, j'ai pu acquérir de nouvelles compétences qui m'ont permis de changer de carrière.
+        La plateforme est intuitive et les ressources sont complètes. Un grand merci à toute l'équipe !" <br><em class="nom">— Anonyme</em>
+      </p>
     </div>
-  </footer>
-  <script src="js/script.js"></script>
+  </section>
+</main>
+
+<footer class="footer">
+  <nav class="footer-main-nav">
+    <a href="#" class="footer-link">Accueil</a>
+    <a href="#" class="footer-link">Cours</a>
+    <a href="#" class="footer-link">À propos</a>
+    <a href="#" class="footer-link">Contact</a>
+  </nav>
+  <div class="footer-secondary-nav">
+    <a href="#" class="footer-link-secondary">Politique de confidentialité</a>
+    <a href="#" class="footer-link-secondary">Conditions d'utilisation</a>
+  </div>
+  <div class="footer-socials">
+  <a href="#" aria-label="Twitter" class="footer-social">
+     <!-- logo -->
+    <img src="../images/logotwitter.png" alt="Twitter" />
+  </a>
+  <a href="#" aria-label="Facebook" class="footer-social">
+    <img src="../images/logofacebook.png" alt="Facebook" />
+  </a>
+  <a href="#" aria-label="Instagram" class="footer-social">
+    <img src="../images/logoinsta.webp" alt="Instagram" />
+  </a>
+  <a href="#" aria-label="TikTok" class="footer-social">
+    <img src="../images/logotiktok.png" alt="TikTok" />
+  </a>
+  <a href="#" aria-label="YouTube" class="footer-social">
+    <img src="../images/logoyoutube.jpeg" alt="YouTube" />
+  </a>
+</div>
+
+  <div class="footer-legal">
+    © 2025 EcoleDigitale. Tous droits réservés.
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
