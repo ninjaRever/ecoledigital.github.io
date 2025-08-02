@@ -9,6 +9,7 @@ body {
   overflow-x: hidden;
 }
 
+<<<<<<< HEAD
 /* Header */
 .nav-header {
   background-color: #ffffff;
@@ -52,6 +53,8 @@ body {
   cursor: pointer;
 }
 
+=======
+>>>>>>> a90493c1ff05c89c96b300543599a10bcf37e897
 /* Contenu principal */
 .main-content {
   max-width: 1100px;
@@ -141,12 +144,12 @@ p {
   padding: 20px;
   margin: 30px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  width: 100%;
+  width: 89%;
   max-width: 700px;
 }
 
 .testimonial img {
-  width: 100%;
+  width: 87%;
   max-height: 350px;
   object-fit: cover;
   border-radius: 10px;
@@ -162,69 +165,15 @@ p {
   font-style: italic;
   color: #2d3748;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  max-width: 90%;
+  max-width: 87%;
 }
 
-/* Footer */
-.footer {
-  background-color: #f1f5f9;
-  padding: 30px 20px;
-  text-align: center; 
-}
-
-.footer-main-nav,
-.footer-secondary-nav,
-.footer-socials {
-  margin-bottom: 10px;
-  
-}
-
-.footer-link,
-.footer-link-secondary {
-  margin: 0 10px;
-  color: #555;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.footer-socials {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.footer-socials img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.footer-socials img:hover {
-  transform: scale(1.2);
-  filter: brightness(1.2);
-}
-
-
-
-.footer-legal {
-  font-size: 13px;
-  color: #777;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
   .team-member {
     width: 100%;
   }
-  .nav-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
-        display: none;
-  }
-  
   
   h1 {
     font-size: 28px;
@@ -238,13 +187,6 @@ p {
   }
 }
 
-  .nav-burger {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-}
 
 .citation-styled {
   position: relative;
@@ -319,12 +261,12 @@ p {
     color: #2563eb;
 }
  .signature-box {
-      margin-top: 30px;
-      background: #f1f5ff;
-      border-left: 4px solid #2563eb;
-      padding: 15px 20px;
-      font-weight: 500;
-      color: #2d3748;
-       border-right: 4px solid #2563eb;
-    }
+  margin-top: 30px;
+  background: #f1f5ff;
+  border-left: 4px solid #2563eb;
+  padding: 15px 20px;
+  font-weight: 500;
+  color: #2d3748;
+  border-right: 4px solid #2563eb;
+}
 
