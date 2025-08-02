@@ -31,78 +31,65 @@
 
 
 
-  <!-- ...autre contenu... -->
-
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="formulaire.js"> </script>
+    <script type="text/javascript" src="formulaire.js"></script>
   </head>
   <body>
-    <!-- l'entete de la page -->
-    <h1>Contactez-nous</h1>
-    <div class="entete">
-      <!-- Petit paragraphe -->
-      <p>
-        Nous sommes là pour vous aider.Si vous avez des des
-        questions,commmentaires,ou des suggestions, n'hésitez pas à <br />
-        nous contacter via le Formulaire ci-dessous ou par les autres moyens
-        indiqués.
+    <main class="container">
+      <h1>Contactez-nous</h1>
+      <p class="description">
+        Nous sommes là pour vous aider. Si vous avez des questions, commentaires ou des suggestions,
+        n'hésitez pas à <br>nous contacter via le formulaire ci-dessous ou par les autres moyens indiqués.
       </p>
-      <br />
-     <!--Formulaire--> 
-      <div class="formulaire">
-        <form id="contactForm">
-  <input type="text" id="nom" placeholder="Nom complet"
-    style="width:80%; padding:10px; height:40px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;" />
-  <br><br>
 
-  <input type="email" id="email" placeholder="Adresse e-mail"
-    style="width:80%; padding:10px; height:40px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;" />
-  <br><br>
-<!-- Sujet de message -->
-  <select id="Sujet"
-    style="width:85%; padding:22px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;">
-    <option value="">Sujet de message</option>
-    <option value="info">Demande d'informations</option>
-    <option value="sugg">Suggestions</option>
+      <!-- Nouveau bloc flex -->
+      
+        <form id="contactForm" class="formulaire">
+          <input type="text" id="nom" placeholder= "Nom complet" />
+          <input type="email" id="email" placeholder="Adresse e-mail" />
 
-<option value="prob">Problème rencontré</option>
-    <option value="retour">Retour d'expérience</option>
-  </select>
-  <br><br>
-<!-- Message -->
-  <textarea id="message" placeholder="Message"
-    style="width:80%; padding:10px; height:90px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;"></textarea>
-  <br><br>
+          <select id="Sujet">
+            <option value="">Sujet de message</option>
+            <option value="info">Demande d'informations</option>
+            <option value="sugg">Suggestions</option>
+            <option value="prob">Problème rencontré</option>
+            <option value="retour">Retour d'expérience</option>
+          </select>
 
-  <button type="button" onclick="resetForm()" class="button"> Envoyer</button> <br>
-  <div id="notification" style="display:none; background-color:#4f46e5; color:white; padding:10px; border-radius:5px; margin-top:10px; text-align:center;">
-  Votre message est bien envoyé !
-</div>
-</form>
-<!-- Autres moyens de nous contacter -->
-<h2>Autres moyens de nous contacter</h2>
+          <textarea id="message" placeholder="Message"></textarea>
+          <button type="button" class="buttons" onclick="resetForm()">Envoyer</button>
 
-     </div>
-     <hr>
-    <pre>
+          <div id="notification">
+            Votre message est bien envoyé !
+          </div>
+        </form> <br>
+
+        <section class="contact-info">
+            <div class="fin">
+          <h4>Autres moyens de nous contacter</h4>    
+          <hr>
+      <pre>
 <span id="mail">Email</span>                                    <span id="mail2">support@ecoledigitale.com</span> <br>
 <hr>
 <span id="call">Telephone</span>                               <span id="call2">78 773 72 03 ; 76 255 32 32</span> <br>
 <hr>
 <span id="reseau">Reseaux sociaux</span>                        <span id="reseau2">Facebook,Twitter,Linkedin</span>
     </pre>
-    <p id="last">Votre message a été envoyé avec succès.Nous vous répondrons dans les plus brefs délais.</p>
-    </div>
+          
+<p id="last">Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.</p>
+          </div>
+        </section>
+    
+    </main>
+  </body>
+</html>
+
    
 
   <!-- ...autre contenu... -->
