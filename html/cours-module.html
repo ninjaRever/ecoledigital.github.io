@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module Mobile - Chapitre</title>
+  <link rel="stylesheet" href="../default.css" />
+  <link rel="stylesheet" href="../css/cours-module.css" />
+   <link rel="stylesheet" href="../css/responsive.css">
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+</head>
+<body>
+
+  <header class="nav-header">
+    <div class="nav-header__left">
+      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo" />
+      <span class="nav-title">EcoleDigitale</span>
+    </div>
+    <div class="nav-header__right">
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <svg width="32" height="32" viewBox="0 0 24 24">
+          <rect y="5" width="24" height="2" rx="1"/>
+          <rect y="11" width="24" height="2" rx="1"/>
+          <rect y="17" width="24" height="2" rx="1"/>
+        </svg>
+      </button>
+      <nav class="nav-nav" id="navMenu">
+        <a href="/index.html" class="nav-link">Accueil</a>
+        <a href="#" class="nav-link">Cours</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <button class="nav-btn">Se connecter</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 id="titre-chapitre">Module du cours</h2>
+    <div id="page-content">
+      <!-- Le contenu dynamique (vidéo, support PDF via canvas, quiz) sera injecté ici par module.js -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <nav class="footer-main-nav">
+      <a href="#" class="footer-link">Accueil</a>
+      <a href="#" class="footer-link">Cours</a>
+      <a href="#" class="footer-link">À propos</a>
+      <a href="#" class="footer-link">Contact</a>
+    </nav>
+    <div class="footer-secondary-nav">
+      <a href="#" class="footer-link-secondary">Politique de confidentialité</a>
+      <a href="#" class="footer-link-secondary">Conditions d'utilisation</a>
+    </div>
+    <div class="footer-legal">
+      © 2025 EcoleDigitale. Tous droits réservés.
+    </div>
+  </footer>
+
+  <!-- JS Dynamique (module.js) -->
+  <script src="../js/module.js"></script>
+  <script src="../js/script.js"></script>
+
+
+</body>
+</html>

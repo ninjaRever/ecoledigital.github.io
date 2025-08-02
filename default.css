@@ -4,26 +4,17 @@ html, body {
   height: 100%;
 }
 
-/* Styles pour le corps de la page */
-body {
-  /* Hauteur minimale de 100vh pour occuper toute la hauteur de la fenêtre */
-  min-height: 100vh;
-  /* Affichage flexible pour le positionnement */
-  display: flex;
-  /* Direction de la disposition en colonne */
-  flex-direction: column;
-}
 
 /* Styles supplémentaires pour le corps de la page */
 body {
-  /* Suppression de la marge par défaut */
   margin: 0;
-  /* Utilisation de la police Inter comme police par défaut */
   font-family: 'Inter', sans-serif;
-  /* Couleur de fond gris très clair */
   background: rgb(249, 249, 252);
-  /* Couleur de texte noir presque absolu */
   color: rgb(26, 26, 26);
+  min-height: 100vh;
+  align-items: center;
+  align-content: center;
+
 }
 
 /* Styles pour l'en-tête de navigation */

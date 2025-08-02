@@ -1,0 +1,226 @@
+    /* Style général */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #f6f9fc;
+  color: #333;
+  line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Contenu principal */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a202c;
+  background-color: #ffffff;
+  padding: 25px 35px;
+  margin-bottom: 30px;
+  text-align: left;
+  width: fit-content;
+  border: 0;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  background: #2563eb;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+h2 {
+  color: #1a202c;
+  font-size: 24px;
+  font-weight: 600;
+  border-left: 4px solid #2563eb;
+  padding-left: 12px;
+  margin-top: 40px;
+}
+
+p {
+  font-weight: 500;
+  color: #444;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+/* Équipe */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.team-member {
+  text-align: center;
+  padding: 20px 10px;
+  width: 30%;
+  min-width: 250px;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Témoignages */
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 89%;
+  max-width: 700px;
+}
+
+.testimonial img {
+  width: 87%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.testimonial p {
+  background-color: #f0f4ff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+  font-style: italic;
+  color: #2d3748;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  max-width: 87%;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-member {
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 28px;
+    padding: 20px 25px;
+  }
+  .testimonial img {
+    max-height: 250px;
+  }
+  .testimonial p {
+    font-size: 15px;
+  }
+}
+
+
+.citation-styled {
+  position: relative;
+  background: linear-gradient(135deg, #e0ecff, #f5faff);
+  padding: 50px 30px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-top: 50px;
+  text-align: center;
+  overflow: hidden;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.citation-styled img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #2563eb;
+  box-shadow: 0 0 0 5px #ffffff;
+  margin-top: 25px;
+}
+
+.citation-styled .quote-icon {
+  font-size: 100px;
+  color: #2563eb;
+  position: absolute;
+  top: -25px;
+  left: 25px;
+  opacity: 0.07;
+}
+
+.citation-styled blockquote {
+  font-style: italic;
+  font-size: 1.4em;
+  color: #1a202c;
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.citation-styled blockquote footer {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1em;
+  color: #2d3748;
+}
+
+@media (max-width: 600px) {
+  .citation-styled {
+    padding: 40px 20px;
+  }
+
+  .citation-styled img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .citation-styled .quote-icon {
+    font-size: 70px;
+    top: -10px;
+    left: 15px
+   
+  }
+
+  .citation-styled blockquote {
+    font-size: 1.1em;
+  }
+}
+.nom{
+    color: #2563eb;
+}
+ .signature-box {
+  margin-top: 30px;
+  background: #f1f5ff;
+  border-left: 4px solid #2563eb;
+  padding: 15px 20px;
+  font-weight: 500;
+  color: #2d3748;
+  border-right: 4px solid #2563eb;
+}
+

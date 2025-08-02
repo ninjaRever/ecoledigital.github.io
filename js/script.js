@@ -1,21 +1,31 @@
 document.getElementById('navBurger').onclick = function() {
   document.getElementById('navMenu').classList.toggle('nav-open');
 };
+function showTab(button, tabId) {
+    const container = button.closest('div');
+    const tabButtons = container.querySelectorAll('.tab-button');
+    const tabContents = container.parentElement.querySelectorAll('.tab-content');
 
-  const filtres = ['filtre-filiere', 'filtre-module', 'filtre-chapitre'].map(id => document.getElementById(id));
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    tabContents.forEach(content => content.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';}
+    
+  const filtres = ['filtre-filiere', 'filtre-module', 'filtre-Semestre'].map(id => document.getElementById(id));
   const blocParFiliere = document.getElementById('cours-par-filiere');
   const blocFiltres = document.getElementById('cours-filtres');
   const tousLesCours = document.querySelectorAll('.course');
   function appliquerFiltre() {
-    const [filiere, module, chapitre] = filtres.map(f => f.value);
-    const tousLesFiltresAll = [filiere, module, chapitre].every(val => val === 'all');
+    const [filiere, module, semestre] = filtres.map(f => f.value);
+    const tousLesFiltresAll = [filiere, module, semestre].every(val => val === 'all');
     blocParFiliere.style.display = tousLesFiltresAll ? 'block' : 'none';
     blocFiltres.style.display = tousLesFiltresAll ? 'none' : 'grid';
     blocFiltres.innerHTML = '';
     if (!tousLesFiltresAll) {tousLesCours.forEach(course => {const match =
           (filiere === 'all' || course.dataset.filiere === filiere) &&
           (module === 'all' || course.dataset.module === module) &&
-          (chapitre === 'all' || course.dataset.chapitre === chapitre);
+          (semestre === 'all' || course.dataset.semestre === semestre);
         if (match) blocFiltres.appendChild(course.cloneNode(true));});}}
   filtres.forEach(select => select.addEventListener('change', appliquerFiltre));
 
