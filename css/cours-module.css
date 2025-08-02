@@ -28,13 +28,26 @@ main {
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   margin: 20px 0;
 }
+
+
 .video-container {
   width: 100%;
-  max-width: 100%;
+  max-width: 650px; /* Limite sur grand écran */
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 16 / 9; /* pour rendre responsive */
+  aspect-ratio: 16 / 9;
 }
+
+.support-viewer {
+  width: 100%;
+  max-width: 900px;  /* Limite sur grand écran */
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
 
 .video-container iframe {
   width: 100%;
@@ -94,15 +107,18 @@ main {
   width: 100%;
 }
 
+
 .video-content iframe {
   width: 100%;
+  max-width: 720px;
   height: auto;
   aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin: 0 auto;
   display: block;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
 
 /* Styles pour le support - élargi */
 .support-content {
@@ -136,16 +152,7 @@ main {
   box-shadow: 0 4px 12px rgba(0,123,255,0.3);
 }
 
-/* --- CONTENEUR PDF PLUS LARGE ET CENTRÉ --- */
-.support-viewer {
-  width: 100%;
-  max-width: 900px;    /* largeur augmentée (avant 700px) */
-  height: auto;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
+
 
 /* Canvas du PDF */
 .support-viewer canvas {
@@ -202,12 +209,20 @@ main {
   width: 100%;
 }
 
+
+
+
 .quiz-container {
   background: #f8f9fa;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  
+  /* Ajout pour limiter la largeur */
+  max-width: 900px;
+  margin: 0 auto;
 }
+
 
 .quiz-container p {
   font-weight: 600;
@@ -309,3 +324,9 @@ main {
   border-bottom: 3px solid  rgb(99, 91, 255);
   transform: translateY(-2px);
 }
+main {
+  max-width: 1100px; /* au lieu de 95% */
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
