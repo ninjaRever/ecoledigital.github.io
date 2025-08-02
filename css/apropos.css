@@ -9,51 +9,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Header */
-.nav-header {
-  background-color: #ffffff;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  flex-wrap: wrap;
-}
-
-.nav-logo {
-  height: 40px;
-  margin-right: 10px;
-}
-
-.nav-title {
-  font-weight: 700;
-  font-size: 20px;
-  color: black;
-}
-
-.nav-nav {
-  display: flex;
-  gap: 45px; /* espace entre chaque lien du menu */
-  align-items: center;
-  margin-left: 80px; /* réduit la distance entre logo et menu */
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #2d3748;
-  font-weight: 500;
-}
-
-.nav-btn {
-  padding: 6px 14px;
-  background-color: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 /* Contenu principal */
 .main-content {
   max-width: 1100px;
@@ -220,13 +175,6 @@ p {
   .team-member {
     width: 100%;
   }
-  .nav-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
-        display: none;
-  }
-  
   
   h1 {
     font-size: 28px;
@@ -240,13 +188,6 @@ p {
   }
 }
 
-  .nav-burger {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-}
 
 .citation-styled {
   position: relative;
@@ -321,12 +262,12 @@ p {
     color: #2563eb;
 }
  .signature-box {
-      margin-top: 30px;
-      background: #f1f5ff;
-      border-left: 4px solid #2563eb;
-      padding: 15px 20px;
-      font-weight: 500;
-      color: #2d3748;
-       border-right: 4px solid #2563eb;
-    }
+  margin-top: 30px;
+  background: #f1f5ff;
+  border-left: 4px solid #2563eb;
+  padding: 15px 20px;
+  font-weight: 500;
+  color: #2d3748;
+  border-right: 4px solid #2563eb;
+}
 
