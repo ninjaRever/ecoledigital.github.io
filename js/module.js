@@ -219,9 +219,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="support-viewer">
           <canvas id="pdf-canvas"></canvas>
           <div class="pdf-controls">
-            <button onclick="prevPage()">⬅️ Précédente</button>
+            <button onclick="prevPage()">⬅️ </button>
             <span id="page-info">Page 1</span>
-            <button onclick="nextPage()">Suivante ➡️</button>
+            <button onclick="nextPage()">➡️ </button>
           </div>
         </div>
         <div class="support-controls">
