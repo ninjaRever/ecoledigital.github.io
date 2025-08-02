@@ -16,54 +16,49 @@ body {
 h1 {
   text-align: start;
   font-weight: bold;
-  
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .description {
   text-align: start;
   margin-bottom: 30px;
-     justify-content: center;
-font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-font-weight: 400;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 400;
 }
 
 .formulaire {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  
 }
 
-.formulaire input
- {
- height: 80px;
-  width:80%; 
-  padding:10px; 
-  height:40px; 
-  background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); 
-    color:rgb(26,26,26); border-radius:10px;
-}
-.formulaire select{
-  height: 80px;
-  width:84%; 
-  padding:10px; 
-  height:60px; 
-  background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); 
-    color:rgb(26,26,26); border-radius:10px;
-}
+.formulaire input,
+.formulaire select,
 .formulaire textarea {
-  height: 80px;
-  width:80%; 
-  padding:10px; 
-  height:90px; 
-  background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); 
-    color:rgb(26,26,26); border-radius:10px;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(236, 236, 236);
+  border: 1px solid rgb(26, 26, 26);
+  color: rgb(26, 26, 26);
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.formulaire input,
+.formulaire select {
+  height: 50px;
+}
+
+.formulaire textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+textarea,
+::placeholder {
+  color: #475569;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .buttons {
@@ -74,7 +69,7 @@ font-weight: 400;
   padding: 10px 20px;
   cursor: pointer;
   transition: 0.3s;
-  width: 90px;
+  width: 150px;
 }
 
 .buttons:hover {
@@ -92,6 +87,8 @@ font-weight: 400;
   text-align: center;
 }
 
+
+
 .contact-info {
   margin-top: 40px;
 }
@@ -107,6 +104,21 @@ font-weight: 400;
   line-height: 1.8;
 }
 
+
+.contact-info h4 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.contact-info ul li {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+
 #last {
   margin-top: 20px;
   color: rgb(55, 65, 81);
@@ -114,32 +126,29 @@ font-weight: 400;
   text-align: center;
 }
 
-/* ========== FLEX LAYOUT POUR GRAND ÉCRAN ========== */
+
+
 .content-flex {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border: 1px solid #f7f7fb;;
+  margin-top: 20px;
 }
 
 @media screen and (min-width: 1024px) {
   .content-flex {
     flex-direction: row;
-    justify-content: space-between;
     align-items: flex-start;
+    gap: 60px; /* espace horizontal */
   }
 
   .formulaire,
   .contact-info {
-    width: 48%;
-  }
-
-  .contact-info {
-    width: 800px
+    width: 50%;
   }
 }
 
-/* ========== RESPONSIVE TABLETTE ========== */
+
 @media screen and (max-width: 1024px) {
   .container {
     max-width: 90%;
@@ -149,9 +158,10 @@ font-weight: 400;
   .contact-info,
   .formulaire {
     width: 100%;
-    margin:500px
+    margin: 0 auto;
   }
 }
+
 
 /* ========== RESPONSIVE MOBILE ========== */
 @media screen and (max-width: 600px) {
@@ -171,15 +181,9 @@ font-weight: 400;
     font-size: 14px;
   }
 
-  button {
+  .buttons {
     width: 100%;
-  }
-  .fin{
-    margin: 400px;
-    width: 500px;
-      font-size: large;
-    font-weight: bold;
-    font-style: normal;
+    padding: 12px;
   }
 
   .contact-info h2 {
@@ -191,48 +195,55 @@ font-weight: 400;
   }
 
   #last {
-    
     text-align: start;
-    color:   rgb(55, 65, 81);
-    font-weight:400;
-  font-size:small;
-  margin-left: 0px
+    color: rgb(55, 65, 81);
+    font-weight: 400;
+    font-size: small;
+    margin-left: 0;
   }
 }
-textarea{
-    color: #475569;
-    font-weight: 700;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-      ::placeholder{
-        color: #475569;
-    font-weight: 700;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
 
-#mail{
-    color:   #475569;
-    font-weight: bold;
-    font-size: larger;
+/* ========== COULEURS DES CONTACTS ========== */
+#mail, #call, #reseau {
+  color: #475569;
+  font-weight: bold;
+  font-size: larger;
 }
-#mail2{
-     font-weight: bold;
-    font-size: larger;
+
+#mail2, #call2, #reseau2 {
+  font-weight: bold;
+  font-size: larger;
 }
-#call{
-     color:  #475569;
-    font-weight: bold;
-    font-size: larger;
+
+/* Labels en gras avec largeur fixe pour espacement */
+#mail, #call, #reseau {
+  display: inline-block;
+  width: 150px;       /* espace fixe pour séparer label et valeur */
+  font-weight: 700;   /* gras uniquement pour le label */
+  color: #475569;
+  font-size: 1.1rem;
 }
-#call2{
-    font-weight: bold;
-    font-size: larger;
+
+/* Valeurs en texte normal, plus grandes */
+#mail2, #call2, #reseau2 {
+  font-weight: 400;   /* texte normal */
+  color: #333;
+  font-size: 1.1rem;
 }
-#reseau{
-     color: #475569;
-    font-weight: bold;
-    font-size: larger;  
-}
-#reseau2{
-   font-weight: bold;
-    font-size: larger; 
+/* ======= Passage à la ligne en responsive pour labels et valeurs ======= */
+
+@media screen and (max-width: 600px) {
+  /* Tous les labels */
+  #mail, #call, #reseau,
+  /* Toutes les valeurs */
+  #mail2, #call2, #reseau2 {
+    display: block;      /* Chaque élément prend une ligne entière */
+    width: 100%;        /* largeur pleine */
+    font-size: 1rem;    /* optionnel : taille un peu plus petite */
+  }
+
+  /* Espacement entre label et valeur */
+  #mail, #call, #reseau {
+    margin-bottom: 4px;  /* espace sous le label */
+  }
 }
