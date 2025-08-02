@@ -174,7 +174,7 @@ main {
 }
 
 .pdf-controls button {
-  background-color: #0066cc;
+  background-color:  rgb(99, 91, 255);
   color: white;
   border: none;
   padding: 8px 16px;
@@ -234,9 +234,9 @@ main {
 }
 
 .submit-btn {
-  background:  #635BFF;
+  background:   rgb(99, 91, 255);
   color: white;
-  border: 2px solid  #635BFF;
+  border: 2px solid  rgb(99, 91, 255);;
   padding: 1rem 2rem;
   border-radius: 8px;
   font-weight: 600;
@@ -247,8 +247,8 @@ main {
 
 .submit-btn:hover {
   background: white;
-  color:  #635BFF;
-  border: 2px solid  #635BFF;
+  color:   rgb(99, 91, 255);
+  border: 2px solid    rgb(99, 91, 255);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,123,255,0.3);
 }
@@ -260,7 +260,7 @@ main {
   border: 1px solid #acc9ff;
   border-radius: 8px;
   font-weight: 600;
-  color: #635BFF;
+  color:  rgb(99, 91, 255);
   display: none;
 }
 
@@ -298,14 +298,14 @@ main {
 }
 
 .tab-button:hover {
-  color: #6366f1;
+  color:  rgb(99, 91, 255);
   background: #f8f9fa;
   transform: translateY(-2px);
 }
 
 .tab-button.active {
-  color: #6366f1;
+  color:  rgb(99, 91, 255);
   background: #f0f0ff;
-  border-bottom: 3px solid #6366f1;
+  border-bottom: 3px solid  rgb(99, 91, 255);
   transform: translateY(-2px);
 }

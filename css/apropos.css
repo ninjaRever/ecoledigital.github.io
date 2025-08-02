@@ -9,52 +9,6 @@ body {
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-/* Header */
-.nav-header {
-  background-color: #ffffff;
-  padding: 20px 40px;
-  flex-direction: row;       /* ligne */
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-logo {
-  height: 40px;
-  margin-right: 10px;
-}
-
-.nav-title {
-  font-weight: 700;
-  font-size: 20px;
-  color: black;
-}
-
-.nav-nav {
-  display: flex;
-  gap: 45px; /* espace entre chaque lien du menu */
-  align-items: center;
-  margin-left: 80px; /* réduit la distance entre logo et menu */
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #2d3748;
-  font-weight: 500;
-}
-
-.nav-btn {
-  padding: 6px 14px;
-  background-color: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-=======
->>>>>>> a90493c1ff05c89c96b300543599a10bcf37e897
 /* Contenu principal */
 .main-content {
   max-width: 1100px;

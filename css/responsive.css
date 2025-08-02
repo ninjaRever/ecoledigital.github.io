@@ -125,7 +125,7 @@
 }
 
 .tab-button.active {
-  background-color: #007bff;
+  background-color: rgb(99, 91, 255);
   color: white;
 }
 
@@ -153,7 +153,7 @@
 .download-btn {
   display: inline-block;
   padding: 0.6em 1em;
-  background-color: #007bff;
+  background-color: rgb(99, 91, 255);
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -176,7 +176,7 @@
   margin-top: 1rem;
   padding: 10px;
   font-size: 1rem;
-  background-color: #28a745;
+  background-color: rgb(99, 91, 255);
   border: none;
   border-radius: 4px;
   color: white;

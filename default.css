@@ -4,13 +4,6 @@ html, body {
   height: 100%;
 }
 
-/* Styles pour le corps de la page */
-body {
-  /* Hauteur minimale de 100vh pour occuper toute la hauteur de la fenêtre */
-  /* Affichage flexible pour le positionnement */
-  /* display: flex; */
-  /* Direction de la disposition en colonne */
-}
 
 /* Styles supplémentaires pour le corps de la page */
 body {
