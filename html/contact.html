@@ -17,7 +17,8 @@
     <div class="nav-header__right">
       <button class="nav-burger" id="navBurger" aria-label="Menu">
         <!-- Icône hamburger SVG -->
-        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/>
+        <rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
       </button>
       <nav class="nav-nav" id="navMenu">
         <a href="../index.html" class="nav-link">Accueil</a>
@@ -30,79 +31,43 @@
   </header>
 
 
-
-
-  <!-- ...autre contenu... -->
-
-   <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="formulaire.js"> </script>
-  </head>
-  <body>
+<main class="main-content">
     <!-- l'entete de la page -->
     <h1>Contactez-nous</h1>
     <div class="entete">
       <!-- Petit paragraphe -->
       <p>
-        Nous sommes là pour vous aider.Si vous avez des des
-        questions,commmentaires,ou des suggestions, n'hésitez pas à <br />
-        nous contacter via le Formulaire ci-dessous ou par les autres moyens
-        indiqués.
-      </p>
-      <br />
+        Nous sommes là pour vous aider.Si vous avez des desquestions,
+        commmentaires,ou des suggestions, n'hésitez pas à nous contacter 
+        via le Formulaire ci-dessous ou par les autres moyens indiqués.
+      </p></div> <br>
      <!--Formulaire--> 
-      <div class="formulaire">
-        <form id="contactForm">
-  <input type="text" id="nom" placeholder="Nom complet"
-    style="width:80%; padding:10px; height:40px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;" />
-  <br><br>
-
-  <input type="email" id="email" placeholder="Adresse e-mail"
-    style="width:80%; padding:10px; height:40px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;" />
-  <br><br>
-<!-- Sujet de message -->
-  <select id="Sujet"
-    style="width:85%; padding:22px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;">
-    <option value="">Sujet de message</option>
-    <option value="info">Demande d'informations</option>
-    <option value="sugg">Suggestions</option>
-
-<option value="prob">Problème rencontré</option>
-    <option value="retour">Retour d'expérience</option>
-  </select>
-  <br><br>
-<!-- Message -->
-  <textarea id="message" placeholder="Message"
-    style="width:80%; padding:10px; height:90px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;"></textarea>
-  <br><br>
-
-  <button type="button" onclick="resetForm()" class="button"> Envoyer</button> <br>
-  <div id="notification" style="display:none; background-color:#4f46e5; color:white; padding:10px; border-radius:5px; margin-top:10px; text-align:center;">
-  Votre message est bien envoyé !
+<div class="formulaire">
+  <form id="contactForm">
+    <input type="text" id="nom" placeholder="Nom complet"/>
+    <input type="email" id="email" placeholder="Adresse e-mail"/>
+    <!-- Sujet de message -->
+    <select id="Sujet">
+      <option value="">Sujet de message</option>
+      <option value="info">Demande d'informations</option>
+      <option value="sugg">Suggestions</option>
+      <option value="prob">Problème rencontré</option>
+      <option value="retour">Retour d'expérience</option>
+    </select>
+    <!-- Message -->
+    <textarea id="message" placeholder="Message"></textarea>
+    <button class="btn" type="button" onclick="resetForm()" class="button"> Envoyer</button>
+    <div id="notification" >Votre message est bien envoyé</div>
+  </form>
 </div>
-</form>
 <!-- Autres moyens de nous contacter -->
-<h2>Autres moyens de nous contacter</h2>
-
-     </div>
-     <hr>
-    <pre>
-<span id="mail">Email</span>                                    <span id="mail2">support@ecoledigitale.com</span> <br>
-<hr>
-<span id="call">Telephone</span>                               <span id="call2">78 773 72 03 ; 76 255 32 32</span> <br>
-<hr>
-<span id="reseau">Reseaux sociaux</span>                        <span id="reseau2">Facebook,Twitter,Linkedin</span>
-    </pre>
-    </div>
+<pre class="contact-info">
+  <h2>Autres moyens de nous contacter</h2> <hr>
+  <div class="line"><span id="mail">Email</span><span id="mail2">support@ecoledigitale.com</span></div> <br><hr>
+  <div class="line"><span id="call">Telephone</span><span id="call2">78 773 72 03 ; 76 255 32 32</span></div> <br><hr>
+  <div class="line"><span id="reseau">Reseaux sociaux</span><span id="reseau2">Facebook,Twitter,Linkedin</span></div>
+</pre>
+   
    
 
   <!-- ...autre contenu... -->
@@ -136,6 +101,8 @@ function resetForm() {
   
 </script>
 
+
+</main>
 
 
   <footer class="footer">
