@@ -13,11 +13,9 @@ body {
 .nav-header {
   background-color: #ffffff;
   padding: 20px 40px;
-  display: flex;
+  flex-direction: row;       /* ligne */
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  flex-wrap: wrap;
 }
 
 .nav-logo {
