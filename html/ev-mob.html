@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EcoleDigitale</title>
   <link rel="stylesheet" href="../default.css">
-  <link rel="stylesheet" href="../css/ev-mob.css">
+  <link rel="stylesheet" href="../css/module.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -27,8 +28,168 @@
       </nav>
     </div>
   </header>
-  <!-- ...autre contenu... -->
-   
+
+
+  <main>
+
+<section id="chapters-content" style="position: relative;">
+<div id="ch1" class="chapter" style="display:none;">
+  <h2>Chapitre 1 : Introduction aux Technologies Mobiles</h2>
+
+  <!--  Onglets -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab(this, 'video1', 'progress1', 33)">Vidéo</button>
+    <button class="tab-button" onclick="showTab(this, 'support1', 'progress1', 66)">Support de cours</button>
+    <button class="tab-button" onclick="showTab(this, 'quiz1', 'progress1', 100)">Tests de connaissance</button>
+  </div>
+
+  <!--  Contenu Vidéo -->
+  <div class="tab-content" id="video1">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc?autoplay=1&loop=1&playlist=vbWg1iRNUIc&controls=0" 
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+  </div>
+
+  <!--  Contenu Support -->
+  <div class="tab-content" id="support1" style="display:none;">
+    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
+  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
+  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
+    <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
+    <button id="next" class="nav-btn">Page suivante ➡️</button>
+  </div>
+</div>
+<script>
+  const url = '../supports/ev-mob1.pdf'; // Chemin vers ton PDF
+  let pdfDoc = null,
+      pageNum = 1,
+      pageRendering = false,
+      pageNumPending = null,
+      scale = 1.5,
+      canvas = document.getElementById('pdf-canvas'),
+      ctx = canvas.getContext('2d');
+  function renderPage(num) {
+    pageRendering = true;
+    pdfDoc.getPage(num).then(function(page) {
+      const viewport = page.getViewport({ scale: scale });
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      const renderContext = {
+        canvasContext: ctx,
+        viewport: viewport};
+      const renderTask = page.render(renderContext);
+      renderTask.promise.then(function () {
+        pageRendering = false;
+        if (pageNumPending !== null) {
+          renderPage(pageNumPending);
+          pageNumPending = null;}  });  });
+    document.getElementById('page-num').textContent = num;}
+  function queueRenderPage(num) {
+    if (pageRendering) { pageNumPending = num;
+    } else { renderPage(num); } }
+  function onPrevPage() {
+    if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); }
+  function onNextPage() {
+    if (pageNum >= pdfDoc.numPages) return;
+    pageNum++; queueRenderPage(pageNum); }
+  // Chargement du document
+  pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+    pdfDoc = pdfDoc_;
+    document.getElementById('page-count').textContent = pdfDoc.numPages;
+    renderPage(pageNum); });
+  // Événements des boutons
+  document.getElementById('prev').addEventListener('click', onPrevPage);
+  document.getElementById('next').addEventListener('click', onNextPage);
+</script>
+    <p>Téléchargez le support de cours (PDF) :</p>
+    <a href="../supports/ev-mob1.pdf" download class="nav-btn">📥 Télécharger le support</a>
+  </div>
+
+  <!--  Contenu Quiz -->
+  <div class="tab-content" id="quiz1" style="display:none;">
+    <form id="quizForm1" onsubmit="return submitQuiz('quizForm1', 'result1')">    
+      <p><strong>1. Quel est le principal avantage des smartphones par rapport aux téléphones classiques ?</strong></p>
+      <label><input type="radio" name="q3" value="0"> Ils sont plus petits</label><br>
+      <label><input type="radio" name="q3" value="1"> Ils offrent des fonctionnalités avancées</label><br>
+      <label><input type="radio" name="q3" value="0"> Ils sont moins chers</label><br>
+      <label><input type="radio" name="q3" value="0"> Ils ont une meilleure autonomie</label><br>
+
+      <p><strong>2. Quel est le système d'exploitation mobile le plus utilisé dans le monde ?</strong></p>
+      <label><input type="radio" name="q4" value="0"> iOS</label><br>
+      <label><input type="radio" name="q4" value="1"> Android</label><br>
+      <label><input type="radio" name="q4" value="0"> Windows Phone</label><br>
+      <label><input type="radio" name="q4" value="0"> BlackBerry OS</label><br>
+
+      <p><strong>3. Quel est le rôle principal d'un système d'exploitation mobile ?</strong></p>
+      <label><input type="radio" name="q6" value="0"> Gérer les applications</label><br>
+      <label><input type="radio" name="q6" value="1"> Gérer les ressources matérielles</label><br>
+      <label><input type="radio" name="q6" value="0"> Gérer les connexions réseau</label><br>
+      <label><input type="radio" name="q6" value="0"> Gérer les données utilisateur</label><br>
+
+      <p><strong>4. Quelle est la principale différence entre les applications natives et les applications web mobiles ?</strong></p>
+      <label><input type="radio" name="q7" value="0"> Les applications natives sont plus lentes</label><br>
+      <label><input type="radio" name="q7" value="1"> Les applications natives sont installées sur l'appareil</label><br>
+      <label><input type="radio" name="q7" value="0"> Les applications web mobiles nécessitent une connexion Internet</label><br>
+      <label><input type="radio" name="q7" value="0"> Les applications natives sont plus faciles à développer</label><br>
+
+      <p><strong>5. Quel est le principal avantage des applications multiplateformes ?</strong></p>
+      <label><input type="radio" name="q9" value="0"> Elles sont plus rapides</label><br>
+      <label><input type="radio" name="q9" value="1"> Elles peuvent être utilisées sur plusieurs systèmes d'exploitation</label><br>
+      <label><input type="radio" name="q9" value="0"> Elles sont plus faciles à développer</label><br>
+      <label><input type="radio" name="q9" value="0"> Elles consomment moins de ressources</label><br>
+
+
+
+      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
+    </form>
+    <p id="result1" style="margin-top:1rem; font-weight: bold;"></p>
+  </div>
+</div>
+
+  <div id="ch2" class="chapter" style="display:none;">
+    <h2>Chapitre 2 : Généralités sur les Technologies Mobiles</h2> 
+
+  </div>
+
+  <div id="ch3" class="chapter" style="display:none;">
+    <h2>Chapitre 3 : Evolution des périphériques mobiles</h2>
+
+  <div id="ch4" class="chapter" style="display:none;">
+    <h2>Chapitre 4 : Plateformes et Applications mobiles</h2>
+  </div>
+
+  <div id="ch5" class="chapter" style="display:none;">
+    <h2>Chapitre 5 : Plateformes et Applications mobiles</h2>
+  </div>
+
+  <div id="ch6" class="chapter" style="display:none;">
+    <h2>Chapitre 6 : Plateformes et Applications mobiles</h2>
+  </div>
+
+  
+
+
+
+</section>
+
+<section class="modules">
+  <h2>Modules du cours</h2>
+  <ul>
+    <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Introduction aux Technologies Mobiles</a></li>
+    <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Généralités sur les Technologies Mobiles</a></li>
+    <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : Evolution des périphériques mobiles</a></li>
+    <li><a href="#" onclick="showChapter('ch4')">Chapitre 4 : Plateformes et Applications mobiles</a></li>
+    <li><a href="#" onclick="showChapter('ch5')">Chapitre 5 : Plateformes et Applications mobiles</a></li>
+    <li><a href="#" onclick="showChapter('ch6')">Chapitre 6 : Plateformes et Applications mobiles</a></li>
+  </ul>
+</section>
+  </main>
+
+
+
+
   <footer class="footer">
     <nav class="footer-main-nav">
       <a href="#" class="footer-link">Accueil</a>
