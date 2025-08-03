@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EcoleDigitale</title>
   <link rel="stylesheet" href="../default.css">
-  <link rel="stylesheet" href="../css/js.css">
+  <link rel="stylesheet" href="../css/module.css">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
 </head>
 <body>
   <header class="nav-header">
@@ -22,7 +23,7 @@
       </button>
       <nav class="nav-nav" id="navMenu">
         <a href="../index.html" class="nav-link">Accueil</a>
-        <a href="#" class="nav-link">Cours</a>
+        <a href="" class="nav-link">Cours</a>
         <a href="apropos.html" class="nav-link">À propos</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <button class="nav-btn">Se connecter</button>
@@ -30,15 +31,178 @@
     </div>
   </header>
 
+  <main>
+
+
+<section id="chapters-content" style="position: relative;">
+<div id="ch1" class="chapter" style="display:none;">
+  <h2>Chapitre 1 : Le langage JavaScript</h2>
+
+  <!--  Onglets -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab(this, 'video1', 'progress1', 33)">Vidéo</button>
+    <button class="tab-button" onclick="showTab(this, 'support1', 'progress1', 66)">Support de cours</button>
+    <button class="tab-button" onclick="showTab(this, 'quiz1', 'progress1', 100)">Tests de connaissance</button>
+  </div>
+
+  <!--  Contenu Vidéo -->
+  <div class="tab-content" id="video1">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc?autoplay=1&loop=1&playlist=vbWg1iRNUIc&controls=0"
+    controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+  </div>
+
+  <!--  Contenu Support -->
+  <div class="tab-content" id="support1" style="display:none;">
+    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
+  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
+  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
+    <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
+    <button id="next" class="nav-btn">Page suivante ➡️</button>
+  </div>
+</div>
+<script>
+  const url = '../supports/js1.pdf'; // Chemin vers ton PDF
+</script>
+<script>
+  let pdfDoc = null,
+      pageNum = 1,
+      pageRendering = false,
+      pageNumPending = null,
+      scale = 1.5,
+      canvas = document.getElementById('pdf-canvas'),
+      ctx = canvas.getContext('2d');
+  function renderPage(num) {
+    pageRendering = true;
+    pdfDoc.getPage(num).then(function(page) {
+      const viewport = page.getViewport({ scale: scale });
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+      const renderContext = {
+        canvasContext: ctx,
+        viewport: viewport};
+      const renderTask = page.render(renderContext);
+      renderTask.promise.then(function () {
+        pageRendering = false;
+        if (pageNumPending !== null) {
+          renderPage(pageNumPending);
+          pageNumPending = null;}  });  });
+    document.getElementById('page-num').textContent = num;}
+  function queueRenderPage(num) {
+    if (pageRendering) { pageNumPending = num;
+    } else { renderPage(num); } }
+  function onPrevPage() {
+    if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); }
+  function onNextPage() {
+    if (pageNum >= pdfDoc.numPages) return;
+    pageNum++; queueRenderPage(pageNum); }
+  // Chargement du document
+  pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+    pdfDoc = pdfDoc_;
+    document.getElementById('page-count').textContent = pdfDoc.numPages;
+    renderPage(pageNum); });
+  // Événements des boutons
+  document.getElementById('prev').addEventListener('click', onPrevPage);
+  document.getElementById('next').addEventListener('click', onNextPage);
+</script>
+    <p>Téléchargez le support de cours (PDF) :</p>
+    <a href="../supports/js1.pdf" download class="nav-btn">📥 Télécharger le support</a>
+  </div>
+
+  <!--  Contenu Quiz -->
+  <div class="tab-content" id="quiz1" style="display:none;">
+    <form id="quizForm1" onsubmit="return submitQuiz('quizForm1', 'result1')">
+      <p><strong>1. Quel est le rôle principal dU JavaScript </strong></p>
+      <label><input type="radio" name="q2" value="1"> Ajouter de l'interactivité aux pages web</label><br>
+      <label><input type="radio" name="q2" value="0"> Gérer les bases de données</label><br>
+      <label><input type="radio" name="q2" value="0"> Créer des images</label><br>
+      <label><input type="radio" name="q2" value="0"> Gérer les serveurs web</label><br>
+
+      <p><strong>2. Quelle est la syntaxe correcte pour déclarer une variable en JavaScript ?</strong></p>
+      <label><input type="radio" name="q3" value="0"> var maVariable;</label><br>
+      <label><input type="radio" name="q3" value="1"> let maVariable;</label><br>
+      <label><input type="radio" name="q3" value="0"> const maVariable;</label><br>
+      <label><input type="radio" name="q3" value="0"> variable maVariable;</label><br>  
+
+      <p><strong>3. Quelle est la différence entre '==' et '===' en JavaScript ?</strong></p>
+      <label><input type="radio" name="q4" value="0"> '==' compare les valeurs et '===' compare les types</label><br>
+      <label><input type="radio" name="q4" value="1"> '==' compare les valeurs et '===' compare les valeurs et les types</label><br>
+      <label><input type="radio" name="q4" value="0"> '==' compare les types et '===' compare les valeurs</label><br>
+      <label><input type="radio" name="q4" value="0"> '==' et '===' sont identiques</label><br>   
+
+      <p><strong>4. Quelle est la méthode pour afficher un message dans la console en JavaScript ?</strong></p>
+      <label><input type="radio" name="q5" value="0"> console.logMessage("Hello World");</label><br>
+      <label><input type="radio" name="q5" value="1"> console.log("Hello World");</label><br>
+      <label><input type="radio" name="q5" value="0"> log.console("Hello World");</label><br>
+      <label><input type="radio" name="q5" value="0"> console.print("Hello World");</label><br> 
+
+      <p><strong>5. Quelle est la bonne syntaxe pour créer une fonction en JavaScript ?</strong></p>
+      <label><input type="radio" name="q6" value="0"> function maFonction() {}</label><br>
+      <label><input type="radio" name="q6" value="1"> function maFonction() {}</label><br>
+      <label><input type="radio" name="q6" value="0"> maFonction() function {}</label><br>
+      <label><input type="radio" name="q6" value="0"> function maFonction() {}</label><br>
+
+      <p><strong>6. Comment peut-on commenter une ligne en JavaScript ?</strong></p>
+      <label><input type="radio" name="q7" value="0"> // Ceci est un commentaire</label><br>
+      <label><input type="radio" name="q7" value="1"> // Ceci est un commentaire</label><br>
+      <label><input type="radio" name="q7" value="0"> /* Ceci est un commentaire */</label><br>
+      <label><input type="radio" name="q7" value="0"> # Ceci est un commentaire</label><br>
+
+      <p><strong>7. Quelle est la méthode pour ajouter un élément à la fin d'un tableau en JavaScript ?</strong></p>
+      <label><input type="radio" name="q8" value="0"> array.push(element);</label><br>
+      <label><input type="radio" name="q8" value="1"> array.push(element);</label><br>
+      <label><input type="radio" name="q8" value="0"> array.add(element);</label><br>
+      <label><input type="radio" name="q8" value="0"> array.append(element);</label><br>
+
+      <p><strong>8. Comment peut-on vérifier si une variable est un tableau en JavaScript ?</strong></p>
+      <label><input type="radio" name="q9" value="0"> Array.isArray(variable);</label><br>
+      <label><input type="radio" name="q9" value="1"> Array.isArray(variable);</label><br>
+      <label><input type="radio" name="q9" value="0"> variable instanceof Array;</label><br>
+      <label><input type="radio" name="q9" value="0"> variable.isArray();</label><br>
+
+      <p><strong>9. Quelle est la méthode pour supprimer le dernier élément d'un tableau en JavaScript ?</strong></p>
+      <label><input type="radio" name="q10" value="0"> array.pop();</label><br>
+      <label><input type="radio" name="q10" value="1"> array.pop();</label><br>
+      <label><input type="radio" name="q10" value="0"> array.removeLast();</label><br>
+      <label><input type="radio" name="q10" value="0"> array.deleteLast();</label><br>
+
+      <p><strong>10. Comment peut-on créer un objet en JavaScript ?</strong></p>
+      <label><input type="radio" name="q11" value="0"> var monObjet = {}; </label><br>
+      <label><input type="radio" name="q11" value="1"> var monObjet = {}; </label><br>
+      <label><input type="radio" name="q11" value="0"> var monObjet = new Object();</label><br>
+      <label><input type="radio" name="q11" value="0"> var monObjet = Object.create();</label><br>  
+
+
+      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
+    </form>
+    <p id="result1" style="margin-top:1rem; font-weight: bold;"></p>
+  </div>
+</div>
+
+  <div id="ch2" class="chapter" style="display:none;">
+    <h2>Chapitre 2 : Les objets, les tableaux et les fonctions </h2>  
+  </div>
+
+  <div id="ch3" class="chapter" style="display:none;">
+    <h2>Chapitre 3 : JavaScript et les navigateurs</h2>
+  </div>
 
 
 
-  <!-- ...autre contenu... -->
 
+</section>
 
-
-
-
+<section class="modules">
+  <h2>Modules du cours</h2>
+  <ul>
+    <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Le langage JavaScript</a></li>
+    <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Les objets, les tableaux et les fonctions</a></li>
+    <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : JavaScript et les navigateurs</a></li>
+  </ul>
+</section>
+  </main>
 
   <footer class="footer">
     <nav class="footer-main-nav">
@@ -77,6 +241,6 @@
       © 2025 EcoleDigitale. Tous droits réservés.
     </div>
   </footer>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
