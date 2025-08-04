@@ -1,0 +1,160 @@
+/* styles pour le titre principal de la page */
+#program {
+  /* marge à gauche de 70px */
+    margin: 70px;
+    /* taille de la police de 200% */
+    font-size: 200%;
+    /* marge en haut de -10px */
+    margin-top: -10px;
+    
+}
+main {
+  /* Largeur maximale de 800px */
+  max-width: 800px;
+  /* Centrage horizontal avec marges automatiques */
+  margin: 40px auto;
+  /* Remplissage horizontal de 20px */
+  padding: 0 20px;
+}
+
+/* styles pour le titre du contenu */
+h5 {
+/* taille de la police de 20px */    
+  font-size: 20px;
+  /* marge à gauche de 70px */
+    margin: 70px;
+    /*couleur du texte gris*/
+    color: grey;
+    /*marge de 20px à gauche*/
+    margin-top: 20px
+}
+/* styles pour le paragraphe d'introduction */
+p {
+    /* marge à gauche de 70px */
+    margin: 70px;
+    /* marge en haut de -30px */
+    margin-top: -30px;
+}
+
+
+
+/* Pseudo-élément pour les éléments de liste dans les modules */
+.modules li::before {
+  /* Contenu vide */
+  content: "";
+  /* Position absolue */
+  position: absolute;
+  /* Positionnement à gauche */
+  left: 0;
+}
+
+/* Styles pour le bouton "Commencer ce cours" */
+.start-course {
+  /* Espacement vertical de 15px */
+  margin-top: 15px;
+  /* Remplissage interne */
+  padding: 10px 20px;
+  /* Couleur de fond violette */
+  background: #6366f1;
+  /* Couleur du texte en blanc */
+  color: white;
+  /* Suppression de la bordure */
+  border: none;
+  /* Coins arrondis de 6px */
+  border-radius: 6px;
+  /* Curseur en forme de main */
+  cursor: pointer;
+  /* Transition fluide pour le changement de couleur de fond */
+  transition: background 0.3s ease;
+}
+
+/* Effet au survol du bouton "Commencer ce cours" */
+.start-course:hover {
+  /* Changement de la couleur de fond en blanc */
+  background: #fff;
+  /* Changement de la couleur du texte en violet */
+  color: rgb(99, 91, 255);
+  /* Ajout d'une bordure violette */
+  border: 1px solid rgb(99, 91, 255);
+}
+
+/* Styles pour les commentaires */
+.comments .comment {
+  /* Couleur de fond blanche */
+  background: white;
+  /* Remplissage interne */
+  padding: 10px 15px;
+  /* Coins arrondis de 8px */
+  border-radius: 8px;
+  /* Espacement vertical de 10px */
+  margin-bottom: 10px;
+}
+
+/* Styles pour la liste des modules */
+.modules ul {
+  /* Suppression des puces par défaut */
+  list-style: none;
+  /* Suppression du remplissage par défaut */
+  padding: 0;
+}
+
+/* Styles pour les éléments de liste des modules */
+.modules li {
+  /* Espacement vertical de 15px */
+  margin-bottom: 15px;
+  /* Affichage flexible */
+  display: flex;
+  /* Direction de la disposition en colonne */
+  flex-direction: column;
+  /* Alignement des éléments sur le début */
+  align-items: flex-start;
+}
+
+/* Styles pour les liens dans les modules */
+.modules a {
+  /* Épaisseur de la police en gras */
+  font-weight: bold;
+  /* Couleur du texte noire */
+  color: #000;
+  /* Suppression du soulignement */
+  text-decoration: none;
+  /* Affichage flexible */
+  display: flex;
+  /* Alignement des éléments sur le centre */
+  align-items: center;
+}
+
+/* Styles pour les icônes SVG dans les liens des modules */
+.modules a svg {
+  /* Espacement à droite de 8px */
+  margin-right: 8px;
+  /* Empêche la réduction de l'icône */
+  flex-shrink: 0;
+  /* Largeur de 40px */
+  width: 40px;
+  /* Hauteur de 40px */
+  height: 40px;
+}
+
+/* Styles pour les titres des modules */
+.modules .module-title {
+  /* Épaisseur de la police en gras */
+  font-weight: bold;
+  /* Espacement en bas de 4px */
+  margin-bottom: 4px;
+  /* Couleur du texte noire */
+  color: #000;
+}
+
+/* Styles pour les descriptions des modules */
+.modules .module-description {
+  /* Épaisseur de la police normale */
+  font-weight: normal;
+  /* Décalage après l'icône */
+  margin-left: 28px;
+  /* Couleur de texte gris foncé */
+  color: #333;
+  /* Taille de la police de 14px */
+  font-size: 14px;
+}
+ 
