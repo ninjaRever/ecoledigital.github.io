@@ -6,6 +6,7 @@
   <!-- Section d'en-tête du document -->
   <meta charset="UTF-8">
   <!-- Encodage des caractères en UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EcoleDigitale</title>
   <!-- Titre de la page affiché dans l'onglet du navigateur -->
   <link rel="stylesheet" href="default.css">
@@ -13,6 +14,7 @@
   <link rel="stylesheet" href="css/accueil.css">
   <!-- Lien vers la feuille de style spécifique à la page d'accueil -->
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  
   <!-- Lien vers la police Google Fonts Inter -->
 </head>
 <body>
@@ -36,11 +38,10 @@
       </button>
       <nav class="nav-nav" id="navMenu">
         <!-- Navigation principale -->
-        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="index.html" class="nav-link">Accueil</a>
         <!-- Lien vers la page d'accueil -->
-        <a href="" class="nav-link">Cours</a>
         <!-- Lien vers la section des cours -->
-        <a href="#" class="nav-link">À propos</a>
+        <a href="html/apropos.html" class="nav-link">À propos</a>
         <!-- Lien vers la page "À propos" -->
         <a href="html/contact.html" class="nav-link">Contact</a>
         <!-- Lien vers la page de contact -->
@@ -55,41 +56,36 @@
     <!-- Section principale avec contenu de héros -->
     <div class="hero-content">
       <!-- Contenu de la section héros -->
-      <img src="image/acceuill.jpg" alt="Illustration éducative" class="hero-image">
+      <img src="image/acceuill.png" alt="Illustration éducative" class="hero-image">
       <!-- Image illustrative -->
       <div class="hero-text">
         <!-- Texte de la section héros -->
         <h1>Apprenez Autrement avec EcoleDigitale</h1>
         <!-- Titre principal -->
         <p>
-          Cours interactifs, vidéos explicatives, quiz et supports complets pour tous les niveaux.
+          Des vidéos explicatives captivantes, des quiz interactifs pour tester vos connaissances,<br>
+           et des supports complets pour une compréhension approfondie, adaptés à tous les niveaux, du débutant à l'expert.
         </p>
         <!-- Description de l'offre -->
-        <button class="btn-primary">Explorer les cours</button>
-        <!-- Bouton d'action principale -->
       </div>
     </div>
   </section>
 
-  <!-- Niveaux -->
-  <section class="section">
-    <!-- Section pour les niveaux d'apprentissage -->
-    <h2>Choisissez Votre Niveau d'Apprentissage</h2>
-    <!-- Titre de la section -->
-    <div class="levels">
-      <!-- Conteneur pour les boutons de niveau -->
-      <button>Classe d’examen</button>
-      <!-- Bouton pour la classe d'examen -->
-      <a href="html/ctgcite.html"><button>Université</button></a>
-      <!-- Lien vers la page université avec bouton -->
-      <button>Technique</button>
-      <!-- Bouton pour le niveau technique -->
-      <button>Lycée</button>
-      <!-- Bouton pour le lycée -->
-      <button>Collège</button>
-      <!-- Bouton pour le collège -->
-    </div>
-  </section>
+ <!-- Niveaux -->
+<section class="section">
+  <!-- Section pour les niveaux d'apprentissage -->
+  <h2>Choisissez Votre Niveau d'Apprentissage</h2>
+  <!-- Titre de la section -->
+  <div class="levels">
+    <!-- Conteneur pour les boutons de niveau -->
+    <button onclick="window.location.href='html/ctgexam.html'">Classe d’examen</button>
+    <button onclick="window.location.href='html/ctgcite.html'">Université</button>
+    <button onclick="window.location.href='#'">Technique</button>
+    <button onclick="window.location.href='#'">Lycée</button>
+    <button onclick="window.location.href='#'">Collège</button>
+  </div>
+</section>
+
 
   <!-- Cours populaires -->
    <!-- Cours populaires -->

@@ -2,10 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EcoleDigitale</title>
   <link rel="stylesheet" href="../default.css">
   <link rel="stylesheet" href="../css/contact.css">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../css/responsive.css">
+    
 </head>
 <body>
   <header class="nav-header">
@@ -16,125 +19,63 @@
     <div class="nav-header__right">
       <button class="nav-burger" id="navBurger" aria-label="Menu">
         <!-- Icône hamburger SVG -->
-        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/>
+        <rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
       </button>
       <nav class="nav-nav" id="navMenu">
         <a href="../index.html" class="nav-link">Accueil</a>
-        <a href="#" class="nav-link">Cours</a>
-        <a href="#" class="nav-link">À propos</a>
-        <a href="#" class="nav-link">Contact</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <button class="nav-btn">Se connecter</button>
       </nav>
     </div>
   </header>
 
-
-
-
-  <!-- ...autre contenu... -->
-
-   <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="formulaire.js"> </script>
-  </head>
-  <body>
-    <!-- l'entete de la page -->
-    <h1>Contactez-nous</h1>
-    <div class="entete">
-      <!-- Petit paragraphe -->
-      <p>
-        Nous sommes là pour vous aider.Si vous avez des des
-        questions,commmentaires,ou des suggestions, n'hésitez pas à <br />
-        nous contacter via le Formulaire ci-dessous ou par les autres moyens
-        indiqués.
+    <main class="container">
+      <h1>Contactez-nous</h1>
+      <p class="description">
+        Nous sommes là pour vous aider. Si vous avez des questions, commentaires ou des suggestions,
+        n'hésitez pas à <br>nous contacter via le formulaire ci-dessous ou par les autres moyens indiqués.
       </p>
-      <br />
-     <!--Formulaire--> 
-      <div class="formulaire">
-        <form id="contactForm">
-  <input type="text" id="nom" placeholder="Nom complet"
-    style="width:80%; padding:10px; height:40px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;" />
-  <br><br>
 
-  <input type="email" id="email" placeholder="Adresse e-mail"
-    style="width:80%; padding:10px; height:40px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;" />
-  <br><br>
-<!-- Sujet de message -->
-  <select id="Sujet"
-    style="width:85%; padding:22px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;">
-    <option value="">Sujet de message</option>
-    <option value="info">Demande d'informations</option>
-    <option value="sugg">Suggestions</option>
+      <!-- Nouveau bloc flex -->
+      
+        <form id="contactForm" class="formulaire">
+          <input type="text" id="nom" placeholder= "Nom complet" />
+          <input type="email" id="email" placeholder="Adresse e-mail" />
 
-<option value="prob">Problème rencontré</option>
-    <option value="retour">Retour d'expérience</option>
-  </select>
-  <br><br>
-<!-- Message -->
-  <textarea id="message" placeholder="Message"
-    style="width:80%; padding:10px; height:90px; background-color:rgb(236, 236, 236);
-    border:1px solid rgb(26,26,26); color:rgb(26,26,26); border-radius:10px;"></textarea>
-  <br><br>
+          <select id="Sujet">
+            <option value="">Sujet de message</option>
+            <option value="info">Demande d'informations</option>
+            <option value="sugg">Suggestions</option>
+            <option value="prob">Problème rencontré</option>
+            <option value="retour">Retour d'expérience</option>
+          </select>
 
-  <button type="button" onclick="resetForm()" class="button"> Envoyer</button> <br>
-  <div id="notification" style="display:none; background-color:#4f46e5; color:white; padding:10px; border-radius:5px; margin-top:10px; text-align:center;">
-  Votre message est bien envoyé !
-</div>
-</form>
-<!-- Autres moyens de nous contacter -->
-<h2>Autres moyens de nous contacter</h2>
+          <textarea id="message" placeholder="Message"></textarea>
+          <button type="button" class="buttons" onclick="resetForm()">Envoyer</button>
 
-     </div>
-     <hr>
-    <pre>
-<span id="mail">Email</span>                                    <span id="mail2">support@ecoledigitale.com</span> <br>
-<hr>
-<span id="call">Telephone</span>                               <span id="call2">78 773 72 03 ; 76 255 32 32</span> <br>
-<hr>
-<span id="reseau">Reseaux sociaux</span>                        <span id="reseau2">Facebook,Twitter,Linkedin</span>
-    </pre>
-    <p id="last">Votre message a été envoyé avec succès.Nous vous répondrons dans les plus brefs délais.</p>
-    </div>
+          <div id="notification">
+            Votre message est bien envoyé !
+          </div>
+        </form> <br>
+
+        <section class="contact-info">
+            <div class="fin">
+          <h4>Autres moyens de nous contacter</h4>    
+          <hr>
+    <ul>
+  <li><span id="mail">Email:</span> <span id="mail2">support@ecoledigitale.com</span></li>
+  <li><span id="call">Téléphone:</span> <span id="call2">78 773 72 03 ; 76 255 32 32</span></li>
+  <li><span id="reseau">Réseaux sociaux:</span> <span id="reseau2">Facebook, Twitter, LinkedIn</span></li>
+</ul>
+
+    
+
+   
    
 
-  <!-- ...autre contenu... -->
-<script>
-function resetForm() {
-  const nom = document.getElementById('nom').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const sujet = document.getElementById('Sujet').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  if (!nom || !email || !sujet || !message) {
-    alert("Veuillez remplir tous les champs.");
-    return;
-  }
-
-  // Vider les champs
-  document.getElementById('nom').value = '';
-  document.getElementById('email').value = '';
-  document.getElementById('Sujet').value = '';
-  document.getElementById('message').value = '';
-
-  // Afficher la notification
-  const notif = document.getElementById('notification');
-  notif.style.display = 'block';
-
-  // La cacher après 2 secondes
-  setTimeout(() => {
-    notif.style.display = 'none';
-  }, 2000);
-}
   
-</script>
 
 
 
@@ -175,5 +116,39 @@ function resetForm() {
       © 2025 EcoleDigitale. Tous droits réservés.
     </div>
   </footer>
+
+  <!-- ...autre contenu... -->
+<script>
+function resetForm() {
+  const nom = document.getElementById('nom').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const sujet = document.getElementById('Sujet').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (!nom || !email || !sujet || !message) {
+    alert("Veuillez remplir tous les champs.");
+    return;
+  }
+
+  // Vider les champs
+  document.getElementById('nom').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('Sujet').value = '';
+  document.getElementById('message').value = '';
+
+  // Afficher la notification
+  const notif = document.getElementById('notification');
+  notif.style.display = 'block';
+
+  // La cacher après 2 secondes
+  setTimeout(() => {
+    notif.style.display = 'none';
+  }, 2000);
+}
+  
+</script>
+<script type="text/javascript" src="formulaire.js"></script>
+ <script src="../js/script.js"></script>
+
 </body>
 </html>
