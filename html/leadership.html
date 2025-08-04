@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EcoleDigitale</title>
   <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../css/programmation.css">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="nav-header">
     <div class="nav-header__left">
-      <img src="../../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
       <span class="nav-title">EcoleDigitale</span>
-      <link rel="stylesheet" href="../css/ctgcite.css">
     </div>
     <div class="nav-header__right">
       <button class="nav-burger" id="navBurger" aria-label="Menu">
@@ -27,64 +27,23 @@
       </nav>
     </div>
   </header>
+  <!-- ...autre contenu... -->
 
 
-  <!-- Catalogue -->
-  <main class="container">
- <h1>Catalogue de Cours</h1>
 
-  <div class="filters">
-    <select id="filtre-filiere">
-      <option value="all">Toutes les Filières</option>
-      <option value="IDA">IDA</option>
-      <option value="MAI">MAI</option>
-    </select>
 
-    <select id="filtre-module">
-      <option value="all">Tous les Modules</option>
-      <option value="WEB">WEB</option>
-      <option value="ALGO">ALGO</option>
-      <option value="RESEAU">RESEAU</option>
-    </select>
-
-    <select id="filtre-Semestre">
-      <option value="all">Tous les Semestres</option>
-      <option value="Semestre 1">Semestre 1</option>
-      <option value="Semestre 2">Semestre 2</option>
-    </select>
-  </div>
-
-<div id="cours-par-filiere">
-  <div class="filiere-block" data-filiere="IDA">
-    <h2>Filière IDA</h2>
-    <div class="courses">
-      <a style="text-decoration: none; color: black; " href="html.html"><div class="course" data-filiere="IDA" data-module="WEB" data-semestre="Semestre 1"><img src="../image/html-css.png" alt="HTML/CSS"><p>HTML/CSS</p></div></a>
-      <a style="text-decoration: none; color: black; " href="js.html"><div class="course" data-filiere="IDA" data-module="WEB" data-semestre="Semestre 1"><img src="../image/js.png" alt="JAVASCRIPT"><p>JAVASCRIPT</p></div></a>
-      <a style="text-decoration: none; color: black; " href="reseau.html"><div class="course" data-filiere="IDA" data-module="RESEAU" data-semestre="Semestre 1"><img src="../image/reseau.png" alt="Réseau"><p>Réseau</p></div></a>
-      <a style="text-decoration: none; color: black; " href="algo.html"><div class="course" data-filiere="IDA" data-module="ALGO" data-semestre="Semestre 1"><img src="../image/ALGORITHEME.jpeg" alt="ALGORITHMIQUE"><p>ALGORITHMIQUE</p></div></a>
-      <a style="text-decoration: none; color: black; " href="web.html"><div class="course" data-filiere="IDA" data-module="WEB" data-semestre="Semestre 1"><img src="../image/web.png" alt="Développement Web"><p>Développement Web</p></div></a>
-      <a style="text-decoration: none; color: black; " href="mobil-dev.html"><div class="course" data-filiere="IDA" data-module="WEB" data-semestre="Semestre 1"><img src="../image/mobile-dev.png" alt="DEVELOPMENT MOBILE"><p>DEVELOPMENT MOBILE</p></div></a>
-      <a style="text-decoration: none; color: black; " href="ev-mob.html"><div class="course" data-filiere="IDA" data-module="WEB" data-semestre="Semestre 1"><img src="../image/env-mobile.png" alt="ENVIRONMENT MOBILE"><p>ENVIRONMENT MOBILE</p></div></a>
-      <a style="text-decoration: none; color: black; " href="programmation.html"><div class="course" data-filiere="IDA" data-module="WEB" data-semestre="Semestre 1"><img src="../image/prog.png" alt="PROGAMATION"><p><br>PROGAMATION</p></div></a>
-      <a style="text-decoration: none; color: black; " href="leadership.html"><div class="course" data-filiere="IDA" data-module="WEB" data-semestre="Semestre 1"><img src="../image/leadership.png" alt="leadership"><p><br>leadership</p></div></a>
-
-    </div>
-  </div>
-
-  <div class="filiere-block" data-filiere="MAI">
-    <h2>Filière MAI</h2>
-    <div class="courses">
-      <div class="course" data-filiere="MAI" data-module="WEB" data-semestre="Semestre 1"><img src="../image/chap1.png" alt=""><p>CHAPITRE1</p></div>
-      <div class="course" data-filiere="MAI" data-module="WEB" data-semestre="Semestre 1"><img src="../image/chap2.png" alt=""><p>CHAPITRE2</p></div>
-      <div class="course" data-filiere="MAI" data-module="WEB" data-semestre="Semestre 1"><img src="../image/chap1.png" alt=""><p>CHAPITRE3</p></div>
-    </div>
-  </div>
+<div class="container" style="margin-top: 20px; margin-bottom: 20px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center; font-family: 'Inter', sans-serif; color: #333; font-size: 1.2em; line-height: 1.6; max-width: 800px; margin-left: auto; margin-right: auto;  ">
+  <h1>leadership</h1>
+  <p>BIENTOT DISPONIBLE</p>
+  <p>Restez à l'écoute pour plus d'informations sur nos cours de leadership !</p>
+  <p>Pour toute question, n'hésitez pas à nous contacter via notre page <a href="contact.html" style="color: #007bff; text-decoration: none;">Contact</a>.</p>
 </div>
 
-<!-- Conteneur des résultats filtrés -->
-<div id="cours-filtres" class="courses" style="display: none;"></div>
 
-<footer class="footer">
+
+
+   
+  <footer class="footer">
     <nav class="footer-main-nav">
       <a href="#" class="footer-link">Accueil</a>
       <a href="#" class="footer-link">Cours</a>
@@ -120,8 +79,7 @@
     <div class="footer-legal">
       © 2025 EcoleDigitale. Tous droits réservés.
     </div>
-    <script src="../js/script.js"> </script>
   </footer>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
