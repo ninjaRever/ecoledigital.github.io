@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let quiz = "";
   let titreChapitre = "";
 
+
+
   switch (page) {
     case "reseauxchapitre1":
       titreChapitre = "Chapitre 1:  Présentation des réseaux";
@@ -23,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>2. Que signifie IP ?</p>
       <label><input type="radio" name="q2" value="0"> Interface Process</label>
       <label><input type="radio" name="q2" value="0"> Internet Page</label>
-      <label><input type="radio" name="q2" value="1"> Internet Protocol</label>
+      <label><input type="radio" name="q2" value="2"> Internet Protocol</label>
       <label><input type="radio" name="q2" value="0"> Internal Program</label>
 
       <p>3. Quel équipement connecte plusieurs réseaux ?</p>
@@ -195,6 +197,119 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       break;
 
+
+
+      case "scratchchapitre1":
+      titreChapitre = "Chapitre 1 : À la découverte de la programmation interactive";
+      videoUrl = "https://www.youtube.com/embed/scratch_video_1"; // remplace par la vraie URL
+      supportPdf = "../pdf/scratch1.pdf";
+      quiz = `
+        <p>1. Qu'est-ce que la programmation interactive ?</p>
+        <label><input type="radio" name="q1" value="2"> Une méthode où l’utilisateur interagit avec le programme</label>
+        <label><input type="radio" name="q1" value="0"> Un type de jeu vidéo</label>
+        <label><input type="radio" name="q1" value="0"> Un système d’exploitation</label>
+        <label><input type="radio" name="q1" value="0"> Une intelligence artificielle</label>
+
+        <p>2. Que permet Scratch dans ce chapitre ?</p>
+        <label><input type="radio" name="q2" value="2"> Visualiser des interactions simples</label>
+        <label><input type="radio" name="q2" value="0"> Coder en Java</label>
+        <label><input type="radio" name="q2" value="0"> Créer un antivirus</label>
+        <label><input type="radio" name="q2" value="0"> Concevoir un système de fichiers</label>
+
+        <p>3. Quelle est la base d’un programme Scratch ?</p>
+        <label><input type="radio" name="q3" value="2"> Les blocs</label>
+        <label><input type="radio" name="q3" value="0"> Les balises</label>
+        <label><input type="radio" name="q3" value="0"> Les lignes de commande</label>
+        <label><input type="radio" name="q3" value="0"> Les API</label>
+
+        <p>4. Quel élément n’est pas une catégorie de blocs dans Scratch ?</p>
+        <label><input type="radio" name="q4" value="2"> Imprimante</label>
+        <label><input type="radio" name="q4" value="0"> Mouvement</label>
+        <label><input type="radio" name="q4" value="0"> Apparence</label>
+        <label><input type="radio" name="q4" value="0"> Contrôle</label>
+
+        <p>5. Quel est l’objectif de ce chapitre ?</p>
+        <label><input type="radio" name="q5" value="2"> Comprendre les bases de la programmation interactive</label>
+        <label><input type="radio" name="q5" value="0"> Apprendre le HTML</label>
+        <label><input type="radio" name="q5" value="0"> Devenir hacker</label>
+        <label><input type="radio" name="q5" value="0"> Installer Linux</label>
+      `;
+      break;
+
+    case "scratchchapitre2":
+      titreChapitre = "Chapitre 2 : Programmer avec Scratch 2";
+      videoUrl = "https://www.youtube.com/embed/scratch_video_2"; // à remplacer
+      supportPdf = "../pdf/scratch2.pdf";
+      quiz = `
+        <p>1. Que permet Scratch 2 ?</p>
+        <label><input type="radio" name="q1" value="2"> Programmer visuellement avec des blocs</label>
+        <label><input type="radio" name="q1" value="0"> Utiliser le terminal</label>
+        <label><input type="radio" name="q1" value="0"> Écrire en C++</label>
+        <label><input type="radio" name="q1" value="0"> Concevoir une base de données</label>
+
+        <p>2. Comment commence un script dans Scratch ?</p>
+        <label><input type="radio" name="q2" value="2"> Par un bloc événement (ex: "quand drapeau est cliqué")</label>
+        <label><input type="radio" name="q2" value="0"> Par une boucle for</label>
+        <label><input type="radio" name="q2" value="0"> Par un tag HTML</label>
+        <label><input type="radio" name="q2" value="0"> Par un include</label>
+
+        <p>3. Quel type de programme peut-on faire avec Scratch 2 ?</p>
+        <label><input type="radio" name="q3" value="2"> Animations, jeux, histoires interactives</label>
+        <label><input type="radio" name="q3" value="0"> Sites web professionnels</label>
+        <label><input type="radio" name="q3" value="0"> Systèmes d’exploitation</label>
+        <label><input type="radio" name="q3" value="0"> Applications Android</label>
+
+        <p>4. Quel bloc permet de répéter une action ?</p>
+        <label><input type="radio" name="q4" value="2"> “Répéter”</label>
+        <label><input type="radio" name="q4" value="0"> “Événement”</label>
+        <label><input type="radio" name="q4" value="0"> “Texte”</label>
+        <label><input type="radio" name="q4" value="0"> “Variable”</label>
+
+        <p>5. Scratch est principalement utilisé pour :</p>
+        <label><input type="radio" name="q5" value="2"> L’initiation à la programmation</label>
+        <label><input type="radio" name="q5" value="0"> Les serveurs web</label>
+        <label><input type="radio" name="q5" value="0"> Le piratage informatique</label>
+        <label><input type="radio" name="q5" value="0"> La création de processeurs</label>
+      `;
+      break;
+
+    case "scratchchapitre3":
+      titreChapitre = "Chapitre 3 : Atelier Scratch 2";
+      videoUrl = "https://www.youtube.com/embed/scratch_video_3"; // à remplacer
+      supportPdf = "../pdf/scratch3.pdf";
+      quiz = `
+        <p>1. Quel est l’objectif principal de l’atelier ?</p>
+        <label><input type="radio" name="q1" value="2"> Mettre en pratique les connaissances avec Scratch</label>
+        <label><input type="radio" name="q1" value="0"> Lire la documentation</label>
+        <label><input type="radio" name="q1" value="0"> Installer Scratch</label>
+        <label><input type="radio" name="q1" value="0"> Apprendre JavaScript</label>
+
+        <p>2. Quel type de projet peut-on réaliser ?</p>
+        <label><input type="radio" name="q2" value="2"> Jeux, animations, quiz</label>
+        <label><input type="radio" name="q2" value="0"> Navigateur Web</label>
+        <label><input type="radio" name="q2" value="0"> Plugin WordPress</label>
+        <label><input type="radio" name="q2" value="0"> Antivirus</label>
+
+        <p>3. Dans un projet Scratch, on peut contrôler :</p>
+        <label><input type="radio" name="q3" value="2"> Les mouvements et sons des sprites</label>
+        <label><input type="radio" name="q3" value="0"> La mémoire RAM</label>
+        <label><input type="radio" name="q3" value="0"> Le BIOS</label>
+        <label><input type="radio" name="q3" value="0"> Le processeur</label>
+
+        <p>4. Un bon projet Scratch comporte :</p>
+        <label><input type="radio" name="q4" value="2"> Une interaction utilisateur claire</label>
+        <label><input type="radio" name="q4" value="0"> Une base de données SQL</label>
+        <label><input type="radio" name="q4" value="0"> Un code Python intégré</label>
+        <label><input type="radio" name="q4" value="0"> Des scripts cachés</label>
+
+        <p>5. L’atelier favorise :</p>
+        <label><input type="radio" name="q5" value="2"> L’apprentissage par la pratique</label>
+        <label><input type="radio" name="q5" value="0"> Le copier-coller</label>
+        <label><input type="radio" name="q5" value="0"> La théorie pure</label>
+        <label><input type="radio" name="q5" value="0"> L’exécution automatique</label>
+      `;
+      break;
+
     default:
       document.getElementById("page-content").innerHTML = "<p>Chapitre non trouvé.</p>";
       return;
@@ -272,13 +387,20 @@ function submitQuiz(formId, resultId) {
   const form = document.getElementById(formId);
   const inputs = form.querySelectorAll("input[type=radio]:checked");
   let score = 0;
+  let maxScore = 0;
+
+  // Calcul du score total
   inputs.forEach(input => {
     score += parseInt(input.value);
   });
-  document.getElementById(resultId).textContent = `Votre score est ${score} / 10`;
+
+  // Calcul du score maximal possible (supposons 2 points par question × 5 questions = 10)
+  maxScore = 10; // Ou calculez-le dynamiquement si nécessaire
+
+  // Affichage sans espace autour du slash
+  document.getElementById(resultId).textContent = `Votre score est ${score}/${maxScore}`;
   return false;
 }
-
 // === PDF.js logic ===
 let pdfDoc = null,
     pageNum = 1,
@@ -338,3 +460,17 @@ function loadPdf(pdfUrl) {
     renderPage(pageNum);
   });
 }
+
+document.getElementById('navBurger').onclick = function() {
+  document.getElementById('navMenu').classList.toggle('nav-open');
+};
+function showTab(button, tabId) {
+    const container = button.closest('div');
+    const tabButtons = container.querySelectorAll('.tab-button');
+    const tabContents = container.parentElement.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    tabContents.forEach(content => content.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';}

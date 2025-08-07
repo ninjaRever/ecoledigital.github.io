@@ -1,13 +1,18 @@
-/* styles pour le titre principal de la page */
-#program {
-  /* marge à gauche de 70px */
-    margin: 70px;
-    /* taille de la police de 200% */
-    font-size: 200%;
-    /* marge en haut de -10px */
-    margin-top: -10px;
-    
+/* Styles généraux pour le corps de la page */
+body {
+  /* Utilisation de la police Arial ou une police sans-serif par défaut */
+  font-family: Arial, sans-serif;
+  /* Suppression de la marge par défaut */
+  margin: 0;
+  /* Suppression du remplissage par défaut */
+  padding: 0;
+  /* Couleur de fond gris très clair */
+  background: #f9f9fb;
+  /* Couleur de texte gris foncé */
+  color: #333;
 }
+
+/* Styles pour le contenu principal */
 main {
   /* Largeur maximale de 800px */
   max-width: 800px;
@@ -17,26 +22,17 @@ main {
   padding: 0 20px;
 }
 
-/* styles pour le titre du contenu */
-h5 {
-/* taille de la police de 20px */    
-  font-size: 20px;
-  /* marge à gauche de 70px */
-    margin: 70px;
-    /*couleur du texte gris*/
-    color: grey;
-    /*marge de 20px à gauche*/
-    margin-top: 20px
+/* Styles pour les images dans le conteneur vidéo */
+.video-container img {
+  /* Largeur de 100% pour s'adapter au conteneur */
+  width: 100%;
+  /* Coins arrondis de 10px */
+  border-radius: 10px;
+  /* Ombre portée */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  /* Espacement vertical de 20px */
+  margin: 20px 0;
 }
-/* styles pour le paragraphe d'introduction */
-p {
-    /* marge à gauche de 70px */
-    margin: 70px;
-    /* marge en haut de -30px */
-    margin-top: -30px;
-}
-
-
 
 /* Pseudo-élément pour les éléments de liste dans les modules */
 .modules li::before {
@@ -48,35 +44,28 @@ p {
   left: 0;
 }
 
-/* Styles pour le bouton "Commencer ce cours" */
 .start-course {
-  /* Espacement vertical de 15px */
-  margin-top: 15px;
-  /* Remplissage interne */
-  padding: 10px 20px;
-  /* Couleur de fond violette */
-  background: #6366f1;
-  /* Couleur du texte en blanc */
+  display: inline-block;           /* Nécessaire pour gérer le padding sur un <a> */
+  margin-top: 20px;
+  padding: 10px 24px;
+  background-color: #6366f1;
   color: white;
-  /* Suppression de la bordure */
-  border: none;
-  /* Coins arrondis de 6px */
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.2;                /* Important : évite les débordements verticaux */
+  font-weight: 600;
   border-radius: 6px;
-  /* Curseur en forme de main */
+  border: 1px solid transparent;
   cursor: pointer;
-  /* Transition fluide pour le changement de couleur de fond */
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
-/* Effet au survol du bouton "Commencer ce cours" */
 .start-course:hover {
-  /* Changement de la couleur de fond en blanc */
-  background: #fff;
-  /* Changement de la couleur du texte en violet */
+  background-color: #fff;
   color: rgb(99, 91, 255);
-  /* Ajout d'une bordure violette */
   border: 1px solid rgb(99, 91, 255);
 }
+
 
 /* Styles pour les commentaires */
 .comments .comment {
@@ -157,4 +146,3 @@ p {
   /* Taille de la police de 14px */
   font-size: 14px;
 }
- 
