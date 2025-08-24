@@ -52,4 +52,3 @@ function submitQuiz(formId, resultId) {
   result.innerText = `Votre score : ${score} / ${total}`;
   return false; 
 }
-
