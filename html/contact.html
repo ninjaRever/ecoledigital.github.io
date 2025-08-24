@@ -40,25 +40,26 @@
 
       <!-- Nouveau bloc flex -->
       
-        <form id="contactForm" class="formulaire">
-          <input type="text" id="nom" placeholder= "Nom complet" />
-          <input type="email" id="email" placeholder="Adresse e-mail" />
+        <!-- Remplacer l'ancien formulaire par celui-ci -->
+<form id="contactForm" class="formulaire" action="https://formspree.io/f/xblarayk" method="POST">
+    <input type="text" id="nom" name="nom" placeholder="Nom complet" required />
+    <input type="email" id="email" name="email" placeholder="Adresse e-mail" required />
 
-          <select id="Sujet">
-            <option value="">Sujet de message</option>
-            <option value="info">Demande d'informations</option>
-            <option value="sugg">Suggestions</option>
-            <option value="prob">Problème rencontré</option>
-            <option value="retour">Retour d'expérience</option>
-          </select>
+    <select id="Sujet" name="sujet" required>
+        <option value="">Sujet de message</option>
+        <option value="info">Demande d'informations</option>
+        <option value="sugg">Suggestions</option>
+        <option value="prob">Problème rencontré</option>
+        <option value="retour">Retour d'expérience</option>
+    </select>
 
-          <textarea id="message" placeholder="Message"></textarea>
-          <button type="button" class="buttons" onclick="resetForm()">Envoyer</button>
+    <textarea id="message" name="message" placeholder="Message" required></textarea>
+    <button type="submit" class="buttons">Envoyer</button>
 
-          <div id="notification">
-            Votre message est bien envoyé !
-          </div>
-        </form> <br>
+    <div id="notification">
+        Votre message est bien envoyé !
+    </div>
+</form> <br>
 
         <section class="contact-info">
             <div class="fin">
