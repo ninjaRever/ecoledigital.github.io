@@ -114,6 +114,11 @@ main {
   padding: 1rem 0;
 }
 
+.modules a {
+  gap: 10px;
+  text-decoration: none;
+  color: #000;
+}
 /* VIDÉO */
 iframe {
   width: 100%;
