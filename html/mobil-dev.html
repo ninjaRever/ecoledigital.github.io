@@ -3,222 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Introduction au Web - EcoleDigitale</title>
+  <title>Cours Android - EcoleDigitale</title>
   <link rel="stylesheet" href="../default.css">
   <link rel="stylesheet" href="../css/module.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
-  <header class="nav-header">
-    <div class="nav-header__left">
-      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
-      <span class="nav-title">EcoleDigitale</span>
-    </div>
-    <div class="nav-header__right">
-      <button class="nav-burger" id="navBurger" aria-label="Menu">
-        <!-- Icône hamburger SVG -->
-        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
-      </button>
-      <nav class="nav-nav" id="navMenu">
-        <a href="./index.html" class="nav-link">Accueil</a>
-        <a href="apropos.html" class="nav-link">À propos</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <button class="nav-btn">Se connecter</button>
-      </nav>
-    </div>
+  <header>
+    <h1>EcoleDigitale - Cours Android</h1>
   </header>
 
-
   <main>
+    <!-- Chapitres -->
+    <section id="chapters-content">
 
+      <!-- Chapitre 1 -->
+      <div id="ch1" class="chapter" style="display:none;">
+        <h2>Chapitre 1 : Initiation au génie logiciel Mobile</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video1')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support1')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz1')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video1">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support1" style="display:none;">
+          <canvas id="pdf-canvas1" data-url="../supports/dev-mob1.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev1" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num1">1</span> / <span id="page-count1">?</span></span>
+            <button id="next1" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dev-mob1.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz1" style="display:none;">
+          <form id="quizForm1" onsubmit="return submitQuiz('quizForm1','result1')">
+            <p><strong>1. Laquelle des affirmations suivantes est vraie ?</strong></p>
+            <label><input type="radio" name="q1" value="0"> Toutes les applications Android sont gratuites</label><br>
+            <label><input type="radio" name="q1" value="1">Il y a des applications Android payantes et gratuites</label><br>
+            <label><input type="radio" name="q1" value="0">Toutes les applications Android sont payantes</label><br>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result1" style="font-weight:bold;"></p>
+        </div>
+      </div>
 
-<section id="chapters-content" style="position: relative;">
-<div id="ch1" class="chapter" style="display:none;">
-  <h2>Chapitre 1 : Initiation au génie logiciel Mobile</h2>
+      <!-- Chapitre 2 -->
+      <div id="ch2" class="chapter" style="display:none;">
+        <h2>Chapitre 2 : Android Studio - Bases</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video2')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support2')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz2')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video2">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support2" style="display:none;">
+          <canvas id="pdf-canvas2" data-url="../supports/dev-mob2.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev2" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num2">1</span> / <span id="page-count2">?</span></span>
+            <button id="next2" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dev-mob2.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz2" style="display:none;">
+          <form id="quizForm2" onsubmit="return submitQuiz('quizForm2','result2')">
+            <p><strong>1. Quelle est la fonction du SDK Manager ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> Installer des paquets supplémentaires</label><br>
+            <label><input type="radio" name="q1" value="0"> Développer des applications Java</label><br>
+            <label><input type="radio" name="q1" value="0"> IDE pour Android</label><br>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result2" style="font-weight:bold;"></p>
+        </div>
+      </div>
 
-  <!--  Onglets -->
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab(this, 'video1', 'progress1', 33)">Vidéo</button>
-    <button class="tab-button" onclick="showTab(this, 'support1', 'progress1', 66)">Support de cours</button>
-    <button class="tab-button" onclick="showTab(this, 'quiz1', 'progress1', 100)">Tests de connaissance</button>
-  </div>
+      <!-- Chapitre 3 -->
+      <div id="ch3" class="chapter" style="display:none;">
+        <h2>Chapitre 3 : Notions essentielles</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video3')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support3')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz3')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video3">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support3" style="display:none;">
+          <canvas id="pdf-canvas3" data-url="../supports/dev-mob3.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev3" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num3">1</span> / <span id="page-count3">?</span></span>
+            <button id="next3" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dev-mob3.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz3" style="display:none;">
+          <form id="quizForm3" onsubmit="return submitQuiz('quizForm3','result3')">
+            <p><strong>1. Exemple question ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> Réponse 1</label><br>
+            <label><input type="radio" name="q1" value="0"> Réponse 2</label><br>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result3" style="font-weight:bold;"></p>
+        </div>
+      </div>
 
-  <!--  Contenu Vidéo -->
-  <div class="tab-content" id="video1">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc?autoplay=1&loop=1&playlist=vbWg1iRNUIc&controls=0" 
-    title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; 
-    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen></iframe>
-  </div>
+      <!-- Chapitre 4 -->
+      <div id="ch4" class="chapter" style="display:none;">
+        <h2>Chapitre 4 : Applications hybrides</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video4')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support4')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz4')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support4" style="display:none;">
+          <canvas id="pdf-canvas4" data-url="../supports/dev-mob4.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev4" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num4">1</span> / <span id="page-count4">?</span></span>
+            <button id="next4" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dev-mob4.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz4" style="display:none;">
+          <form id="quizForm4" onsubmit="return submitQuiz('quizForm4','result4')">
+            <p><strong>1. Question ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> Réponse correcte</label><br>
+            <label><input type="radio" name="q1" value="0"> Réponse incorrecte</label><br>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result4" style="font-weight:bold;"></p>
+        </div>
+      </div>
 
-  <!--  Contenu Support -->
-  <div class="tab-content" id="support1" style="display:none;">
-    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
-  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
-  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
-    <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
-    <button id="next" class="nav-btn">Page suivante ➡️</button>
-  </div>
-</div>
-<script>
-  const url = '../supports/dev-mob1.pdf'</script>; // Chemin vers ton PDF
-<script src="../js/pdf.js"></script>
-    <p>Téléchargez le support de cours (PDF) :</p>
-    <a href="../supports/dev-mob1.pdf" download class="nav-btn">📥 Télécharger le support</a>
-  </div>
+      <!-- Chapitre 5 -->
+      <div id="ch5" class="chapter" style="display:none;">
+        <h2>Chapitre 5 : Conclusion</h2>
+        <p>Contenu libre pour le dernier chapitre.</p>
+      </div>
 
-  <!--  Contenu Quiz -->
-  <div class="tab-content" id="quiz1" style="display:none;">
-    <form id="quizForm1" onsubmit="return submitQuiz('quizForm1', 'result1')">
-      <p><strong>1. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q1" value="0"> Toutes les applications Android sont gratuites</label><br>
-      <label><input type="radio" name="q1" value="1">Il y a des applications Android payantes et des applications gratuites </label><br>
-      <label><input type="radio" name="q1" value="0">Toutes les applications Android sont payantes</label><br>
+    </section>
 
-      <p><strong>2. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q2" value="1"> SDK Manager permet d’installer des paquets supplémentaires sur Android Studio </label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager nous permet de développer des applications Java</label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager est un IDE qui permet de développer des applications Android</label><br>
-
-      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
-    </form>
-    <p id="result1" style="margin-top:1rem; font-weight: bold;"></p>
-  </div>
-</div>
-
-  <div id="ch2" class="chapter" style="display:none;">
-    
-    <h2>Chapitre 2 : Initiation en android sous android Studio</h2>
-
-  <!--  Onglets -->
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab(this, 'video2', 'progress2', 33)">Vidéo</button>
-    <button class="tab-button" onclick="showTab(this, 'support2', 'progress2', 66)">Support de cours</button>
-    <button class="tab-button" onclick="showTab(this, 'quiz2', 'progress2', 100)">Tests de connaissance</button>
-  </div>
-
-  <!--  Contenu Vidéo -->
-  <div class="tab-content" id="video1">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc?autoplay=1&loop=1&playlist=vbWg1iRNUIc&controls=0" 
-    title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; 
-    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen></iframe>
-  </div>
-
-  <!--  Contenu Support -->
-  <div class="tab-content" id="support1" style="display:none;">
-    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
-  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
-  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
-    <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
-    <button id="next" class="nav-btn">Page suivante ➡️</button>
-  </div>
-</div>
-<script>
-  const url = '../supports/dev-mob2.pdf'</script>; // Chemin vers ton PDF
-<script src="../js/pdf.js"></script>
-    <p>Téléchargez le support de cours (PDF) :</p>
-    <a href="../supports/dev-mob2.pdf" download class="nav-btn">📥 Télécharger le support</a>
-  </div>
-
-  <!--  Contenu Quiz -->
-  <div class="tab-content" id="quiz2" style="display:none;">
-    <form id="quizForm2" onsubmit="return submitQuiz('quizForm2', 'result2')">
-      <p><strong>1. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q1" value="0"> Toutes les applications Android sont gratuites</label><br>
-      <label><input type="radio" name="q1" value="1">Il y a des applications Android payantes et des applications gratuites </label><br>
-      <label><input type="radio" name="q1" value="0">Toutes les applications Android sont payantes</label><br>
-
-      <p><strong>2. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q2" value="1"> SDK Manager permet d’installer des paquets supplémentaires sur Android Studio </label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager nous permet de développer des applications Java</label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager est un IDE qui permet de développer des applications Android</label><br>
-
-      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
-    </form>
-    <p id="result2" style="margin-top:1rem; font-weight: bold;"></p>
-  </div>
-
-  </div>
-
-  <div id="ch3" class="chapter" style="display:none;">
-    <h2>Chapitre 3 : Notions essentielles d’une application Android</h2>      
-    <!--  Onglets -->
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab(this, 'video3', 'progress3', 33)">Vidéo</button>
-    <button class="tab-button" onclick="showTab(this, 'support3', 'progress3', 66)">Support de cours</button>
-    <button class="tab-button" onclick="showTab(this, 'quiz3', 'progress3', 100)">Tests de connaissance</button>
-  </div>
-
-  <!--  Contenu Vidéo -->
-  <div class="tab-content" id="video3">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc?autoplay=1&loop=1&playlist=vbWg1iRNUIc&controls=0" 
-    title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; 
-    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen></iframe>
-  </div>
-
-  <!--  Contenu Support -->
-  <div class="tab-content" id="support1" style="display:none;">
-    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
-  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
-  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
-    <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
-    <button id="next" class="nav-btn">Page suivante ➡️</button>
-  </div>
-</div>
-<script>
-  const url = '../supports/dev-mob2.pdf'</script>; // Chemin vers ton PDF
-<script src="../js/pdf.js"></script>
-    <p>Téléchargez le support de cours (PDF) :</p>
-    <a href="../supports/dev-mob3.pdf" download class="nav-btn">📥 Télécharger le support</a>
-  </div>
-
-  <!--  Contenu Quiz -->
-  <div class="tab-content" id="quiz3" style="display:none;">
-    <form id="quizForm3" onsubmit="return submitQuiz('quizForm3', 'result3')">
-      <p><strong>1. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q1" value="0"> Toutes les applications Android sont gratuites</label><br>
-      <label><input type="radio" name="q1" value="1">Il y a des applications Android payantes et des applications gratuites </label><br>
-      <label><input type="radio" name="q1" value="0">Toutes les applications Android sont payantes</label><br>
-
-      <p><strong>2. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q2" value="1"> SDK Manager permet d’installer des paquets supplémentaires sur Android Studio </label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager nous permet de développer des applications Java</label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager est un IDE qui permet de développer des applications Android</label><br>
-
-      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
-    </form>
-    <p id="result3" style="margin-top:1rem; font-weight: bold;"></p>
-  </div>
-  </div>
-
-  <div id="ch4" class="chapter" style="display:none;">
-    <h2>Chapitre 4 : Les applications Hybrides (Ionic)</h2>
-    <p>Objectifs spécifiques:
-    <br>- Connaitre les avantages d’une évaluation du personnel
-    <br>- Savoir comment évaluer le personnel
-    <br>- Connaître les problèmes pouvant biaiser l’évaluation</p>
-  </div>
-
-
-
-
-</section>
-
-<section class="modules">
-  <h2>Modules du cours</h2>
-  <ul>
-    <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Initiation au génie logiciel Mobile</a></li>
-    <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Introduction en Android sous Android Studio</a></li>
-    <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : Notions essentielles d’une application Android</a></li>
-    <li><a href="#" onclick="showChapter('ch4')">Chapitre 4 : Les applications Hybrides (Ionic)</a></li>
-  </ul>
-</section>
+    <!-- Menu des chapitres -->
+    <section class="modules">
+      <h2>Modules du cours</h2>
+      <ul>
+        <li><a href="#" onclick="showChapter('ch1')">Chapitre 1</a></li>
+        <li><a href="#" onclick="showChapter('ch2')">Chapitre 2</a></li>
+        <li><a href="#" onclick="showChapter('ch3')">Chapitre 3</a></li>
+        <li><a href="#" onclick="showChapter('ch4')">Chapitre 4</a></li>
+        <li><a href="#" onclick="showChapter('ch5')">Chapitre 5</a></li>
+      </ul>
+    </section>
   </main>
+
 
    <footer class="footer">
     <nav class="footer-main-nav">
@@ -257,7 +201,8 @@
       © 2025 EcoleDigitale. Tous droits réservés.
     </div>
   </footer>
-  <script src="../js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="../js/script.js" defer></script>
 </body>
 </html>
 
