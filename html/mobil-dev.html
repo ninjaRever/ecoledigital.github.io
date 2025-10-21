@@ -5,8 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Introduction au Web - EcoleDigitale</title>
   <link rel="stylesheet" href="../default.css">
-  <link rel="stylesheet" href="../css/module.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- <link rel="stylesheet" href="../css/module.css"> -->
+   <style>
+    /* === RESET & BASE === */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* === HEADER === */
+    header {
+      background: #6366f1;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-weight: bold; font-size: 1.3rem; letter-spacing: 0.5px; }
+    nav ul { display: flex; list-style: none; gap: 1rem; }
+    nav li a:hover { text-decoration: underline; }
+
+    /* === MAIN === */
+    main { padding: 2rem; max-width: 900px; margin: auto; }
+    h1 { margin-bottom: 1.5rem; color: #1e40af; }
+
+    /* === CHAPTERS === */
+    .chapter { display: none; animation: fadeIn 0.4s ease; }
+    .chapter.active { display: block; }
+
+    /* === TABS === */
+    .tab-buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .tab-buttons button {
+      flex: 1;
+      background: #e2e8f0;
+      border: none;
+      padding: 0.7rem;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s;
+      font-weight: 500;
+    }
+    .tab-buttons button.active {
+      background: #6366f1;
+      color: #fff;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* === PDF === */
+    canvas { width: 100%; border: 1px solid #cbd5e1; border-radius: 8px; margin-top: 1rem; }
+
+    /* === QUIZ === */
+    .quiz-question { margin-bottom: 1rem; }
+    .quiz-option { display: block; margin: 0.4rem 0; }
+    .result { font-weight: bold; margin-top: 1rem; }
+
+    /* === NAVIGATION === */
+    .chapter-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+    .nav-btn {
+      background: #6366f1;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .nav-btn:hover { background: #4f46e5; }
+
+    /* === PROGRESS BAR === */
+    .progress-bar {
+      background: #e2e8f0;
+      border-radius: 6px;
+      height: 10px;
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+    .progress {
+      background: #6366f1;
+      height: 100%;
+      width: 0;
+      transition: width 0.4s ease;
+    }
+
+    /* === ANIMATIONS === */
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; align-items: center; }
+    }
+
+   </style>
+  <script>
+    window.onload = () => {
+      loadPDF(1, '../supports/dev-mob1.pdf');
+      loadPDF(2, '../supports/dev-mob2.pdf');
+      loadPDF(3, '../supports/dev-mob1.pdf');
+      loadPDF(3, '../supports/dev-mob1.pdf');
+    };
+  </script>
+
 </head>
 <body>
   <header class="nav-header">
@@ -29,142 +132,133 @@
   </header>
 
 
-  <main>
+<main>
+  <h1>Introduction au Génie Logiciel Mobile</h1>
 
+  <!-- ==== CHAPITRE 1 ==== -->
+  <section id="ch1" class="chapter active">
+    <h2>Chapitre 1 – Les bases</h2>
 
-<section id="chapters-content" style="position: relative;">
-<div id="ch1" class="chapter" style="display:none;">
-  <h2>Chapitre 1 : Initiation au génie logiciel Mobile</h2>
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab(this, 'video1')">Vidéo</button>
+      <button class="tab-btn" onclick="showTab(this, 'pdf1')">Support</button>
+      <button class="tab-btn" onclick="showTab(this, 'quiz1')">Quiz</button>
+    </div>
 
-  <!--  Onglets -->
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab(this, 'video1', 'progress1', 33)">Vidéo</button>
-    <button class="tab-button" onclick="showTab(this, 'support1', 'progress1', 66)">Support de cours</button>
-    <button class="tab-button" onclick="showTab(this, 'quiz1', 'progress1', 100)">Tests de connaissance</button>
-  </div>
+    <div id="video1" class="tab-content active">
+      <iframe width="100%" height="350" src="https://www.youtube.com/embed/vbWg1iRNUIc?autoplay=1&loop=1&playlist=vbWg1iRNUIc&controls=0" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-  <!--  Contenu Vidéo -->
-  <div class="tab-content" id="video1">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc?autoplay=1&loop=1&playlist=vbWg1iRNUIc&controls=0" 
-    title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; 
-    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen></iframe>
-  </div>
-
-  <!--  Contenu Support -->
-  <div class="tab-content" id="support1" style="display:none;">
-    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
-  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
-  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
+    <div id="pdf1" class="tab-content">
+      <canvas id="pdfCanvas1"></canvas>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="changePage('prev', 1)">← Précédent</button>
     <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
-    <button id="next" class="nav-btn">Page suivante ➡️</button>
-  </div>
-</div>
-<script>
-  const url = '../supports/dev-mob1.pdf'; // Chemin vers ton PDF
-</script>
-<script>
-  let pdfDoc = null,
-      pageNum = 1,
-      pageRendering = false,
-      pageNumPending = null,
-      scale = 1.5,
-      canvas = document.getElementById('pdf-canvas'),
-      ctx = canvas.getContext('2d');
-  function renderPage(num) {
-    pageRendering = true;
-    pdfDoc.getPage(num).then(function(page) {
-      const viewport = page.getViewport({ scale: scale });
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      const renderContext = {
-        canvasContext: ctx,
-        viewport: viewport};
-      const renderTask = page.render(renderContext);
-      renderTask.promise.then(function () {
-        pageRendering = false;
-        if (pageNumPending !== null) {
-          renderPage(pageNumPending);
-          pageNumPending = null;}  });  });
-    document.getElementById('page-num').textContent = num;}
-  function queueRenderPage(num) {
-    if (pageRendering) { pageNumPending = num;
-    } else { renderPage(num); } }
-  function onPrevPage() {
-    if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); }
-  function onNextPage() {
-    if (pageNum >= pdfDoc.numPages) return;
-    pageNum++; queueRenderPage(pageNum); }
-  // Chargement du document
-  pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-    pdfDoc = pdfDoc_;
-    document.getElementById('page-count').textContent = pdfDoc.numPages;
-    renderPage(pageNum); });
-  // Événements des boutons
-  document.getElementById('prev').addEventListener('click', onPrevPage);
-  document.getElementById('next').addEventListener('click', onNextPage);
-</script>
-    <p>Téléchargez le support de cours (PDF) :</p>
-    <a href="../supports/dev-mob1.pdf" download class="nav-btn">📥 Télécharger le support</a>
-  </div>
+        <button class="nav-btn" onclick="changePage('next', 1)">Suivant →</button>
+      </div>
+    </div>
 
-  <!--  Contenu Quiz -->
-  <div class="tab-content" id="quiz1" style="display:none;">
-    <form id="quizForm1" onsubmit="return submitQuiz('quizForm1', 'result1')">
-      <p><strong>1. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q1" value="0"> Toutes les applications Android sont gratuites</label><br>
-      <label><input type="radio" name="q1" value="1">Il y a des applications Android payantes et des applications gratuites </label><br>
-      <label><input type="radio" name="q1" value="0">Toutes les applications Android sont payantes</label><br>
+    <div id="quiz1" class="tab-content">
+      <div class="quiz-question">Qu’est-ce que le génie logiciel mobile ?</div>
+      <label class="quiz-option"><input type="radio" name="q1" value="0"> Le matériel d’un téléphone</label>
+      <label class="quiz-option"><input type="radio" name="q1" value="1"> La conception et gestion d’applications mobiles</label>
+      <label class="quiz-option"><input type="radio" name="q1" value="0"> Le réseau cellulaire</label>
+      <button class="nav-btn" onclick="checkQuiz(1, 1)">Valider</button>
+      <div id="result1" class="result"></div>
+    </div>
 
-      <p><strong>2. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q2" value="1"> SDK Manager permet d’installer des paquets supplémentaires sur Android Studio </label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager nous permet de développer des applications Java</label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager est un IDE qui permet de développer des applications Android</label><br>
+    <div class="progress-bar"><div id="progress1" class="progress"></div></div>
 
-      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
-    </form>
-    <p id="result1" style="margin-top:1rem; font-weight: bold;"></p>
-  </div>
-</div>
+        <section class="modules">
+          <h2>Modules du cours</h2>
+          <ul>
+            <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Initiation au génie logiciel Mobile</a></li>
+            <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Introduction en Android sous Android Studio</a></li>
+            <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : Notions essentielles d’une application Android</a></li>
+            <li><a href="#" onclick="showChapter('ch4')">Chapitre 4 : Les applications Hybrides (Ionic)</a></li>
+          </ul>
+        </section>  
+      
+  </section>
 
-  <div id="ch2" class="chapter" style="display:none;">
-    <h2>Chapitre 2 : Introduction en Android sous Android Studio</h2>  
-    <p>A la fin de cette séquence, l’étudiant devra être :<br>familier  à l’environnement Android studio.
-    <br>Il doit aussi capable d’installer le IDE Android studio
-    <br>et créer un projet android sous android studio et se familiariser avec la structure.
-</p>
-  </div>
+  <!-- ==== CHAPITRE 2 ==== -->
+  <section id="ch2" class="chapter">
+    <h2>Chapitre 2 – Cycle de vie d’une app</h2>
 
-  <div id="ch3" class="chapter" style="display:none;">
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab(this, 'video2')">Vidéo</button>
+      <button class="tab-btn" onclick="showTab(this, 'pdf2')">Support</button>
+      <button class="tab-btn" onclick="showTab(this, 'quiz2')">Quiz</button>
+    </div>
+
+    <div id="video2" class="tab-content active">
+      <iframe width="100%" height="350" src="https://www.youtube.com/embed/vbWg1iRNUIc?autoplay=1&loop=1&playlist=vbWg1iRNUIc&controls=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div id="pdf2" class="tab-content">
+      <canvas id="pdfCanvas2"></canvas>
+      <div class="chapter-nav">
+        <button class="nav-btn" onclick="changePage('prev', 2)">← Précédent</button>
+        <span id="pageInfo2">Page 1 / ?</span>
+        <button class="nav-btn" onclick="changePage('next', 2)">Suivant →</button>
+      </div>
+    </div>
+
+    <div id="quiz2" class="tab-content">
+      <div class="quiz-question">Combien d’étapes comporte le cycle de vie logiciel classique ?</div>
+      <label class="quiz-option"><input type="radio" name="q2" value="1"> 6</label>
+      <label class="quiz-option"><input type="radio" name="q2" value="0"> 3</label>
+      <label class="quiz-option"><input type="radio" name="q2" value="0"> 10</label>
+      <button class="nav-btn" onclick="checkQuiz(2, 1)">Valider</button>
+      <div id="result2" class="result"></div>
+    </div>
+
+    <div class="progress-bar"><div id="progress2" class="progress"></div></div>
+  
+      <section class="modules">
+        <h2>Modules du cours</h2>
+        <ul>
+          <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Initiation au génie logiciel Mobile</a></li>
+          <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Introduction en Android sous Android Studio</a></li>
+          <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : Notions essentielles d’une application Android</a></li>
+          <li><a href="#" onclick="showChapter('ch4')">Chapitre 4 : Les applications Hybrides (Ionic)</a></li>
+        </ul>
+      </section>
+  </section>
+  <!-- ==== CHAPITRE 3 ==== -->
+  <section id="ch3" class="chapter">
     <h2>Chapitre 3 : Notions essentielles d’une application Android</h2>
     <p>A la fin de cette séquence, l’étudiant devra être familier avec les notions d’activity, d’intent, service, la stucture du fichier Manifest.xml</p>
-  </div>
+    <section class="modules">
+        <h2>Modules du cours</h2>
+        <ul>
+          <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Initiation au génie logiciel Mobile</a></li>
+          <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Introduction en Android sous Android Studio</a></li>
+          <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : Notions essentielles d’une application Android</a></li>
+          <li><a href="#" onclick="showChapter('ch4')">Chapitre 4 : Les applications Hybrides (Ionic)</a></li>
+        </ul>
+      </section>
 
-  <div id="ch4" class="chapter" style="display:none;">
+  </section>
+  <!-- ==== CHAPITRE 4 ==== -->
+  <section id="ch4" class="chapter">
     <h2>Chapitre 4 : Les applications Hybrides (Ionic)</h2>
     <p>Objectifs spécifiques:
     <br>- Connaitre les avantages d’une évaluation du personnel
     <br>- Savoir comment évaluer le personnel
     <br>- Connaître les problèmes pouvant biaiser l’évaluation</p>
-  </div>
+    <section class="modules">
+        <h2>Modules du cours</h2>
+        <ul>
+          <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Initiation au génie logiciel Mobile</a></li>
+          <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Introduction en Android sous Android Studio</a></li>
+          <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : Notions essentielles d’une application Android</a></li>
+          <li><a href="#" onclick="showChapter('ch4')">Chapitre 4 : Les applications Hybrides (Ionic)</a></li>
+        </ul>
+      </section>
 
-
-
-
-</section>
-
-<section class="modules">
-  <h2>Modules du cours</h2>
-  <ul>
-    <li><a href="#" onclick="showChapter('ch1')">Chapitre 1 : Initiation au génie logiciel Mobile</a></li>
-    <li><a href="#" onclick="showChapter('ch2')">Chapitre 2 : Introduction en Android sous Android Studio</a></li>
-    <li><a href="#" onclick="showChapter('ch3')">Chapitre 3 : Notions essentielles d’une application Android</a></li>
-    <li><a href="#" onclick="showChapter('ch4')">Chapitre 4 : Les applications Hybrides (Ionic)</a></li>
-  </ul>
-</section>
-  </main>
-
+  </section>
+</main>
    <footer class="footer">
     <nav class="footer-main-nav">
       <a href="#" class="footer-link">Accueil</a>
@@ -202,7 +296,8 @@
       © 2025 EcoleDigitale. Tous droits réservés.
     </div>
   </footer>
-  <script src="../js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script src="../js/modo.js"></script>
 </body>
 </html>
 
