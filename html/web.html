@@ -62,15 +62,15 @@
         </div>
         <div class="tab-content" id="quiz1" style="display:none;">
           <<form id="quizForm1" onsubmit="return submitQuiz('quizForm1','result1')">
-            <p><strong>1. Le Web a été inventé par :</strong></p>
-            <label><input type="radio" name="q1" value="0"> Bill Gates</label><br>
+            <p><strong>1. Le Web fonctionne grâce à :</strong></p>
+            <label><input type="radio" name="q1" value="0"> Un réseau de satellites</label><br>
             <label><input type="radio" name="q1" value="1">Un modèle client-serveur</label><br>
             <label><input type="radio" name="q1" value="0">Un langage de programmation unique</label><br>
 
-            <p><strong>2. Le Web fonctionne grâce à :</strong></p>
-            <label><input type="radio" name="q2" value="0"> Un réseau de satellites</label><br>
-            <label><input type="radio" name="q2" value="1">Tim Berners-Lee</label><br>
+            <p><strong>2. Le Web a été inventé par :</strong></p>
             <label><input type="radio" name="q2" value="0">Steve Jobs</label><br>
+            <label><input type="radio" name="q2" value="0"> Bill Gates</label><br>
+            <label><input type="radio" name="q2" value="1">Tim Berners-Lee</label><br>
 
             <p><strong>3. Le Web 2.0 se caractérise par :</strong></p>
             <label><input type="radio" name="q3" value="0"> Des pages statiques</label><br>
@@ -166,43 +166,34 @@
           </div>
           <a href="../supports/dweb3.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
         </div>
-        <div class="tab-content" id="quiz2" style="display:none;">
+        <div class="tab-content" id="quiz3" style="display:none;">
           <form id="quizForm3" onsubmit="return submitQuiz('quizForm3','result3')">
-            <p>1️⃣ Un site web est :
-A. Un fichier sur l’ordinateur personnel
-B. Un ensemble de pages accessibles via Internet
-C. Une application mobile
-
-Réponse : B
-
-<br>2️⃣ L’hébergement web sert à :
-A. Créer un logo
-B. Stocker les fichiers du site sur un serveur accessible
-C. Écrire du code CSS
-
-Réponse : B
-
-<br>3️⃣ Un hébergement mutualisé signifie :
-A. Chaque client a son propre serveur
-B. Plusieurs sites partagent un même serveur
-C. Le serveur est installé sur un téléphone
-
-Réponse : B
-
-<br>4️⃣ Un nom de domaine sert à :
-A. Identifier et localiser un site sur Internet
-B. Créer des mots de passe
-C. Héberger des fichiers
-
-Réponse : A
-
-<br>5️⃣ Le protocole HTTPS permet :
-A. D’accélérer le site
-B. De sécuriser la connexion et les données échangées
-C. D’envoyer des emails
-
-Réponse : B</p>
             
+            <p><strong>1. Un site web est :</strong></p>
+            <label><input type="radio" name="q1" value="0"> Un fichier sur l’ordinateur personnel</label><br>
+            <label><input type="radio" name="q1" value="0"> Une application mobile</label><br>
+            <label><input type="radio" name="q1" value="1"> Un ensemble de pages accessibles via Internet</label><br>
+
+           <p><strong>2. L’hébergement web sert à :</strong></p>
+            <label><input type="radio" name="q2" value="0"> Créer un logo</label><br>
+            <label><input type="radio" name="q2" value="1"> Stocker les fichiers du site sur un serveur accessible</label><br>
+            <label><input type="radio" name="q2" value="0"> Écrire du code CSS</label><br>
+
+            <p><strong>3. Un hébergement mutualisé signifie :</strong></p>
+            <label><input type="radio" name="q3" value="0"> Chaque client a son propre serveur </label><br>
+            <label><input type="radio" name="q3" value="1"> Plusieurs sites partagent un même serveur</label><br>
+            <label><input type="radio" name="q3" value="0"> Le serveur est installé sur un téléphone</label><br>
+
+            <p><strong>4. Un nom de domaine sert à : </strong></p>
+            <label><input type="radio" name="q4" value="1"> Identifier et localiser un site sur Internet</label><br>
+            <label><input type="radio" name="q4" value="0"> Créer des mots de passe</label><br>
+            <label><input type="radio" name="q4" value="0"> Héberger des fichiers</label><br>
+
+            <p><strong>5. Le protocole HTTPS permet : </strong></p>
+            <label><input type="radio" name="q5" value="0"> D’accélérer le site</label><br>
+            <label><input type="radio" name="q5" value="0"> D’envoyer des emails</label><br>
+            <label><input type="radio" name="q5" value="1"> De sécuriser la connexion et les données échangées</label><br>
+
             <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result3" style="font-weight:bold;"></p>
@@ -230,40 +221,33 @@ Réponse : B</p>
         </div>
         <div class="tab-content" id="quiz4" style="display:none;">
           <form id="quizForm4" onsubmit="return submitQuiz('quizForm4','result4')">
-            <p>Le webmaster est :
-A. Un simple rédacteur de contenu
-B. La personne chargée de gérer et maintenir un site web
-C. Un graphiste uniquement
+            
+            <p><strong>1. Le webmaster est :</strong></p>
+            <label><input type="radio" name="q1" value="1"> La personne chargée de gérer et maintenir un site web</label><br>
+            <label><input type="radio" name="q1" value="0"> Un simple rédacteur de contenu</label><br>
+            <label><input type="radio" name="q1" value="0"> Un graphiste uniquement</label><br>
 
-Réponse : B
+            <p><strong>2. Le développeur front-end s’occupe :</strong></p>
+            <label><input type="radio" name="q2" value="1"> De la partie visible du site</label><br>
+            <label><input type="radio" name="q2" value="0"> De la base de données</label><br>
+            <label><input type="radio" name="q2" value="0"> De l’hébergement</label><br>
 
-<br>2️⃣ Le développeur front-end s’occupe :
-A. De la base de données
-B. De la partie visible du site
-C. De l’hébergement
 
-Réponse : B
+            <p><strong>3. Le web designer est responsable de :</strong></p>
+            <label><input type="radio" name="q3" value="0"> La sécurité des serveurs</label><br>
+            <label><input type="radio" name="q3" value="0"> L’installation du certificat SSL</label><br>
+            <label><input type="radio" name="q3" value="1"> L’identité visuelle et l’interface du site</label><br>
 
-<br>3️⃣ Le web designer est responsable de :
-A. La sécurité des serveurs
-B. L’identité visuelle et l’interface du site
-C. L’installation du certificat SSL
+            <p><strong>4. Le SEO vise à :</strong></p>
+            <label><input type="radio" name="q4" value="1"> Optimiser la position d’un site sur les moteurs de recherche</label><br>
+            <label><input type="radio" name="q4" value="0"> Créer des bases de données</label><br>
+            <label><input type="radio" name="q4" value="0"> Gérer les emails professionnels</label><br>
 
-Réponse : B
+            <p><strong>5. Le chef de projet web :</strong></p>
+            <label><input type="radio" name="q5" value="1"> Supervise l’équipe et planifie le développement</label><br>
+            <label><input type="radio" name="q5" value="0"> Programme uniquement en HTML</label><br>
+            <label><input type="radio" name="q5" value="0"> Gère les réseaux sociaux</label><br>
 
-<br>4️⃣ Le SEO vise à :
-A. Optimiser la position d’un site sur les moteurs de recherche
-B. Gérer les emails professionnels
-C. Créer des bases de données
-
-Réponse : A
-
-<br>5️⃣ Le chef de projet web :
-A. Supervise l’équipe et planifie le développement
-B. Programme uniquement en HTML
-C. Gère les réseaux sociaux
-
-Réponse : A</p>
             <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result4" style="font-weight:bold;"></p>
@@ -291,40 +275,33 @@ Réponse : A</p>
         </div>
         <div class="tab-content" id="quiz5" style="display:none;">
           <form id="quizForm5" onsubmit="return submitQuiz('quizForm5','result5')">
-            <p>1️⃣ Le HTML sert à :
-A. Styliser une page web
-B. Structurer le contenu d’une page web
-C. Gérer la base de données
+            
+            <p><strong>1. Le HTML sert à :</strong></p>
+            <label><input type="radio" name="q1" value="0"> Styliser une page web</label><br>
+            <label><input type="radio" name="q1" value="1"> Structurer le contenu d’une page web</label><br>
+            <label><input type="radio" name="q1" value="0"> Gérer la base de données</label><br>
 
-Réponse : B
+            <p><strong>2. Le CSS permet de :</strong></p>
+            <label><input type="radio" name="q2" value="0"> Créer des serveurs</label><br>
+            <label><input type="radio" name="q2" value="0"> Définir la structure des pages</label><br>
+            <label><input type="radio" name="q2" value="1"> Mettre en forme les éléments HTML</label><br>
 
-<br>2️⃣ Le CSS permet de :
-A. Créer des serveurs
-B. Définir la structure des pages
-C. Mettre en forme les éléments HTML
 
-Réponse : C
+            <p><strong>3. Le langage le plus couramment utilisé côté serveur est :</strong></p>
+            <label><input type="radio" name="q3" value="1"> PHP</label><br>
+            <label><input type="radio" name="q3" value="0"> JavaScript</label><br>
+            <label><input type="radio" name="q3" value="0"> SQL</label><br>
 
-<br>3️⃣ Le langage le plus couramment utilisé côté serveur est :
-A. PHP
-B. JavaScript
-C. SQL
+            <p><strong>4. Le JSON est :</strong></p>
+            <label><input type="radio" name="q4" value="0"> Un langage de programmation</label><br>
+            <label><input type="radio" name="q4" value="1"> Un format d’échange de données léger</label><br>
+            <label><input type="radio" name="q4" value="0"> Un outil d’hébergement</label><br>
 
-Réponse : A
+            <p><strong>5. L’ensemble HTML + CSS + JavaScript forme :</strong></p>
+            <label><input type="radio" name="q5" value="0"> Le back-end</label><br>
+            <label><input type="radio" name="q5" value="1"> Le front-end</label><br>
+            <label><input type="radio" name="q5" value="0"> La base de données</label><br>
 
-<br>4️⃣ Le JSON est :
-A. Un langage de programmation
-B. Un format d’échange de données léger
-C. Un outil d’hébergement
-
-Réponse : B
-
-<br>5️⃣ L’ensemble HTML + CSS + JavaScript forme :
-A. Le back-end
-B. Le front-end
-C. La base de données
-
-Réponse : B</p>
             <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result5" style="font-weight:bold;"></p>
@@ -352,40 +329,33 @@ Réponse : B</p>
         </div>
         <div class="tab-content" id="quiz6" style="display:none;">
           <form id="quizForm6" onsubmit="return submitQuiz('quizForm6','result6')">
-            <p>1️⃣ Un nom de domaine sert à :
-A. Sécuriser un site web
-B. Identifier et localiser un site sur Internet
-C. Créer un serveur
+            
+            <p><strong>1. Un nom de domaine sert à :</strong></p>
+            <label><input type="radio" name="q1" value="0"> Sécuriser un site web</label><br>
+            <label><input type="radio" name="q1" value="1"> Identifier et localiser un site sur Internet</label><br>
+            <label><input type="radio" name="q1" value="0"> Créer un serveur</label><br>
 
-Réponse : B
+            <p><strong>2. Le DNS permet de ::</strong></p>
+            <label><input type="radio" name="q2" value="1"> Traduire un nom de domaine en adresse IP</label><br>
+            <label><input type="radio" name="q2" value="0"> Créer des emails professionnels</label><br>
+            <label><input type="radio" name="q2" value="0"> Stocker les fichiers d’un site</label><br>
 
-<br>2️⃣ Le DNS permet de :
-A. Traduire un nom de domaine en adresse IP
-B. Créer des emails professionnels
-C. Stocker les fichiers d’un site
 
-Réponse : A
+            <p><strong>3. L’extension “.sn” correspond à :</strong></p>
+            <label><input type="radio" name="q3" value="0"> Un domaine commercial</label><br>
+            <label><input type="radio" name="q3" value="0"> Un domaine gouvernemental</label><br>
+            <label><input type="radio" name="q3" value="1"> Un domaine national du Sénégal</label><br>
 
-<br>3️⃣ L’extension “.sn” correspond à :
-A. Un domaine commercial
-B. Un domaine gouvernemental
-C. Un domaine national du Sénégal
+            <p><strong>4. Le WHOIS sert à :</strong></p>
+            <label><input type="radio" name="q4" value="0"> Masquer les fichiers d’un site</label><br>
+            <label><input type="radio" name="q4" value="1"> Afficher les informations du propriétaire d’un domaine</label><br>
+            <label><input type="radio" name="q4" value="0"> Vérifier le certificat SSL</label><br>
 
-Réponse : C
+            <p><strong>5. Un registrar est :</strong></p>
+            <label><input type="radio" name="q5" value="0"> Un moteur de recherche</label><br>
+            <label><input type="radio" name="q5" value="1"> Un service d’enregistrement de noms de domaine</label><br>
+            <label><input type="radio" name="q5" value="0"> Un protocole Internet</label><br>
 
-<br>4️⃣ Le WHOIS sert à :
-A. Masquer les fichiers d’un site
-B. Afficher les informations du propriétaire d’un domaine
-C. Vérifier le certificat SSL
-
-Réponse : B
-
-<br>5️⃣ Un registrar est :
-A. Un moteur de recherche
-B. Un service d’enregistrement de noms de domaine
-C. Un protocole Internet
-
-Réponse : B</p>
             <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result6" style="font-weight:bold;"></p>
