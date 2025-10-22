@@ -45,69 +45,17 @@
     <button class="tab-button" onclick="showTab(this, 'quiz1', 'progress1', 100)">Tests de connaissance</button>
   </div>
 
-  <!--  Contenu Vidéo -->
   <div class="tab-content" id="video1">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/OS_TVKWDJos;
-    ?autoplay=0&mute=1&loop=1&playlist=OS_TVKWDJos&enablejsapi
-    controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen></iframe>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/OS_TVKWDJos" frameborder="0" allowfullscreen></iframe>
   </div>
 
-  <!--  Contenu Support -->
   <div class="tab-content" id="support1" style="display:none;">
-    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
-  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
-  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
-    <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
-    <button id="next" class="nav-btn">Page suivante ➡️</button>
-  </div>
-</div>
-<script>
-  const url = '../supports/algo1.pdf'; // Chemin vers ton PDF
-</script>
-<script>
-  let pdfDoc = null,
-      pageNum = 1,
-      pageRendering = false,
-      pageNumPending = null,
-      scale = 1.5,
-      canvas = document.getElementById('pdf-canvas'),
-      ctx = canvas.getContext('2d');
-  function renderPage(num) {
-    pageRendering = true;
-    pdfDoc.getPage(num).then(function(page) {
-      const viewport = page.getViewport({ scale: scale });
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      const renderContext = {
-        canvasContext: ctx,
-        viewport: viewport};
-      const renderTask = page.render(renderContext);
-      renderTask.promise.then(function () {
-        pageRendering = false;
-        if (pageNumPending !== null) {
-          renderPage(pageNumPending);
-          pageNumPending = null;}  });  });
-    document.getElementById('page-num').textContent = num;}
-  function queueRenderPage(num) {
-    if (pageRendering) { pageNumPending = num;
-    } else { renderPage(num); } }
-  function onPrevPage() {
-    if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); }
-  function onNextPage() {
-    if (pageNum >= pdfDoc.numPages) return;
-    pageNum++; queueRenderPage(pageNum); }
-  // Chargement du document
-  pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-    pdfDoc = pdfDoc_;
-    document.getElementById('page-count').textContent = pdfDoc.numPages;
-    renderPage(pageNum); });
-  // Événements des boutons
-  document.getElementById('prev').addEventListener('click', onPrevPage);
-  document.getElementById('next').addEventListener('click', onNextPage);
-</script>
+    <canvas id="pdf-canvas1" data-url="../supports/algo1.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <button id="prev1" class="nav-btn">⬅️ Page précédente</button>
+      <span>Page <span id="page-num1">1</span> / <span id="page-count1">?</span></span>
+      <button id="next1" class="nav-btn">Page suivante ➡️</button>
+    </div>
     <p>Téléchargez le support de cours (PDF) :</p>
     <a href="../supports/algo1.pdf" download class="nav-btn">📥 Télécharger le support</a>
   </div>
@@ -152,15 +100,66 @@
 </div>
 
   <div id="ch2" class="chapter" style="display:none;">
-    <h2>Chapitre 2 : Introduction générale à l'algorithme</h2>  
+    <h2>Chapitre 2 : Introduction générale à l'algorithme</h2>
+    <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video2')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support2')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz2')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video2">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support2" style="display:none;">
+          <canvas id="pdf-canvas2" data-url="../supports/algo2.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev2" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num2">1</span> / <span id="page-count2">?</span></span>
+            <button id="next2" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/algo2.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>  
   </div>
 
   <div id="ch3" class="chapter" style="display:none;">
     <h2>Chapitre 3 : Les tableaux</h2>
+    <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video3')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support3')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz3')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video3">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support3" style="display:none;">
+          <canvas id="pdf-canvas3" data-url="../supports/algo3.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev3" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num3">1</span> / <span id="page-count3">?</span></span>
+            <button id="next3" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/algo3.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
   </div>
 
   <div id="ch4" class="chapter" style="display:none;">
     <h2>Chapitre 4 : Les sous-programmes</h2>
+    <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video4')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support4')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz4')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support4" style="display:none;">
+          <canvas id="pdf-canvas4" data-url="../supports/algo4.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev4" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num4">1</span> / <span id="page-count4">?</span></span>
+            <button id="next4" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/algo4.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
   </div>
 
 
