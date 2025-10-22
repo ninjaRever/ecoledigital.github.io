@@ -8,8 +8,23 @@
   <link rel="stylesheet" href="../css/module.css">
 </head>
 <body>
-  <header>
-    <h1>EcoleDigitale - Cours Android</h1>
+  <header class="nav-header">
+    <div class="nav-header__left">
+      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+      <span class="nav-title">EcoleDigitale</span>
+    </div>
+    <div class="nav-header__right">
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <!-- Icône hamburger SVG -->
+        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
+      </button>
+      <nav class="nav-nav" id="navMenu">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <button class="nav-btn">Se connecter</button>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -133,9 +148,40 @@
         </div>
         <div class="tab-content" id="quiz4" style="display:none;">
           <form id="quizForm4" onsubmit="return submitQuiz('quizForm4','result4')">
-            <p><strong>1. Question ?</strong></p>
-            <label><input type="radio" name="q1" value="1"> Réponse correcte</label><br>
-            <label><input type="radio" name="q1" value="0"> Réponse incorrecte</label><br>
+            <p>1️⃣ Une application hybride utilise principalement :
+A. Java et Swift
+B. HTML, CSS, JavaScript
+C. SQL et Python
+
+Réponse : B
+
+<br>2️⃣ Le framework Flutter utilise quel langage ?
+A. Dart
+B. JavaScript
+C. Kotlin
+
+Réponse : A
+
+<br>3️⃣ Quel est le principal avantage du développement hybride ?
+A. Performances maximales
+B. Un code unique pour plusieurs plateformes
+C. Pas besoin d’installation
+
+Réponse : B
+
+<br>4️⃣ Quel framework hybride est développé par Facebook ?
+A. Ionic
+B. Flutter
+C. React Native
+
+Réponse : C
+
+<br>5️⃣ L’un des inconvénients majeurs des apps hybrides est :
+A. Leur coût élevé
+B. Leur lenteur possible face aux apps natives
+C. Leur absence sur les stores
+
+Réponse : B</p>
             <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result4" style="font-weight:bold;"></p>

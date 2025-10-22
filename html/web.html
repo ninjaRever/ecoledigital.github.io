@@ -43,124 +43,353 @@
 <section id="chapters-content" style="position: relative;">
 <div id="ch1" class="chapter" style="display:none;">
   <h2>Chapitre 1 : Introduction au web</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video1')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support1')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz1')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video1">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support1" style="display:none;">
+          <canvas id="pdf-canvas1" data-url="../supports/dweb1.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev1" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num1">1</span> / <span id="page-count1">?</span></span>
+            <button id="next1" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dweb1.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz1" style="display:none;">
+          <<form id="quizForm1" onsubmit="return submitQuiz('quizForm1','result1')">
+            <p><strong>1. Le Web a été inventé par :</strong></p>
+            <label><input type="radio" name="q1" value="0"> Bill Gates</label><br>
+            <label><input type="radio" name="q1" value="1">Un modèle client-serveur</label><br>
+            <label><input type="radio" name="q1" value="0">Un langage de programmation unique</label><br>
 
-  <!--  Onglets -->
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab(this, 'video1', 'progress1', 33)">Vidéo</button>
-    <button class="tab-button" onclick="showTab(this, 'support1', 'progress1', 66)">Support de cours</button>
-    <button class="tab-button" onclick="showTab(this, 'quiz1', 'progress1', 100)">Tests de connaissance</button>
-  </div>
+            <p><strong>2. Le Web fonctionne grâce à :</strong></p>
+            <label><input type="radio" name="q2" value="0"> Un réseau de satellites</label><br>
+            <label><input type="radio" name="q2" value="1">Tim Berners-Lee</label><br>
+            <label><input type="radio" name="q2" value="0">Steve Jobs</label><br>
 
-  <!--  Contenu Vidéo -->
-  <div class="tab-content" id="video1">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/oTNs8dLJQ8s;
-    ?si=1&si=1&start=0&end=0&autoplay=0&mute=0&controls=1&loop=0&playlist=oTNs8dLJQ8s;
-    controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
-    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen></iframe>
-  </div>
+            <p><strong>3. Le Web 2.0 se caractérise par :</strong></p>
+            <label><input type="radio" name="q3" value="0"> Des pages statiques</label><br>
+            <label><input type="radio" name="q3" value="1">L’interaction et la participation des utilisateurs</label><br>
+            <label><input type="radio" name="q3" value="0">L’absence d’images</label><br>
 
-  <!--  Contenu Support -->
-  <div class="tab-content" id="support1" style="display:none;">
+            <p><strong>4. L’adresse https://www.ecoledigitale.sn correspond à :</strong></p>
+            <label><input type="radio" name="q4" value="1"> Une URL</label><br>
+            <label><input type="radio" name="q4" value="0">Un langage</label><br>
+            <label><input type="radio" name="q4" value="0">Un protocole</label><br>
 
-    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
-  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
-  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
-    <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
-    <button id="next" class="nav-btn">Page suivante ➡️</button>
-  </div>
-</div>
-<script>
-  const url = '../supports/reseau1.pdf'; // Chemin vers ton PDF
-</script>
-<script>
-  let pdfDoc = null,
-      pageNum = 1,
-      pageRendering = false,
-      pageNumPending = null,
-      scale = 1.5,
-      canvas = document.getElementById('pdf-canvas'),
-      ctx = canvas.getContext('2d');
-  function renderPage(num) {
-    pageRendering = true;
-    pdfDoc.getPage(num).then(function(page) {
-      const viewport = page.getViewport({ scale: scale });
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      const renderContext = {
-        canvasContext: ctx,
-        viewport: viewport};
-      const renderTask = page.render(renderContext);
-      renderTask.promise.then(function () {
-        pageRendering = false;
-        if (pageNumPending !== null) {
-          renderPage(pageNumPending);
-          pageNumPending = null;}  });  });
-    document.getElementById('page-num').textContent = num;}
-  function queueRenderPage(num) {
-    if (pageRendering) { pageNumPending = num;
-    } else { renderPage(num); } }
-  function onPrevPage() {
-    if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); }
-  function onNextPage() {
-    if (pageNum >= pdfDoc.numPages) return;
-    pageNum++; queueRenderPage(pageNum); }
-  // Chargement du document
-  pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-    pdfDoc = pdfDoc_;
-    document.getElementById('page-count').textContent = pdfDoc.numPages;
-    renderPage(pageNum); });
-  // Événements des boutons
-  document.getElementById('prev').addEventListener('click', onPrevPage);
-  document.getElementById('next').addEventListener('click', onNextPage);
-</script>
-    <p>Téléchargez le support de cours (PDF) :</p>
-    <a href="../supports/reseau1.pdf" download class="nav-btn">📥 Télécharger le support</a>
-  </div>
+            <p><strong>5. Le protocole sécurisé du Web est :</strong></p>
+            <label><input type="radio" name="q5" value="0"> FTP</label><br>
+            <label><input type="radio" name="q5" value="0">HTTP</label><br>
+            <label><input type="radio" name="q5" value="1">HTTPS</label><br>
 
-  <!--  Contenu Quiz -->
-  <div class="tab-content" id="quiz1" style="display:none;">
-    <form id="quizForm1" onsubmit="return submitQuiz('quizForm1', 'result1')">
-      <p><strong>1. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q1" value="0"> Toutes les applications Android sont gratuites</label><br>
-      <label><input type="radio" name="q1" value="1">Il y a des applications Android payantes et des applications gratuites </label><br>
-      <label><input type="radio" name="q1" value="0">Toutes les applications Android sont payantes</label><br>
-
-      <p><strong>2. Laquelle des affirmations suivantes est vraie ?</strong></p>
-      <label><input type="radio" name="q2" value="1"> SDK Manager permet d’installer des paquets supplémentaires sur Android Studio </label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager nous permet de développer des applications Java</label><br>
-      <label><input type="radio" name="q2" value="0"> SDK Manager est un IDE qui permet de développer des applications Android</label><br>
-
-      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
-    </form>
-    <p id="result1" style="margin-top:1rem; font-weight: bold;"></p>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result1" style="font-weight:bold;"></p>
   </div>
 </div>
 
   <div id="ch2" class="chapter" style="display:none;">
-    <h2>Chapitre 2 : Le Web et le concept</h2>  
+    <h2>Chapitre 2 : LE WEB ET SON CONCEPT</h2>  
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video2')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support2')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz2')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video2">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support2" style="display:none;">
+          <canvas id="pdf-canvas2" data-url="../supports/dweb2.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev2" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num2">1</span> / <span id="page-count2">?</span></span>
+            <button id="next2" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dweb2.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz2" style="display:none;">
+          <form id="quizForm2" onsubmit="return submitQuiz('quizForm2','result2')">
+            
+            <p><strong>1. Le créateur du Web est :</strong></p>
+            <label><input type="radio" name="q1" value="1"> Tim Berners-Lee</label><br>
+            <label><input type="radio" name="q1" value="0"> Bill Gates</label><br>
+            <label><input type="radio" name="q1" value="0"> Mark Zuckerberg</label><br>
 
+            <p><strong>2. Le Web est :</strong></p>
+            <label><input type="radio" name="q2" value="0"> Un autre nom d’Internet</label><br>
+            <label><input type="radio" name="q2" value="1"> Un service utilisant Internet</label><br>
+            <label><input type="radio" name="q2" value="0"> Un réseau d’ordinateurs</label><br>
+
+
+            <p><strong>3. Le protocole utilisé pour le Web est :</strong></p>
+            <label><input type="radio" name="q3" value="0"> FTP</label><br>
+            <label><input type="radio" name="q3" value="0"> SMTP</label><br>
+            <label><input type="radio" name="q3" value="1"> HTTP</label><br>
+
+            <p><strong>4. HTML sert à :</strong></p>
+            <label><input type="radio" name="q4" value="0"> Créer des bases de données</label><br>
+            <label><input type="radio" name="q4" value="1"> Structurer les pages web</label><br>
+            <label><input type="radio" name="q4" value="0"> Gérer les serveurs</label><br>
+
+            <p><strong>5. Le DNS sert à :</strong></p>
+            <label><input type="radio" name="q5" value="1"> Traduire un nom de domaine en adresse IP</label><br>
+            <label><input type="radio" name="q5" value="0"> Créer des sites web</label><br>
+            <label><input type="radio" name="q5" value="0"> Sécuriser les données</label><br>
+
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result2" style="font-weight:bold;"></p>
+        </div>
   </div>
 
   <div id="ch3" class="chapter" style="display:none;">
     <h2>Chapitre 3 : Site Web et hébergement</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video3')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support3')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz3')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video3">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support3" style="display:none;">
+          <canvas id="pdf-canvas3" data-url="../supports/dweb3.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev3" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num3">1</span> / <span id="page-count3">?</span></span>
+            <button id="next3" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dweb3.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz2" style="display:none;">
+          <form id="quizForm3" onsubmit="return submitQuiz('quizForm3','result3')">
+            <p>1️⃣ Un site web est :
+A. Un fichier sur l’ordinateur personnel
+B. Un ensemble de pages accessibles via Internet
+C. Une application mobile
 
+Réponse : B
+
+<br>2️⃣ L’hébergement web sert à :
+A. Créer un logo
+B. Stocker les fichiers du site sur un serveur accessible
+C. Écrire du code CSS
+
+Réponse : B
+
+<br>3️⃣ Un hébergement mutualisé signifie :
+A. Chaque client a son propre serveur
+B. Plusieurs sites partagent un même serveur
+C. Le serveur est installé sur un téléphone
+
+Réponse : B
+
+<br>4️⃣ Un nom de domaine sert à :
+A. Identifier et localiser un site sur Internet
+B. Créer des mots de passe
+C. Héberger des fichiers
+
+Réponse : A
+
+<br>5️⃣ Le protocole HTTPS permet :
+A. D’accélérer le site
+B. De sécuriser la connexion et les données échangées
+C. D’envoyer des emails
+
+Réponse : B</p>
+            
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result3" style="font-weight:bold;"></p>
+        </div>
   </div>
 
   <div id="ch4" class="chapter" style="display:none;">
     <h2>Chapitre 4 : Le Webmastering et les autres</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video4')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support4')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz4')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support4" style="display:none;">
+          <canvas id="pdf-canvas4" data-url="../supports/dweb4.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev4" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num4">1</span> / <span id="page-count4">?</span></span>
+            <button id="next4" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dweb4.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz4" style="display:none;">
+          <form id="quizForm4" onsubmit="return submitQuiz('quizForm4','result4')">
+            <p>Le webmaster est :
+A. Un simple rédacteur de contenu
+B. La personne chargée de gérer et maintenir un site web
+C. Un graphiste uniquement
 
+Réponse : B
+
+<br>2️⃣ Le développeur front-end s’occupe :
+A. De la base de données
+B. De la partie visible du site
+C. De l’hébergement
+
+Réponse : B
+
+<br>3️⃣ Le web designer est responsable de :
+A. La sécurité des serveurs
+B. L’identité visuelle et l’interface du site
+C. L’installation du certificat SSL
+
+Réponse : B
+
+<br>4️⃣ Le SEO vise à :
+A. Optimiser la position d’un site sur les moteurs de recherche
+B. Gérer les emails professionnels
+C. Créer des bases de données
+
+Réponse : A
+
+<br>5️⃣ Le chef de projet web :
+A. Supervise l’équipe et planifie le développement
+B. Programme uniquement en HTML
+C. Gère les réseaux sociaux
+
+Réponse : A</p>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result4" style="font-weight:bold;"></p>
+        </div>
   </div>
 
   <div id="ch5" class="chapter" style="display:none;">
     <h2>Chapitre 5 : Les langages du Web</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video5')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support5')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz5')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video5">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support5" style="display:none;">
+          <canvas id="pdf-canvas5" data-url="../supports/dweb5.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev5" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num5">1</span> / <span id="page-count5">?</span></span>
+            <button id="next5" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dweb5.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz5" style="display:none;">
+          <form id="quizForm5" onsubmit="return submitQuiz('quizForm5','result5')">
+            <p>1️⃣ Le HTML sert à :
+A. Styliser une page web
+B. Structurer le contenu d’une page web
+C. Gérer la base de données
 
+Réponse : B
+
+<br>2️⃣ Le CSS permet de :
+A. Créer des serveurs
+B. Définir la structure des pages
+C. Mettre en forme les éléments HTML
+
+Réponse : C
+
+<br>3️⃣ Le langage le plus couramment utilisé côté serveur est :
+A. PHP
+B. JavaScript
+C. SQL
+
+Réponse : A
+
+<br>4️⃣ Le JSON est :
+A. Un langage de programmation
+B. Un format d’échange de données léger
+C. Un outil d’hébergement
+
+Réponse : B
+
+<br>5️⃣ L’ensemble HTML + CSS + JavaScript forme :
+A. Le back-end
+B. Le front-end
+C. La base de données
+
+Réponse : B</p>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result5" style="font-weight:bold;"></p>
+        </div>
   </div>
 
   <div id="ch6" class="chapter" style="display:none;">
     <h2>Chapitre 6 : Les noms de domaine </h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video6')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support6')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz6')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video6">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support6" style="display:none;">
+          <canvas id="pdf-canvas6" data-url="../supports/dweb6.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev6" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num6">1</span> / <span id="page-count6">?</span></span>
+            <button id="next6" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <a href="../supports/dweb6.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+        </div>
+        <div class="tab-content" id="quiz6" style="display:none;">
+          <form id="quizForm6" onsubmit="return submitQuiz('quizForm6','result6')">
+            <p>1️⃣ Un nom de domaine sert à :
+A. Sécuriser un site web
+B. Identifier et localiser un site sur Internet
+C. Créer un serveur
 
+Réponse : B
+
+<br>2️⃣ Le DNS permet de :
+A. Traduire un nom de domaine en adresse IP
+B. Créer des emails professionnels
+C. Stocker les fichiers d’un site
+
+Réponse : A
+
+<br>3️⃣ L’extension “.sn” correspond à :
+A. Un domaine commercial
+B. Un domaine gouvernemental
+C. Un domaine national du Sénégal
+
+Réponse : C
+
+<br>4️⃣ Le WHOIS sert à :
+A. Masquer les fichiers d’un site
+B. Afficher les informations du propriétaire d’un domaine
+C. Vérifier le certificat SSL
+
+Réponse : B
+
+<br>5️⃣ Un registrar est :
+A. Un moteur de recherche
+B. Un service d’enregistrement de noms de domaine
+C. Un protocole Internet
+
+Réponse : B</p>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result6" style="font-weight:bold;"></p>
+        </div>
   </div>
 
 
