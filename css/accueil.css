@@ -43,8 +43,7 @@ body {
 }
 
 /* Centrage du texte pour les titres et paragraphes des sections */
-.section h2,
-.section p {
+.section h2 , .section p {
   text-align: center;
 }
 
@@ -56,16 +55,11 @@ body {
 
 /* Contenu de la section Héros */
 .hero-content {
-  /* Affichage flexible pour le positionnement */
   display: flex;
-  /* Permet aux éléments de passer à la ligne si nécessaire */
   flex-wrap: wrap;
-  /* Espacement entre les éléments */
   gap: 2rem;
-  /* Alignement des éléments sur le centre */
   align-items: center;
-  /* Inversion de l'ordre : image à droite, texte à gauche */
-  flex-direction: row-reverse;
+  justify-content: center;
 }
 
 /* Image de la section Héros */
