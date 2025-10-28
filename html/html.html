@@ -35,128 +35,523 @@
 <section id="chapters-content" style="position: relative;">
 <div id="ch1" class="chapter" style="display:none;">
   <h2>Chapitre 1 : Introduction aux langages HTML et CSS</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video1')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support1')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz1')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video1">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support1" style="display:none;">
+          <canvas id="pdf-canvas1" data-url="../supports/html1.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev1" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num1">1</span> / <span id="page-count1">?</span></span>
+            <button id="next1" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html1.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz1" style="display:none;">
+          <form id="quizForm1" onsubmit="return submitQuiz('quizForm1','result1')">
+            
+            <p><strong>1. Que signifie HTML ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> HyperText Markup Language</label><br>
+            <label><input type="radio" name="q1" value="0"> Hyperlink Text Markup Language</label><br>
+            <label><input type="radio" name="q1" value="0"> Home Tool Markup Language</label><br>
 
-  <!--  Onglets -->
-  <div class="tabs">
-    <button class="tab-button active" onclick="showTab(this, 'video1', 'progress1', 33)">Vidéo</button>
-    <button class="tab-button" onclick="showTab(this, 'support1', 'progress1', 66)">Support de cours</button>
-    <button class="tab-button" onclick="showTab(this, 'quiz1', 'progress1', 100)">Tests de connaissance</button>
-  </div>
+            <p><strong>2. Que signifie CSS ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> Cascading Style Sheets</label><br>
+            <label><input type="radio" name="q2" value="0"> Computer Style Sheets</label><br>
+            <label><input type="radio" name="q2" value="0"> Creative Styling System</label><br>
 
-  <!--  Contenu Vidéo -->
-  <div class="tab-content" id="video1">
-    <iframe src="https://archive.org/embed/html-de-a-a-z-1" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
-  </div>
+            <p><strong>3. Quel langage est utilisé pour structurer une page web ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> HTML</label><br>
+            <label><input type="radio" name="q3" value="0"> CSS</label><br>
+            <label><input type="radio" name="q3" value="0"> JavaScript</label><br>
 
-  <!--  Contenu Support -->
-  <div class="tab-content" id="support1" style="display:none;">
-    <div id="pdf-viewer" style="text-align: center; margin-top: 1rem;">
-  <canvas id="pdf-canvas" style="width: 80%; border: 1px solid #ccc; border-radius: 6px;"></canvas>
-  <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-    <button id="prev" class="nav-btn">⬅️ Page précédente</button>
-    <span>Page <span id="page-num">1</span> / <span id="page-count">?</span></span>
-    <button id="next" class="nav-btn">Page suivante ➡️</button>
-  </div>
-</div>
-<script>
-  const url = '../supports/html1.pdf'; // Chemin vers ton PDF
-  let pdfDoc = null,
-      pageNum = 1,
-      pageRendering = false,
-      pageNumPending = null,
-      scale = 1.5,
-      canvas = document.getElementById('pdf-canvas'),
-      ctx = canvas.getContext('2d');
-  function renderPage(num) {
-    pageRendering = true;
-    pdfDoc.getPage(num).then(function(page) {
-      const viewport = page.getViewport({ scale: scale });
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      const renderContext = {
-        canvasContext: ctx,
-        viewport: viewport};
-      const renderTask = page.render(renderContext);
-      renderTask.promise.then(function () {
-        pageRendering = false;
-        if (pageNumPending !== null) {
-          renderPage(pageNumPending);
-          pageNumPending = null;}  });  });
-    document.getElementById('page-num').textContent = num;}
-  function queueRenderPage(num) {
-    if (pageRendering) { pageNumPending = num;
-    } else { renderPage(num); } }
-  function onPrevPage() {
-    if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum); }
-  function onNextPage() {
-    if (pageNum >= pdfDoc.numPages) return;
-    pageNum++; queueRenderPage(pageNum); }
-  // Chargement du document
-  pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-    pdfDoc = pdfDoc_;
-    document.getElementById('page-count').textContent = pdfDoc.numPages;
-    renderPage(pageNum); });
-  // Événements des boutons
-  document.getElementById('prev').addEventListener('click', onPrevPage);
-  document.getElementById('next').addEventListener('click', onNextPage);
-</script>
-    <p>Téléchargez le support de cours (PDF) :</p>
-    <a href="../supports/html1.pdf" download class="nav-btn">📥 Télécharger le support</a>
-  </div>
+            <p><strong>4. Quel langage est utilisé pour styliser et mettre en forme une page web ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> CSS</label><br>
+            <label><input type="radio" name="q4" value="0"> HTML</label><br>
+            <label><input type="radio" name="q4" value="0"> PHP</label><br>
 
-  <!--  Contenu Quiz -->
-  <div class="tab-content" id="quiz1" style="display:none;">
-    <form id="quizForm1" onsubmit="return submitQuiz('quizForm1', 'result1')">    
-      
-      <p><strong>1. Quel est le rôle principal de l'html </strong></p>
-      <label><input type="radio" name="q1" value="1"> Fournir une structure de base pour les pages web</label><br>
-      <label><input type="radio" name="q1" value="0"> Créer des applications mobiles</label><br>
-      <label><input type="radio" name="q1" value="0"> Gérer des bases de données</label><br>
+            <p><strong>5. Quelle balise HTML permet d’inclure un fichier CSS externe ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> &lt;link&gt;</label><br>
+            <label><input type="radio" name="q5" value="0"> &lt;style&gt;</label><br>
+            <label><input type="radio" name="q5" value="0"> &lt;css&gt;</label><br>
 
-      
-
-
-
-      <button type="submit" class="nav-btn" style="margin-top:1rem;">Valider mes réponses</button>
-    </form>
-    <p id="result1" style="margin-top:1rem; font-weight: bold;"></p>
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result1" style="font-weight:bold;"></p>
   </div>
 </div>
 
   <div id="ch2" class="chapter" style="display:none;">
-    <h2>Chapitre 2 : Les éléments et attributs HTML</h2> 
+    <h2>Chapitre 2 : Les éléments et attributs HTML</h2>  
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video2')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support2')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz2')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video2">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support2" style="display:none;">
+          <canvas id="pdf-canvas2" data-url="../supports/html2.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev2" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num2">1</span> / <span id="page-count2">?</span></span>
+            <button id="next2" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html2.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz2" style="display:none;">
+          <form id="quizForm2" onsubmit="return submitQuiz('quizForm2','result2')">
+            
+            <p><strong>1. Quelle balise HTML permet de créer un lien vers une autre page ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> &lt;a&gt;</label><br>
+            <label><input type="radio" name="q1" value="0"> &lt;link&gt;</label><br>
+            <label><input type="radio" name="q1" value="0"> &lt;div&gt;</label><br>
 
+            <p><strong>2. Quel attribut de la balise &lt;img&gt; définit le texte alternatif ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> alt</label><br>
+            <label><input type="radio" name="q2" value="0"> src</label><br>
+            <label><input type="radio" name="q2" value="0"> title</label><br>
+
+            <p><strong>3. Quelle balise HTML est utilisée pour créer un paragraphe ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> &lt;p&gt;</label><br>
+            <label><input type="radio" name="q3" value="0"> &lt;div&gt;</label><br>
+            <label><input type="radio" name="q3" value="0"> &lt;span&gt;</label><br>
+
+            <p><strong>4. Quel attribut de la balise &lt;a&gt; définit l’URL de destination ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> href</label><br>
+            <label><input type="radio" name="q4" value="0"> src</label><br>
+            <label><input type="radio" name="q4" value="0"> link</label><br>
+
+            <p><strong>5. Quelle balise HTML définit un titre de niveau 2 ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> &lt;h2&gt;</label><br>
+            <label><input type="radio" name="q5" value="0"> &lt;h1&gt;</label><br>
+            <label><input type="radio" name="q5" value="0"> &lt;h3&gt;</label><br>
+
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result2" style="font-weight:bold;"></p>
+        </div>
   </div>
 
   <div id="ch3" class="chapter" style="display:none;">
     <h2>Chapitre 3 : Jeux de caractères, symboles et métadonnées</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video3')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support3')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz3')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video3">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support3" style="display:none;">
+          <canvas id="pdf-canvas3" data-url="../supports/html3.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev3" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num3">1</span> / <span id="page-count3">?</span></span>
+            <button id="next3" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html3.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz3" style="display:none;">
+          <form id="quizForm3" onsubmit="return submitQuiz('quizForm3','result3')">
+            
+            <p><strong>1. Quel attribut dans la balise &lt;meta&gt; définit le jeu de caractères d’une page HTML ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> charset</label><br>
+            <label><input type="radio" name="q1" value="0"> content</label><br>
+            <label><input type="radio" name="q1" value="0"> name</label><br>
+
+            <p><strong>2. Quelle balise HTML permet de définir un titre affiché dans l’onglet du navigateur ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> &lt;title&gt;</label><br>
+            <label><input type="radio" name="q2" value="0"> &lt;meta&gt;</label><br>
+            <label><input type="radio" name="q2" value="0"> &lt;header&gt;</label><br>
+
+            <p><strong>3. Quel code HTML permet d’afficher le symbole © ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> &amp;copy;</label><br>
+            <label><input type="radio" name="q3" value="0"> &amp;reg;</label><br>
+            <label><input type="radio" name="q3" value="0"> &amp;trade;</label><br>
+
+            <p><strong>4. Quel attribut de la balise &lt;meta&gt; fournit la description d’une page pour les moteurs de recherche ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> name="description"</label><br>
+            <label><input type="radio" name="q4" value="0"> name="keywords"</label><br>
+            <label><input type="radio" name="q4" value="0"> charset="UTF-8"</label><br>
+
+            <p><strong>5. Quel symbole HTML représente une flèche droite → ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> &amp;rarr;</label><br>
+            <label><input type="radio" name="q5" value="0"> &amp;larr;</label><br>
+            <label><input type="radio" name="q5" value="0"> &amp;uarr;</label><br>
+
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result3" style="font-weight:bold;"></p>
+        </div>
+  </div>
 
   <div id="ch4" class="chapter" style="display:none;">
     <h2>Chapitre 4 : Les styles et couleurs en HTML</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video4')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support4')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz4')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support4" style="display:none;">
+          <canvas id="pdf-canvas4" data-url="../supports/html4.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev4" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num4">1</span> / <span id="page-count4">?</span></span>
+            <button id="next4" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html4.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz4" style="display:none;">
+          <form id="quizForm4" onsubmit="return submitQuiz('quizForm4','result4')">
+            
+            <p><strong>1. Quelle balise HTML permet de changer la couleur du texte directement ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> &lt;font color="..."&gt;</label><br>
+            <label><input type="radio" name="q1" value="0"> &lt;style&gt;</label><br>
+            <label><input type="radio" name="q1" value="0"> &lt;div color="..."&gt;</label><br>
+
+            <p><strong>2. Quelle attribut permet de définir la couleur de fond d’un élément ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> bgcolor</label><br>
+            <label><input type="radio" name="q2" value="0"> color</label><br>
+            <label><input type="radio" name="q2" value="0"> background-color</label><br>
+
+            <p><strong>3. Comment définir une couleur en HTML en utilisant le code hexadécimal ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> #RRGGBB</label><br>
+            <label><input type="radio" name="q3" value="0"> rgb(…)</label><br>
+            <label><input type="radio" name="q3" value="0"> color="red"</label><br>
+
+            <p><strong>4. Quelle balise HTML permet d’ajouter du style en interne ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> &lt;style&gt;</label><br>
+            <label><input type="radio" name="q4" value="0"> &lt;font&gt;</label><br>
+            <label><input type="radio" name="q4" value="0"> &lt;css&gt;</label><br>
+
+            <p><strong>5. Quelle couleur est représentée par le code #FF0000 ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> Rouge</label><br>
+            <label><input type="radio" name="q5" value="0"> Vert</label><br>
+            <label><input type="radio" name="q5" value="0"> Bleu</label><br>
+
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result4" style="font-weight:bold;"></p>
+        </div>
   </div>
 
   <div id="ch5" class="chapter" style="display:none;">
     <h2>Chapitre 5 : Les feuilles de styles CSS</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video5')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support5')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz5')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video5">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support5" style="display:none;">
+          <canvas id="pdf-canvas5" data-url="../supports/html5.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev5" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num5">1</span> / <span id="page-count5">?</span></span>
+            <button id="next5" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html5.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz5" style="display:none;">
+          <form id="quizForm5" onsubmit="return submitQuiz('quizForm5','result5')">
+            
+            <p><strong>1. Que signifie CSS ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> Cascading Style Sheets</label><br>
+            <label><input type="radio" name="q1" value="0"> Computer Style Sheets</label><br>
+            <label><input type="radio" name="q1" value="0"> Creative Style System</label><br>
+
+            <p><strong>2. Quelle propriété change la couleur du texte ?</strong></p>
+            <label><input type="radio" name="q2" value="0"> background-color</label><br>
+            <label><input type="radio" name="q2" value="1"> color</label><br>
+            <label><input type="radio" name="q2" value="0"> font-size</label><br>
+
+            <p><strong>3. Quelle balise HTML permet d’inclure un fichier CSS externe ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> &lt;link&gt;</label><br>
+            <label><input type="radio" name="q3" value="0"> &lt;style&gt;</label><br>
+            <label><input type="radio" name="q3" value="0"> &lt;script&gt;</label><br>
+
+            <p><strong>4. Quelle propriété modifie l’espace entre les lettres ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> letter-spacing</label><br>
+            <label><input type="radio" name="q4" value="0"> line-height</label><br>
+            <label><input type="radio" name="q4" value="0"> word-spacing</label><br>
+
+            <p><strong>5. Quelle propriété ajuste la marge intérieure d’un élément ?</strong></p>
+            <label><input type="radio" name="q5" value="0"> margin</label><br>
+            <label><input type="radio" name="q5" value="1"> padding</label><br>
+            <label><input type="radio" name="q5" value="0"> border</label><br>
+
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result5" style="font-weight:bold;"></p>
+        </div>
   </div>
 
-  <div id="ch6" class="chapter" style="display:none;">
-    <h2>Chapitre 6 : Les éléments multimédia en HTML</h2>
+    <div id="ch6" class="chapter" style="display:none;">
+    <h2>Chapitre 6 : LES ÉLÉMENTS MULTIMÉDIAS EN HTML</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video6')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support6')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz6')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video6">
+          <iframe width="100%" height="316" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support6" style="display:none;">
+          <canvas id="pdf-canvas6" data-url="../supports/html6.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev6" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num6">1</span> / <span id="page-count6">?</span></span>
+            <button id="next6" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html6.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz6" style="display:none;">
+          <form id="quizForm6" onsubmit="return submitQuiz('quizForm6','result6')">
+            
+            <p><strong>1. Quelle balise HTML permet d’insérer une image ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> &lt;img&gt;</label><br>
+            <label><input type="radio" name="q1" value="0"> &lt;image&gt;</label><br>
+            <label><input type="radio" name="q1" value="0"> &lt;picture&gt;</label><br>
+
+            <p><strong>2. Quelle balise HTML permet d’intégrer une vidéo ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> &lt;video&gt;</label><br>
+            <label><input type="radio" name="q2" value="0"> &lt;movie&gt;</label><br>
+            <label><input type="radio" name="q2" value="0"> &lt;media&gt;</label><br>
+
+            <p><strong>3. Quelle balise HTML permet d’ajouter du son ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> &lt;audio&gt;</label><br>
+            <label><input type="radio" name="q3" value="0"> &lt;sound&gt;</label><br>
+            <label><input type="radio" name="q3" value="0"> &lt;music&gt;</label><br>
+
+            <p><strong>4. Quel attribut de la balise &lt;video&gt; permet de lancer la lecture automatiquement ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> autoplay</label><br>
+            <label><input type="radio" name="q4" value="0"> loop</label><br>
+            <label><input type="radio" name="q4" value="0"> controls</label><br>
+
+            <p><strong>5. Quel attribut de la balise &lt;audio&gt; affiche les contrôles de lecture ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> controls</label><br>
+            <label><input type="radio" name="q5" value="0"> autoplay</label><br>
+            <label><input type="radio" name="q5" value="0"> loop</label><br>
+
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result6" style="font-weight:bold;"></p>
+        </div>
   </div>
 
   <div id="ch7" class="chapter" style="display:none;">
-    <h2>Chapitre 7 : Les tableaux et les listes</h2>
-  </div>
+    <h2>Chapitre 7 : LES TABLEAUX ET LES LISTES</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video7')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support7')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz7')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video7">
+          <iframe width="100%" height="317" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support7" style="display:none;">
+          <canvas id="pdf-canvas7" data-url="../supports/html7.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev7" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num7">1</span> / <span id="page-count7">?</span></span>
+            <button id="next7" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html7.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz7" style="display:none;">
+          <form id="quizForm7" onsubmit="return submitQuiz('quizForm7','result7')">
+            
+            <p><strong>1. Quelle balise HTML permet de créer un tableau ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> &lt;table&gt;</label><br>
+            <label><input type="radio" name="q1" value="0"> &lt;list&gt;</label><br>
+            <label><input type="radio" name="q1" value="0"> &lt;tr&gt;</label><br>
+
+            <p><strong>2. Quelle balise HTML définit une ligne dans un tableau ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> &lt;tr&gt;</label><br>
+            <label><input type="radio" name="q2" value="0"> &lt;td&gt;</label><br>
+            <label><input type="radio" name="q2" value="0"> &lt;th&gt;</label><br>
+
+            <p><strong>3. Quelle balise HTML définit une cellule de données dans un tableau ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> &lt;td&gt;</label><br>
+            <label><input type="radio" name="q3" value="0"> &lt;tr&gt;</label><br>
+            <label><input type="radio" name="q3" value="0"> &lt;table&gt;</label><br>
+
+            <p><strong>4. Quelle balise HTML crée une liste à puces ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> &lt;ul&gt;</label><br>
+            <label><input type="radio" name="q4" value="0"> &lt;ol&gt;</label><br>
+            <label><input type="radio" name="q4" value="0"> &lt;li&gt;</label><br>
+
+            <p><strong>5. Quelle balise HTML crée une liste numérotée ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> &lt;ol&gt;</label><br>
+            <label><input type="radio" name="q5" value="0"> &lt;ul&gt;</label><br>
+            <label><input type="radio" name="q5" value="0"> &lt;li&gt;</label><br>
+            
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result7" style="font-weight:bold;"></p>
+        </div>
+      </div>
 
   <div id="ch8" class="chapter" style="display:none;">
     <h2>Chapitre 8 : La mise en page en HTML</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video8')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support8')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz8)">Quiz</button>
+        </div>
+        <div class="tab-content" id="video6">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support8" style="display:none;">
+          <canvas id="pdf-canvas8" data-url="../supports/html8.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev8" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num8">1</span> / <span id="page-count8">?</span></span>
+            <button id="next8" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html8.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz8" style="display:none;">
+          <form id="quizForm8" onsubmit="return submitQuiz('quizForm6','result8')">
+            
+            <p><strong>1. Quel est le rôle principal de la mise en page en HTML ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> Organiser le contenu et structurer les éléments sur la page web</label><br>
+            <label><input type="radio" name="q1" value="0"> Changer la couleur du texte</label><br>
+            <label><input type="radio" name="q1" value="0"> Gérer les animations du site</label><br>
+
+            <p><strong>2. Quelle balise HTML sert à définir une section principale d’un document ?</strong></p>
+            <label><input type="radio" name="q2" value="1">&lt;main&gt;</label><br>
+            <label><input type="radio" name="q2" value="0">&lt;section&gt;</label><br>
+            <label><input type="radio" name="q2" value="0">&lt;article&gt;</label><br>
+
+            <p><strong>3. Quelle balise HTML est utilisée pour le contenu de l’en-tête du site ?</strong></p>
+            <label><input type="radio" name="q3" value="1">&lt;header&gt;</label><br>
+            <label><input type="radio" name="q3" value="0">&lt;head&gt;</label><br>
+            <label><input type="radio" name="q3" value="0">&lt;nav&gt;</label><br>
+
+            <p><strong>4. Quelle balise permet d’ajouter un menu de navigation ?</strong></p>
+            <label><input type="radio" name="q4" value="1">&lt;nav&gt;</label><br>
+            <label><input type="radio" name="q4" value="0">&lt;menu&gt;</label><br>
+            <label><input type="radio" name="q4" value="0">&lt;aside&gt;</label><br>
+
+            <p><strong>5. Quelle balise HTML est utilisée pour le pied de page ?</strong></p>
+            <label><input type="radio" name="q5" value="1">&lt;footer&gt;</label><br>
+            <label><input type="radio" name="q5" value="0">&lt;bottom&gt;</label><br>
+            <label><input type="radio" name="q5" value="0">&lt;end&gt;</label><br>
+
+            <p><strong>6. Quelle balise est idéale pour placer du contenu secondaire, comme une barre latérale ?</strong></p>
+            <label><input type="radio" name="q6" value="1">&lt;aside&gt;</label><br>
+            <label><input type="radio" name="q6" value="0">&lt;article&gt;</label><br>
+            <label><input type="radio" name="q6" value="0">&lt;extra&gt;</label><br>
+
+            <p><strong>7. Quelle balise regroupe logiquement des éléments de contenu ?</strong></p>
+            <label><input type="radio" name="q7" value="1">&lt;div&gt;</label><br>
+            <label><input type="radio" name="q7" value="0">&lt;p&gt;</label><br>
+            <label><input type="radio" name="q7" value="0">&lt;span&gt;</label><br>
+
+            <p><strong>8. Quelle est la différence entre &lt;div&gt; et &lt;span&gt; ?</strong></p>
+            <label><input type="radio" name="q8" value="1">&lt;div&gt; est un conteneur de bloc, &lt;span&gt; est en ligne</label><br>
+            <label><input type="radio" name="q8" value="0">&lt;div&gt; change la couleur du texte</label><br>
+            <label><input type="radio" name="q8" value="0">&lt;span&gt; crée une image</label><br>
+
+            <p><strong>9. Quelle balise HTML est souvent utilisée pour regrouper une section cohérente de contenu ?</strong></p>
+            <label><input type="radio" name="q9" value="1">&lt;section&gt;</label><br>
+            <label><input type="radio" name="q9" value="0">&lt;group&gt;</label><br>
+            <label><input type="radio" name="q9" value="0">&lt;layout&gt;</label><br>
+
+            <p><strong>10. Quelle est la bonne pratique pour organiser une page web ?</strong></p>
+            <label><input type="radio" name="q10" value="1"> Utiliser une structure claire : header, nav, main, aside, footer</label><br>
+            <label><input type="radio" name="q10" value="0"> Mettre tout le contenu dans une seule balise &lt;div&gt;</label><br>
+            <label><input type="radio" name="q10" value="0"> Utiliser uniquement du texte sans structure</label><br>
+
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result8" style="font-weight:bold;"></p>
+        </div>
   </div>
 
-  <div id="ch9" class="chapter" style="display:none;">
+        <div id="ch9" class="chapter" style="display:none;">
     <h2>Chapitre 9 : Les formulaires en HTML</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'vide')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support9')">Support de cours</button>
+          <button class="tab-button" onclick="showTab(this, 'quiz9')">Quiz</button>
+        </div>
+        <div class="tab-content" id="video9">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/vbWg1iRNUIc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support9" style="display:none;">
+          <canvas id="pdf-canvas9" data-url="../supports/html9.pdf" style="width:80%; border:1px solid #ccc;"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev6" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num9">1</span> / <span id="page-count9">?</span></span>
+            <button id="next9" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../supports/html9.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+        <div class="tab-content" id="quiz9" style="display:none;">
+          <form id="quizForm9" onsubmit="return submitQuiz('quizForm9','result9')">
+            
+            <p><strong>1. Un nom de domaine sert à :</strong></p>
+            <label><input type="radio" name="q1" value="0"> Sécuriser un site web</label><br>
+            <label><input type="radio" name="q1" value="1"> Identifier et localiser un site sur Internet</label><br>
+            <label><input type="radio" name="q1" value="0"> Créer un serveur</label><br>
+
+            <p><strong>2. Le DNS permet de ::</strong></p>
+            <label><input type="radio" name="q2" value="1"> Traduire un nom de domaine en adresse IP</label><br>
+            <label><input type="radio" name="q2" value="0"> Créer des emails professionnels</label><br>
+            <label><input type="radio" name="q2" value="0"> Stocker les fichiers d’un site</label><br>
+
+            <p><strong>3. L’extension “.sn” correspond à :</strong></p>
+            <label><input type="radio" name="q3" value="0"> Un domaine commercial</label><br>
+            <label><input type="radio" name="q3" value="0"> Un domaine gouvernemental</label><br>
+            <label><input type="radio" name="q3" value="1"> Un domaine national du Sénégal</label><br>
+
+            <p><strong>4. Le WHOIS sert à :</strong></p>
+            <label><input type="radio" name="q4" value="0"> Masquer les fichiers d’un site</label><br>
+            <label><input type="radio" name="q4" value="1"> Afficher les informations du propriétaire d’un domaine</label><br>
+            <label><input type="radio" name="q4" value="0"> Vérifier le certificat SSL</label><br>
+
+            <p><strong>5. Un registrar est :</strong></p>
+            <label><input type="radio" name="q5" value="0"> Un moteur de recherche</label><br>
+            <label><input type="radio" name="q5" value="1"> Un service d’enregistrement de noms de domaine</label><br>
+            <label><input type="radio" name="q5" value="0"> Un protocole Internet</label><br>
+
+            <button type="submit" class="nav-btn">Valider mes réponses</button>
+          </form>
+          <p id="result9" style="font-weight:bold;"></p>
+        </div>
   </div>
-  
-
-
 
 </section>
 

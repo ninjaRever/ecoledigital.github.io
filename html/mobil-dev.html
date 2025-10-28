@@ -49,15 +49,73 @@
             <span>Page <span id="page-num1">1</span> / <span id="page-count1">?</span></span>
             <button id="next1" class="nav-btn">Page suivante ➡️</button>
           </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
           <a href="../supports/dev-mob1.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
         </div>
         <div class="tab-content" id="quiz1" style="display:none;">
           <form id="quizForm1" onsubmit="return submitQuiz('quizForm1','result1')">
-            <p><strong>1. Laquelle des affirmations suivantes est vraie ?</strong></p>
-            <label><input type="radio" name="q1" value="0"> Toutes les applications Android sont gratuites</label><br>
-            <label><input type="radio" name="q1" value="1">Il y a des applications Android payantes et gratuites</label><br>
-            <label><input type="radio" name="q1" value="0">Toutes les applications Android sont payantes</label><br>
-            <button type="submit" class="nav-btn">Valider mes réponses</button>
+            <p><strong>1. Qu’est-ce que le génie logiciel mobile ?</strong></p>
+          <label><input type="radio" name="q1" value="0"> La fabrication de matériel de téléphonie</label><br>
+          <label><input type="radio" name="q1" value="1"> L’ensemble des méthodes et outils utilisés pour concevoir, développer et maintenir des applications mobiles</label><br>
+          <label><input type="radio" name="q1" value="0"> Le design graphique d’une application mobile</label><br>
+          <label><input type="radio" name="q1" value="0"> La programmation uniquement en Java ou Kotlin</label><br><br>
+
+          <p><strong>2. Quel est le principal objectif du génie logiciel mobile ?</strong></p>
+          <label><input type="radio" name="q2" value="0"> Créer des applications jolies mais peu fonctionnelles</label><br>
+          <label><input type="radio" name="q2" value="1"> Concevoir des applications fiables, performantes et adaptées aux besoins utilisateurs</label><br>
+          <label><input type="radio" name="q2" value="0"> Limiter les mises à jour</label><br>
+          <label><input type="radio" name="q2" value="0"> Produire uniquement pour Android</label><br><br>
+
+          <p><strong>3. Le cycle de vie du génie logiciel mobile comprend :</strong></p>
+          <label><input type="radio" name="q3" value="0"> La rédaction d’un rapport uniquement</label><br>
+          <label><input type="radio" name="q3" value="1"> L’analyse, la conception, le développement, les tests et la maintenance</label><br>
+          <label><input type="radio" name="q3" value="0"> La publicité et la commercialisation</label><br>
+          <label><input type="radio" name="q3" value="0"> La création du logo</label><br><br>
+
+          <p><strong>4. Durant la phase d’analyse des besoins, le but principal est :</strong></p>
+          <label><input type="radio" name="q4" value="0"> De coder directement l’application</label><br>
+          <label><input type="radio" name="q4" value="1"> D’identifier les besoins fonctionnels et non fonctionnels du projet</label><br>
+          <label><input type="radio" name="q4" value="0"> De choisir la couleur de l’interface</label><br>
+          <label><input type="radio" name="q4" value="0"> D’acheter un serveur</label><br><br>
+
+          <p><strong>5. Dans le développement mobile, qu’est-ce qu’une plateforme ?</strong></p>
+          <label><input type="radio" name="q5" value="0"> Un téléphone portable</label><br>
+          <label><input type="radio" name="q5" value="1"> Un système d’exploitation et son environnement de développement (Android, iOS...)</label><br>
+          <label><input type="radio" name="q5" value="0"> Un langage de programmation</label><br>
+          <label><input type="radio" name="q5" value="0"> Un navigateur web</label><br><br>
+
+          <p><strong>6. Les langages courants pour développer des applications mobiles natives sont :</strong></p>
+          <label><input type="radio" name="q6" value="1"> Java / Kotlin pour Android et Swift / Objective-C pour iOS</label><br>
+          <label><input type="radio" name="q6" value="0"> HTML et CSS uniquement</label><br>
+          <label><input type="radio" name="q6" value="0"> Python et C++</label><br>
+          <label><input type="radio" name="q6" value="0"> PHP et SQL</label><br><br>
+
+          <p><strong>7. Quelle est la différence entre une application native et une application hybride ?</strong></p>
+          <label><input type="radio" name="q7" value="0"> Aucune, elles sont identiques</label><br>
+          <label><input type="radio" name="q7" value="1"> La native est développée pour un seul système, l’hybride fonctionne sur plusieurs</label><br>
+          <label><input type="radio" name="q7" value="0"> L’hybride ne peut pas utiliser Internet</label><br>
+          <label><input type="radio" name="q7" value="0"> L’hybride ne peut pas être publiée sur les stores</label><br><br>
+
+          <p><strong>8. Quel est le rôle du test dans le cycle du génie logiciel mobile ?</strong></p>
+          <label><input type="radio" name="q8" value="0"> Ajouter des fonctionnalités</label><br>
+          <label><input type="radio" name="q8" value="1"> Vérifier que l’application fonctionne correctement et répond aux exigences</label><br>
+          <label><input type="radio" name="q8" value="0"> Supprimer du code inutile</label><br>
+          <label><input type="radio" name="q8" value="0"> Décorer l’interface utilisateur</label><br><br>
+
+          <p><strong>9. La maintenance d’une application mobile consiste à :</strong></p>
+          <label><input type="radio" name="q9" value="0"> Supprimer l’application du store</label><br>
+          <label><input type="radio" name="q9" value="1"> Corriger les bugs et ajouter des fonctionnalités après le déploiement</label><br>
+          <label><input type="radio" name="q9" value="0"> Écrire la documentation</label><br>
+          <label><input type="radio" name="q9" value="0"> Créer des icônes</label><br><br>
+
+          <p><strong>10. Un des grands défis du génie logiciel mobile est :</strong></p>
+          <label><input type="radio" name="q10" value="0"> Le manque de couleurs dans les applications</label><br>
+          <label><input type="radio" name="q10" value="1"> La diversité des appareils et des versions de systèmes d’exploitation</label><br>
+          <label><input type="radio" name="q10" value="0"> Le coût des serveurs web</label><br>
+          <label><input type="radio" name="q10" value="0"> L’installation d’antivirus</label><br><br>
+
+          <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result1" style="font-weight:bold;"></p>
         </div>
@@ -81,14 +139,62 @@
             <span>Page <span id="page-num2">1</span> / <span id="page-count2">?</span></span>
             <button id="next2" class="nav-btn">Page suivante ➡️</button>
           </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
           <a href="../supports/dev-mob2.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
         </div>
         <div class="tab-content" id="quiz2" style="display:none;">
           <form id="quizForm2" onsubmit="return submitQuiz('quizForm2','result2')">
-            <p><strong>1. Quelle est la fonction du SDK Manager ?</strong></p>
-            <label><input type="radio" name="q1" value="1"> Installer des paquets supplémentaires</label><br>
-            <label><input type="radio" name="q1" value="0"> Développer des applications Java</label><br>
-            <label><input type="radio" name="q1" value="0"> IDE pour Android</label><br>
+            <p><strong>1. Qu’est-ce qu’Android Studio ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> L’environnement de développement officiel pour les applications Android</label><br>
+            <label><input type="radio" name="q1" value="0"> Un langage de programmation</label><br>
+            <label><input type="radio" name="q1" value="0"> Un système d’exploitation</label><br>
+
+            <p><strong>2. Quel langage est principalement utilisé dans Android Studio ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> Java ou Kotlin</label><br>
+            <label><input type="radio" name="q2" value="0"> C++</label><br>
+            <label><input type="radio" name="q2" value="0"> Python</label><br>
+
+            <p><strong>3. Quelle extension ont les fichiers de mise en page d’interface dans Android Studio ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> .xml</label><br>
+            <label><input type="radio" name="q3" value="0"> .html</label><br>
+            <label><input type="radio" name="q3" value="0"> .java</label><br>
+
+            <p><strong>4. Que représente l’activité principale (MainActivity) ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> L’écran principal de l’application</label><br>
+            <label><input type="radio" name="q4" value="0"> Le menu de configuration de l’appareil</label><br>
+            <label><input type="radio" name="q4" value="0"> Le dossier de ressources</label><br>
+
+            <p><strong>5. Quel dossier contient les ressources visuelles (images, layouts, etc.) ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> Le dossier <code>res/</code></label><br>
+            <label><input type="radio" name="q5" value="0"> Le dossier <code>src/</code></label><br>
+            <label><input type="radio" name="q5" value="0"> Le dossier <code>build/</code></label><br>
+
+            <p><strong>6. Que contient le fichier <code>AndroidManifest.xml</code> ?</strong></p>
+            <label><input type="radio" name="q6" value="1"> Les informations essentielles de l’application (nom, permissions, activités...)</label><br>
+            <label><input type="radio" name="q6" value="0"> Le code source Java</label><br>
+            <label><input type="radio" name="q6" value="0"> Les fichiers image</label><br>
+
+            <p><strong>7. À quoi sert le fichier <code>build.gradle</code> ?</strong></p>
+            <label><input type="radio" name="q7" value="1"> À gérer les dépendances et la configuration du projet</label><br>
+            <label><input type="radio" name="q7" value="0"> À stocker les images</label><br>
+            <label><input type="radio" name="q7" value="0"> À gérer les traductions</label><br>
+
+            <p><strong>8. Quelle option permet d’exécuter une application dans Android Studio ?</strong></p>
+            <label><input type="radio" name="q8" value="1"> Le bouton “Run” (triangle vert)</label><br>
+            <label><input type="radio" name="q8" value="0"> Le menu “Tools > Clean Project”</label><br>
+            <label><input type="radio" name="q8" value="0"> L’outil de refactorisation</label><br>
+
+            <p><strong>9. Quelle est la fonction du dossier <code>java/</code> dans un projet Android Studio ?</strong></p>
+            <label><input type="radio" name="q9" value="1"> Il contient le code source de l’application</label><br>
+            <label><input type="radio" name="q9" value="0"> Il contient les fichiers audio</label><br>
+            <label><input type="radio" name="q9" value="0"> Il contient les fichiers XML</label><br>
+
+            <p><strong>10. Comment tester une application sans téléphone physique ?</strong></p>
+            <label><input type="radio" name="q10" value="1"> En utilisant un émulateur Android intégré</label><br>
+            <label><input type="radio" name="q10" value="0"> En exécutant sur un navigateur web</label><br>
+            <label><input type="radio" name="q10" value="0"> Ce n’est pas possible</label><br>
+
             <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result2" style="font-weight:bold;"></p>
@@ -113,13 +219,63 @@
             <span>Page <span id="page-num3">1</span> / <span id="page-count3">?</span></span>
             <button id="next3" class="nav-btn">Page suivante ➡️</button>
           </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
           <a href="../supports/dev-mob3.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
         </div>
         <div class="tab-content" id="quiz3" style="display:none;">
           <form id="quizForm3" onsubmit="return submitQuiz('quizForm3','result3')">
-            <p><strong>1. Exemple question ?</strong></p>
-            <label><input type="radio" name="q1" value="1"> Réponse 1</label><br>
-            <label><input type="radio" name="q1" value="0"> Réponse 2</label><br>
+            <p><strong>1. Qu’est-ce que le développement mobile ?</strong></p>
+            
+            <label><input type="radio" name="q1" value="1"> La création d’applications pour smartphones et tablettes</label><br>
+            <label><input type="radio" name="q1" value="0"> La conception de sites web uniquement</label><br>
+            <label><input type="radio" name="q1" value="0"> Le développement d’applications pour ordinateurs de bureau</label><br>
+
+            <p><strong>2. Quels sont les deux principaux systèmes d’exploitation mobiles ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> Android et iOS</label><br>
+            <label><input type="radio" name="q2" value="0"> Windows et macOS</label><br>
+            <label><input type="radio" name="q2" value="0"> Linux et Ubuntu</label><br>
+
+            <p><strong>3. Qu’est-ce qu’une application native ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> Une application développée spécifiquement pour une plateforme donnée (Android ou iOS)</label><br>
+            <label><input type="radio" name="q3" value="0"> Une application fonctionnant uniquement sur navigateur</label><br>
+            <label><input type="radio" name="q3" value="0"> Une application universelle non installable</label><br>
+
+            <p><strong>4. Qu’est-ce qu’une application hybride ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> Une application développée avec des technologies web et déployée sur plusieurs plateformes</label><br>
+            <label><input type="radio" name="q4" value="0"> Une application sans interface graphique</label><br>
+            <label><input type="radio" name="q4" value="0"> Une application nécessitant Internet en permanence</label><br>
+
+            <p><strong>5. Quelle est la différence entre une application native et une application web mobile ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> La native s’installe sur l’appareil, la web mobile s’exécute dans le navigateur</label><br>
+            <label><input type="radio" name="q5" value="0"> Aucune, ce sont les mêmes</label><br>
+            <label><input type="radio" name="q5" value="0"> La web mobile ne fonctionne pas sur iOS</label><br>
+
+            <p><strong>6. Quelle est la principale contrainte du développement mobile ?</strong></p>
+            <label><input type="radio" name="q6" value="1"> La diversité des appareils, tailles d’écran et systèmes</label><br>
+            <label><input type="radio" name="q6" value="0"> Le manque de couleurs disponibles</label><br>
+            <label><input type="radio" name="q6" value="0"> L’absence de clavier physique</label><br>
+
+            <p><strong>7. Quel langage est le plus utilisé pour le développement Android ?</strong></p>
+            <label><input type="radio" name="q7" value="1"> Java ou Kotlin</label><br>
+            <label><input type="radio" name="q7" value="0"> Swift</label><br>
+            <label><input type="radio" name="q7" value="0"> C#</label><br>
+
+            <p><strong>8. Quel langage est le plus utilisé pour le développement iOS ?</strong></p>
+            <label><input type="radio" name="q8" value="1"> Swift</label><br>
+            <label><input type="radio" name="q8" value="0"> Kotlin</label><br>
+            <label><input type="radio" name="q8" value="0"> PHP</label><br>
+
+            <p><strong>9. Quelle technologie permet de créer des applications multiplateformes ?</strong></p>
+            <label><input type="radio" name="q9" value="1"> Flutter, React Native ou Ionic</label><br>
+            <label><input type="radio" name="q9" value="0"> WordPress</label><br>
+            <label><input type="radio" name="q9" value="0"> Visual Basic</label><br>
+
+            <p><strong>10. Que signifie le terme “responsive design” ?</strong></p>
+            <label><input type="radio" name="q10" value="1"> L’adaptation automatique de l’interface à la taille de l’écran</label><br>
+            <label><input type="radio" name="q10" value="0"> L’ajout d’animations dans l’application</label><br>
+            <label><input type="radio" name="q10" value="0"> La réduction du poids de l’application</label><br>
+
             <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result3" style="font-weight:bold;"></p>
@@ -144,44 +300,63 @@
             <span>Page <span id="page-num4">1</span> / <span id="page-count4">?</span></span>
             <button id="next4" class="nav-btn">Page suivante ➡️</button>
           </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
           <a href="../supports/dev-mob4.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
         </div>
         <div class="tab-content" id="quiz4" style="display:none;">
           <form id="quizForm4" onsubmit="return submitQuiz('quizForm4','result4')">
-            <p>1️⃣ Une application hybride utilise principalement :
-A. Java et Swift
-B. HTML, CSS, JavaScript
-C. SQL et Python
+           
+            <p><strong>1. Qu’est-ce qu’une application hybride ?</strong></p>
+            <label><input type="radio" name="q1" value="1"> Une application développée avec des technologies web et pouvant fonctionner sur plusieurs plateformes</label><br>
+            <label><input type="radio" name="q1" value="0"> Une application native créée uniquement pour Android</label><br>
+            <label><input type="radio" name="q1" value="0"> Une application web non installable</label><br>
 
-Réponse : B
+            <p><strong>2. Quels langages sont utilisés dans le développement d’applications hybrides ?</strong></p>
+            <label><input type="radio" name="q2" value="1"> HTML, CSS et JavaScript</label><br>
+            <label><input type="radio" name="q2" value="0"> C et Assembleur</label><br>
+            <label><input type="radio" name="q2" value="0"> PHP et SQL</label><br>
 
-<br>2️⃣ Le framework Flutter utilise quel langage ?
-A. Dart
-B. JavaScript
-C. Kotlin
+            <p><strong>3. Quelle est la principale différence entre une application native et une hybride ?</strong></p>
+            <label><input type="radio" name="q3" value="1"> L’hybride utilise un seul code pour plusieurs systèmes d’exploitation</label><br>
+            <label><input type="radio" name="q3" value="0"> L’hybride ne peut pas être installée</label><br>
+            <label><input type="radio" name="q3" value="0"> L’hybride est plus lente à développer</label><br>
 
-Réponse : A
+            <p><strong>4. Quel framework est le plus populaire pour développer des applications hybrides ?</strong></p>
+            <label><input type="radio" name="q4" value="1"> Ionic, Flutter, ou React Native</label><br>
+            <label><input type="radio" name="q4" value="0"> Laravel ou Symfony</label><br>
+            <label><input type="radio" name="q4" value="0"> Angular ou Vue.js</label><br>
 
-<br>3️⃣ Quel est le principal avantage du développement hybride ?
-A. Performances maximales
-B. Un code unique pour plusieurs plateformes
-C. Pas besoin d’installation
+            <p><strong>5. Quel est l’avantage principal des applications hybrides ?</strong></p>
+            <label><input type="radio" name="q5" value="1"> Le même code fonctionne sur Android et iOS</label><br>
+            <label><input type="radio" name="q5" value="0"> Elles n’ont pas besoin de maintenance</label><br>
+            <label><input type="radio" name="q5" value="0"> Elles ne nécessitent pas d’interface graphique</label><br>
 
-Réponse : B
+            <p><strong>6. Quel est le rôle du composant <em>WebView</em> dans une application hybride ?</strong></p>
+            <label><input type="radio" name="q6" value="1"> Il affiche le contenu web à l’intérieur de l’application</label><br>
+            <label><input type="radio" name="q6" value="0"> Il gère la base de données interne</label><br>
+            <label><input type="radio" name="q6" value="0"> Il compile le code JavaScript</label><br>
 
-<br>4️⃣ Quel framework hybride est développé par Facebook ?
-A. Ionic
-B. Flutter
-C. React Native
+            <p><strong>7. Quel est l’un des inconvénients des applications hybrides ?</strong></p>
+            <label><input type="radio" name="q7" value="1"> Les performances peuvent être légèrement inférieures aux applications natives</label><br>
+            <label><input type="radio" name="q7" value="0"> Elles ne peuvent pas utiliser Internet</label><br>
+            <label><input type="radio" name="q7" value="0"> Elles nécessitent plusieurs serveurs</label><br>
 
-Réponse : C
+            <p><strong>8. Comment une application hybride accède-t-elle aux fonctionnalités du téléphone (GPS, caméra, etc.) ?</strong></p>
+            <label><input type="radio" name="q8" value="1"> Par des plugins natifs ou des API fournies par le framework</label><br>
+            <label><input type="radio" name="q8" value="0"> En utilisant uniquement le HTML</label><br>
+            <label><input type="radio" name="q8" value="0"> Grâce à une connexion Internet permanente</label><br>
 
-<br>5️⃣ L’un des inconvénients majeurs des apps hybrides est :
-A. Leur coût élevé
-B. Leur lenteur possible face aux apps natives
-C. Leur absence sur les stores
+            <p><strong>9. Quelle caractéristique rend le framework Flutter particulier ?</strong></p>
+            <label><input type="radio" name="q9" value="1"> Il utilise le langage Dart et compile en code natif</label><br>
+            <label><input type="radio" name="q9" value="0"> Il utilise du PHP</label><br>
+            <label><input type="radio" name="q9" value="0"> Il fonctionne uniquement sur navigateur</label><br>
 
-Réponse : B</p>
+            <p><strong>10. Pourquoi les entreprises choisissent-elles souvent le développement hybride ?</strong></p>
+            <label><input type="radio" name="q10" value="1"> Pour réduire les coûts et le temps de développement</label><br>
+            <label><input type="radio" name="q10" value="0"> Pour éviter d’utiliser les stores officiels</label><br>
+            <label><input type="radio" name="q10" value="0"> Parce que le code hybride est plus complexe</label><br>
+
             <button type="submit" class="nav-btn">Valider mes réponses</button>
           </form>
           <p id="result4" style="font-weight:bold;"></p>
