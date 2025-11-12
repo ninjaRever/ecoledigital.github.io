@@ -38,8 +38,10 @@ select {
   border-radius: 10px;
 }
 .course p {
-  font-weight: bold;
+  overflow: hidden;
+  height: 40pt;
   margin-top: 8px;
+  overflow-wrap: break-word;
 }
 /* .grid {
   display: grid;

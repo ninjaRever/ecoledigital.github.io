@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoleDigitale</title>
+  <link rel="stylesheet" href="../../../default.css">
+  <link rel="stylesheet" href="../../../css/module.css">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+</head>
+<body>
+  <header class="nav-header">
+    <div class="nav-header__left">
+      <img src="./../../../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+      <span class="nav-title">EcoleDigitale</span>
+    </div>
+    <div class="nav-header__right">
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <!-- Icône hamburger SVG -->
+        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
+      </button>
+      <nav class="nav-nav" id="navMenu">
+        <a href="../../../index.html" class="nav-link">Accueil</a>
+        <a href="../../../html/apropos.html" class="nav-link">À propos</a>
+        <a href="../../../html/contact.html" class="nav-link">Contact</a>
+        <button class="nav-btn">Se connecter</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+
+<section id="chapters-content" style="position: relative;">
+  <div id="ch0" class="chapter" style="display:none;">
+  <h2>Chapitre 0 : PRESENTATION</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video0')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support0')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="video0">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/OhjJFOCEWpo?si=Rfnnyvb5btb1D2l1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="tab-content" id="support0" style="display:none;">
+          <canvas id="pdf-canvas0" data-url="../../../electro-meca/cours/cons/chapitre_0/ressources/103677.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev0" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num0">1</span> / <span id="page-count0">?</span></span>
+            <button id="next0" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_0/ressources/103677.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch1" class="chapter" style="display:none;">
+  <h2>Chapitre 1 : SOLUTIONS CONSTRUCTIVES</h2><hr>
+  <h2>I.1 : TOLERENCE ET AJUSTEMENTS</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video1')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support1')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="video1">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/OhjJFOCEWpo?si=Rfnnyvb5btb1D2l1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="tab-content" id="support1" style="display:none;">
+          <canvas id="pdf-canvas1" data-url="../../../electro-meca/cours/cons/chapitre_1/ressources/103679.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev1" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num1">1</span> / <span id="page-count1">?</span></span>
+            <button id="next1" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_1/ressources/103679.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch2" class="chapter" style="display:none;">
+  <h2>Chapitre 1 : SOLUTIONS CONSTRUCTIVES</h2><hr>
+  <h2>I.2 : GUIDAGE EN TRANSLATION</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video2')">Vidéo</button>
+        </div>
+        <div class="tab-content" id="video2">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/OhjJFOCEWpo?si=Rfnnyvb5btb1D2l1" frameborder="0" allowfullscreen></iframe>
+        </div>
+  </div>
+
+  <div id="ch3" class="chapter" style="display:none;">
+  <h2>Chapitre 1 : SOLUTIONS CONSTRUCTIVES</h2><hr>
+  <h2>I.3: GUIDAGE EN ROTATION</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video3')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support3')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="video3">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/OhjJFOCEWpo?si=Rfnnyvb5btb1D2l1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="tab-content" id="support3" style="display:none;">
+          <canvas id="pdf-canvas3" data-url="../../../electro-meca/cours/cons/chapitre_1/ressources/103681.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev3" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num3">1</span> / <span id="page-count3">?</span></span>
+            <button id="next3" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_1/ressources/103681.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch4" class="chapter" style="display:none;">
+  <h2>Chapitre 1 : SOLUTIONS CONSTRUCTIVES</h2><hr>
+  <h2>I.4: DESIGNATION DES ROULEMENTS</h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support4')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support4" style="display:none;">
+          <canvas id="pdf-canvas4" data-url="../../../electro-meca/cours/cons/chapitre_1/ressources/103685.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev4" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num4">1</span> / <span id="page-count4">?</span></span>
+            <button id="next4" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_1/ressources/103685.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch5" class="chapter" style="display:none;">
+  <h2>Chapitre 1 : SOLUTIONS CONSTRUCTIVES </h2><hr>
+  <h2>I.5 : MODELISATION DES LIAISONS MECANIQUES</h2>
+        <div class="tabs">
+          <button class="tab-button active" onclick="showTab(this, 'video5')">Vidéo</button>
+          <button class="tab-button" onclick="showTab(this, 'support5')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="video5">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/OhjJFOCEWpo?si=Rfnnyvb5btb1D2l1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-content" id="support5" style="display:none;">
+          <canvas id="pdf-canvas5" data-url="../../../electro-meca/cours/cons/chapitre_1/ressources/103687.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev5" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num5">1</span> / <span id="page-count5">?</span></span>
+            <button id="next5" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_1/ressources/103687.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch6" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PISSANCE</h2><hr>
+  <h2>II.1 : ACCOUPLEMENT  </h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support6')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support6" style="display:none;">
+          <canvas id="pdf-canvas6" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103689.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev6" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num6">1</span> / <span id="page-count6">?</span></span>
+            <button id="next6" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103689.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch7" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PISSANCE</h2><hr>
+  <h2>II.2: EMBRAYAGES</h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support7')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support7" style="display:none;">
+          <canvas id="pdf-canvas7" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103695.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev7" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num7">1</span> / <span id="page-count7">?</span></span>
+            <button id="next7" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103695.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+    <div id="ch8" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PISSANCE</h2><hr>
+  <h2>II.3: FREINS</h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support8')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support8" style="display:none;">
+          <canvas id="pdf-canvas8" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103691.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev8" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num8">1</span> / <span id="page-count8">?</span></span>
+            <button id="next8" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103691.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch9" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PISSANCE </h2><hr>
+  <h2>II.4 : ROUES DE FRICTION</h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support9')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support9" style="display:none;">
+          <canvas id="pdf-canvas9" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103697.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev9" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num9">1</span> / <span id="page-count9">?</span></span>
+            <button id="next9" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103697.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch10" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PUISSANCE </h2><hr>
+  <h2>II.5 : POULIES-COURROIES</h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support10')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support10" style="display:none;">
+          <canvas id="pdf-canvas10" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103701.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev10" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num10">1</span> / <span id="page-count10">?</span></span>
+            <button id="next10" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103701.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch11" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PUISSANCE </h2><hr>
+  <h2>II.6 : ROUES  ET CHAINES</h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support11')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support11" style="display:none;">
+          <canvas id="pdf-canvas11" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103699.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev11" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num11">1</span> / <span id="page-count11">?</span></span>
+            <button id="next11" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103699.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch12" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PUISSANCE </h2><hr>
+  <h2>II.7 : ENGRENAGES</h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support12')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support12" style="display:none;">
+          <canvas id="pdf-canvas12" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103693.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev12" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num12">1</span> / <span id="page-count12">?</span></span>
+            <button id="next12" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103693.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch13" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PUISSANCE  </h2><hr>
+  <h2>II.8 : REDUCTEURS ET MULTIPLICATEURS DE VITESSE</h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support13')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support13" style="display:none;">
+          <canvas id="pdf-canvas13" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103703.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev13" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num13">1</span> / <span id="page-count13">?</span></span>
+            <button id="next13" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103703.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+  <div id="ch14" class="chapter" style="display:none;">
+  <h2>Chapitre 2 : TRANSMISSION DE PISSANCE  </h2><hr>
+  <h2>II.9: VARIATEUR DE VITESSE </h2>
+        <div class="tabs">
+          <button class="tab-button" onclick="showTab(this, 'support14')">Support de cours</button>
+        </div>
+        <div class="tab-content" id="support14" style="display:none;">
+          <canvas id="pdf-canvas14" data-url="../../../electro-meca/cours/cons/chapitre_2/ressources/103707.pdf" ></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="prev14" class="nav-btn">⬅️ Page précédente</button>
+            <span>Page <span id="page-num14">1</span> / <span id="page-count14">?</span></span>
+            <button id="next14" class="nav-btn">Page suivante ➡️</button>
+          </div>
+          <div style="display:flex; justify-content: space-around ; align-items: center;">
+          <a href="../../../electro-meca/cours/cons/chapitre_2/ressources/103707.pdf" download class="nav-btn">📥 Télécharger le PDF</a>
+          </div>
+        </div>
+  </div>
+
+
+</section>
+
+<section class="modules">
+  <h2>Modules du cours</h2>
+  <ul>
+    <li><a href="#" onclick="showChapter('ch0')">I : PRESENTATION </a></li>
+    <li><a href="#" onclick="showChapter('ch1')">I.1 : TOLERENCE ET AJUSTEMENTS </a></li>
+    <li><a href="#" onclick="showChapter('ch2')">I.2 : GUIDAGE EN TRANSLATION  </a></li>
+    <li><a href="#" onclick="showChapter('ch3')">I.3: GUIDAGE EN ROTATION  </a></li>
+    <li><a href="#" onclick="showChapter('ch4')">I.4: DESIGNATION DES ROULEMENTS</a></li>
+    <li><a href="#" onclick="showChapter('ch5')">I.5 : MODELISATION DES LIAISONS MECANIQUES   </a></li>
+    <li><a href="#" onclick="showChapter('ch6')">II.1 : ACCOUPLEMENT </a></li>
+    <li><a href="#" onclick="showChapter('ch7')">II.2: EMBRAYAGES </a></li>
+    <li><a href="#" onclick="showChapter('ch8')">II.3: FREINS</a></li>
+    <li><a href="#" onclick="showChapter('ch9')">II.4 : ROUES DE FRICTION </a></li>
+    <li><a href="#" onclick="showChapter('ch10')">II.5 : POULIES-COURROIES </a></li>
+    <li><a href="#" onclick="showChapter('ch11')">II.6 : ROUES  ET CHAINES </a></li>
+    <li><a href="#" onclick="showChapter('ch12')">II.7 : ENGRENAGES </a></li>
+    <li><a href="#" onclick="showChapter('ch13')">II.8 : REDUCTEURS ET MULTIPLICATEURS DE VITESSE</a></li>
+    <li><a href="#" onclick="showChapter('ch14')">II.9: VARIATEUR DE VITESSE</a></li>
+  </ul>
+</section>
+  </main>
+
+  <footer class="footer">
+    <nav class="footer-main-nav">
+      <a href="#" class="footer-link">Accueil</a>
+      <a href="#" class="footer-link">Cours</a>
+      <a href="#" class="footer-link">À propos</a>
+      <a href="#" class="footer-link">Contact</a>
+    </nav>
+    <div class="footer-secondary-nav">
+      <a href="#" class="footer-link-secondary">Politique de confidentialité</a>
+      <a href="#" class="footer-link-secondary">Conditions d'utilisation</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#" aria-label="Twitter" class="footer-social">
+        <!-- Heroicons Twitter -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.29 20c7.547 0 11.675-6.155 11.675-11.495 0-.175 0-.349-.012-.522A8.18 8.18 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.637A4.077 4.077 0 0 0 21.448 4.1a8.224 8.224 0 0 1-2.605.981A4.108 4.108 0 0 0 16.616 3c-2.266 0-4.104 1.82-4.104 4.065 0 .319.036.63.105.927C8.728 7.87 5.8 6.13 3.785 3.671a4.032 4.032 0 0 0-.555 2.045c0 1.41.722 2.655 1.823 3.384a4.093 4.093 0 0 1-1.858-.511v.052c0 1.97 1.41 3.615 3.292 3.99a4.1 4.1 0 0 1-1.853.07c.522 1.613 2.037 2.788 3.833 2.82A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"></path></svg>
+      </a>
+      <a href="#" aria-label="Facebook" class="footer-social">
+        <!-- Heroicons Facebook -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2.75h-2.5A4.25 4.25 0 0 0 10.25 7v2.25H7.75a.75.75 0 0 0-.75.75v2.5c0 .414.336.75.75.75h2.5V21.25c0 .414.336.75.75.75h2.5a.75.75 0 0 0 .75-.75V13.25h2.25a.75.75 0 0 0 .75-.75v-2.5a.75.75 0 0 0-.75-.75H14.75V7A1.75 1.75 0 0 1 16.5 5.25H17a.75.75 0 0 0 .75-.75V3.5a.75.75 0 0 0-.75-.75z"></path></svg>
+      </a>
+      <a href="#" aria-label="Instagram" class="footer-social">
+        <!-- Heroicons Instagram -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="16" height="16" x="4" y="4" rx="4" /><circle cx="12" cy="12" r="3.5"/><circle cx="16.5" cy="7.5" r="1"/></svg>
+      </a>
+      <a href="#" aria-label="TikTok" class="footer-social">
+        <!-- TikTok SVG -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3v7.25a4.25 4.25 0 1 1-4.25-4.25"></path></svg>
+      </a>
+      <a href="#" aria-label="YouTube" class="footer-social">
+        <!-- Heroicons YouTube -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="20" height="14" x="2" y="5" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor"/></svg>
+      </a>
+    </div>
+    <div class="footer-legal">
+      © 2025 EcoleDigitale. Tous droits réservés.
+    </div>
+  </footer>
+  <script src="../../../js/script.js"></script>
+</body>
+</html>

@@ -117,15 +117,10 @@ body {
 
 /* Styles pour la section Niveaux */
 .levels {
-  /* Affichage flexible pour le positionnement */
   display: flex;
-  /* Permet aux éléments de passer à la ligne si nécessaire */
   flex-wrap: wrap;
-  /* Espacement entre les boutons */
   gap: 2rem;
-  /* Espacement vertical */
   margin-top: 2rem;
-  /* Centrage des éléments */
   justify-content: center;
 }
 
@@ -297,9 +292,8 @@ body {
   min-width: 250px;
 }
 @media screen and (max-width: 768px) {
-  .levels {
-   display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
+   .levels {
+  flex-direction: column;
+}
   
 }

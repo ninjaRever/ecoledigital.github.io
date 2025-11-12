@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoleDigitale</title>
+  <link rel="stylesheet" href="../css/ctgcite.css">
+  <link rel="stylesheet" href="../default.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="nav-header">
+    <div class="nav-header__left">
+      <img src="../image/logo.jpg" alt="Logo EcoleDigitale" class="nav-logo">
+      <span class="nav-title">EcoleDigitale</span>
+    </div>
+    <div class="nav-header__right">
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <!-- Icône hamburger SVG -->
+        <svg width="32" height="32" viewBox="0 0 24 24"><rect y="5" width="24" height="2" rx="1"/><rect y="11" width="24" height="2" rx="1"/><rect y="17" width="24" height="2" rx="1"/></svg>
+      </button>
+      <nav class="nav-nav" id="navMenu">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="apropos.html" class="nav-link">À propos</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <button class="nav-btn">Se connecter</button>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Catalogue -->
+  <main class="container">
+ <h1>Catalogue de Cours</h1>
+
+  <div class="filters">
+    <select id="filtre-filiere">
+      <option value="all">Toutes les Filières</option>
+      <option value="ELECTROMECANIQUE">ELECTROMECANIQUE</option>
+      <option value="MAI">MAI</option>
+    </select>
+
+    <select id="filtre-module">
+      <option value="all">Tous les Modules</option>
+      <option value="MODULE1">MODULE1</option>
+      <option value="MODULE2">MODULE2</option>
+      <option value="MODULE3">MODULE3</option>
+      <option value="MODULE4">MODULE4</option>
+    </select>
+
+    <select id="filtre-semestre" style="display: none;">
+      <option value="all">Tous les Semestres</option>
+      <option value="Semestre 1">Semestre 1</option>
+      <option value="Semestre 2">Semestre 2</option>
+    </select>
+  </div>
+
+<div id="cours-par-filiere">
+  <div class="filiere-block" data-filiere="IDA">
+    <h2>BTS ELECTROMECANIQUE </h2>
+    <div class="courses">
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/math/184.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/math/assets/184.png" alt="MATHEMATIQUE"><p>MATHEMATIQUE</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/tec/186.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/tec/assets/186.png" alt="FRANCAIS"><p>FRANCAIS</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/chimie/185.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/chimie/assets/185.png" alt="CHIMIE"><p>CHIMIE</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/anglais/187.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE2" data-semestre="Semestre 1"><img src="../electro-meca/cours/anglais/assets/187.png" alt="ANGLAIS"><p>ANGLAIS</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/informatique/176.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE3" data-semestre="Semestre 1"><img src="../electro-meca/cours/informatique/assets/176.png" alt="INFORMATIQUE"><p>INFORMATIQUE</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/remise_a_niveau/175.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/remise_a_niveau/assets/175.png" alt="REMISE A NIVEAU"><p>REMISE A NIVEAU</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/schema/180.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/schema/assets/180.png" alt="SCHEMA"><p>SCHEMA</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/meca_solid/183.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/meca_solid/assets/183.png" alt="MECANIQUE DU SOLIDE"><p><br>MECANIQUE DU SOLIDE</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/electrotec/177.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE2" data-semestre="Semestre 1"><img src="../electro-meca/cours/electrotec/assets/177.png" alt="ELECTROTECHNIQUE"><p><br>ELECTROTECHNIQUE</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/electronique/179.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/electronique/assets/179.png" alt="ELECTRONIQUE"><p>ELECTRONIQUE</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/automatisme/181.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE3" data-semestre="Semestre 1"><img src="../electro-meca/cours/automatisme/assets/181.png" alt="AUTOMATISME"><p>AUTOMATISME</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/ase/174.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE2" data-semestre="Semestre 1"><img src="../electro-meca/cours/ase/assets/174.png" alt="ANALYSE DES SYSTEMES"><p>ANALYSE DES SYSTEMES</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/fabrique_mecanique/223.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE3" data-semestre="Semestre 1"><img src="../electro-meca/cours/fabrique_mecanique/assets/223.png" alt="FABLICATION MECANIQUE"><p>FABLICATION MECANIQUE</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/theorie_de_maintenance/178.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/theorie_de_maintenance/assets/178.png" alt="THEORIE DE MAINTENANCE"><p>THEORIE DE MAINTENANCE</p></div></a>
+      <a style="text-decoration: none; color: black; " href="../electro-meca/cours/cons/182.html"><div class="course" data-filiere="ELECTROMECANIQUE" data-module="MODULE1" data-semestre="Semestre 1"><img src="../electro-meca/cours/cons/assets/182.png" alt="TECHNOLOGIE DE CONSTRUCTION"><p>TECHNOLOGIE DE CONSTRUCTION</p></div></a>
+
+    </div>
+  </div>
+
+  <div class="filiere-block" data-filiere="MAI">
+    <h2>Filière AUTRE </h2>
+    <div class="courses">
+      <div class="course" data-filiere="MAI" data-module="WEB" data-semestre="Semestre 1"><img src="../image/chap1.png" alt=""><p>CHAPITRE1</p></div>
+      <div class="course" data-filiere="MAI" data-module="WEB" data-semestre="Semestre 1"><img src="../image/chap2.png" alt=""><p>CHAPITRE2</p></div>
+      <div class="course" data-filiere="MAI" data-module="WEB" data-semestre="Semestre 1"><img src="../image/chap1.png" alt=""><p>CHAPITRE3</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- Conteneur des résultats filtrés -->
+<div id="cours-filtres" class="courses" style="display: none;"></div>
+
+<footer class="footer">
+    <nav class="footer-main-nav">
+      <a href="#" class="footer-link">Accueil</a>
+      <a href="#" class="footer-link">Cours</a>
+      <a href="#" class="footer-link">À propos</a>
+      <a href="#" class="footer-link">Contact</a>
+    </nav>
+    <div class="footer-secondary-nav">
+      <a href="#" class="footer-link-secondary">Politique de confidentialité</a>
+      <a href="#" class="footer-link-secondary">Conditions d'utilisation</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#" aria-label="Twitter" class="footer-social">
+        <!-- Heroicons Twitter -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.29 20c7.547 0 11.675-6.155 11.675-11.495 0-.175 0-.349-.012-.522A8.18 8.18 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.637A4.077 4.077 0 0 0 21.448 4.1a8.224 8.224 0 0 1-2.605.981A4.108 4.108 0 0 0 16.616 3c-2.266 0-4.104 1.82-4.104 4.065 0 .319.036.63.105.927C8.728 7.87 5.8 6.13 3.785 3.671a4.032 4.032 0 0 0-.555 2.045c0 1.41.722 2.655 1.823 3.384a4.093 4.093 0 0 1-1.858-.511v.052c0 1.97 1.41 3.615 3.292 3.99a4.1 4.1 0 0 1-1.853.07c.522 1.613 2.037 2.788 3.833 2.82A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"></path></svg>
+      </a>
+      <a href="#" aria-label="Facebook" class="footer-social">
+        <!-- Heroicons Facebook -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2.75h-2.5A4.25 4.25 0 0 0 10.25 7v2.25H7.75a.75.75 0 0 0-.75.75v2.5c0 .414.336.75.75.75h2.5V21.25c0 .414.336.75.75.75h2.5a.75.75 0 0 0 .75-.75V13.25h2.25a.75.75 0 0 0 .75-.75v-2.5a.75.75 0 0 0-.75-.75H14.75V7A1.75 1.75 0 0 1 16.5 5.25H17a.75.75 0 0 0 .75-.75V3.5a.75.75 0 0 0-.75-.75z"></path></svg>
+      </a>
+      <a href="#" aria-label="Instagram" class="footer-social">
+        <!-- Heroicons Instagram -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="16" height="16" x="4" y="4" rx="4" /><circle cx="12" cy="12" r="3.5"/><circle cx="16.5" cy="7.5" r="1"/></svg>
+      </a>
+      <a href="#" aria-label="TikTok" class="footer-social">
+        <!-- TikTok SVG -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3v7.25a4.25 4.25 0 1 1-4.25-4.25"></path></svg>
+      </a>
+      <a href="#" aria-label="YouTube" class="footer-social">
+        <!-- Heroicons YouTube -->
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24"><rect width="20" height="14" x="2" y="5" rx="4"/><polygon points="10,9 16,12 10,15" fill="currentColor"/></svg>
+      </a>
+    </div>
+    <div class="footer-legal">
+      © 2025 EcoleDigitale. Tous droits réservés.
+    </div>
+  </footer>
+  <script src="../js/script.js"></script>
+</body>
+</html>
